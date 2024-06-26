@@ -9,7 +9,7 @@ from models.nice_approxbp import Logit, approx_backprop_score_matching, NICE
 from losses.score_matching import exact_score_matching
 from tqdm import tqdm
 
-
+# 计算fisher的那个最直接的
 def compute_scores(energy_net, samples, train=False, use_hessian=False):
     samples.requires_grad_(True)
     if use_hessian:
@@ -25,7 +25,7 @@ def compute_scores(energy_net, samples, train=False, use_hessian=False):
         scores = (torch.norm(grad1, dim=-1) ** 2).detach()
     return scores
 
-
+# 遍历数据集（验证集和测试集）
 def evaluate_scores(flow, val_loader, test_loader, device, noise_sigma=0.0):
     def energy_net(inputs):
         energy, _ = flow(inputs, inv=False)
@@ -53,7 +53,7 @@ def evaluate_scores(flow, val_loader, test_loader, device, noise_sigma=0.0):
     
     return val_scores, test_scores
 
-        
+# 没被调用过
 def evaluate_model(flow, val_loader, test_loader, device, noise_sigma = 0.0):
     def energy_net(inputs):
         energy, _ = flow(inputs, inv=False)
@@ -102,17 +102,21 @@ def evaluate_model(flow, val_loader, test_loader, device, noise_sigma = 0.0):
     print("Test logp: {}, score matching loss: {}".format(test_logp.item(), test_sm_loss.item()))
     
 sigma = 0.1
-for dataset_name in ["MNIST", "CIFAR10"]:
-    d = 784 if dataset_name == 'MNIST' else 3072
+#  数据集路径
+cifar10_route = '/cpfs01/projects-SSD/cfff-448d03a18a24_SSD/drj_22210240082/drj/DATASET/images/cifar10/'
 
+# for dataset_name in ["MNIST", "CIFAR10"]:
+for dataset_name in ["CIFAR10"]:
+    d = 784 if dataset_name == 'MNIST' else 3072 # input dim 32*32*3 for CIFAR10
+    # 数据集处理
     if dataset_name == 'CIFAR10':
         transform = transforms.Compose([
             transforms.Resize(32),
             transforms.ToTensor()
         ])
-        dataset = CIFAR10(os.path.join('run', 'datasets', 'cifar10'), train=True, download=True,
+        dataset = CIFAR10(cifar10_route, train=True, download=True,
                             transform=transform)
-        test_dataset = CIFAR10(os.path.join('run', 'datasets', 'cifar10'), train=False, download=True,
+        test_dataset = CIFAR10(cifar10_route, train=False, download=True,
                                 transform=transform)
     elif dataset_name == 'MNIST':
         transform = transforms.Compose([
@@ -123,6 +127,7 @@ for dataset_name in ["MNIST", "CIFAR10"]:
                         transform=transform)
         test_dataset = MNIST(os.path.join('run', 'datasets', 'mnist'), train=False, download=True,
                                 transform=transform)
+    
     num_items = len(dataset)
     indices = list(range(num_items))
     random_state = np.random.get_state()
@@ -138,12 +143,16 @@ for dataset_name in ["MNIST", "CIFAR10"]:
     test_loader = DataLoader(test_dataset, batch_size=128, shuffle=True, num_workers=2)
 
     device = torch.device('cuda')
+
+    # matching 模型
     flow = NICE(d, 1000, 5).to(device)
     if dataset_name == "MNIST":
         state_dict = torch.load('run/results/mnist_sigma_{}/best_on_esm_nice.pth'.format(sigma))
-    else:
+    else: # cifar10 
         state_dict = torch.load('run/results/cifar_sigma_{}/best_on_esm_nice.pth'.format(sigma))
     flow.load_state_dict(state_dict)
 
     val_scores, test_scores = evaluate_scores(flow, val_loader, test_loader, device, noise_sigma=sigma)
+    # test score是计算在所有数据集上的平均
+    # 先平均再求迹等于先求迹再平均
     print("%s: dFIL (prior) = %.2f" % (dataset_name, test_scores.mean() / d))
