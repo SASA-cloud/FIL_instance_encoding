@@ -9,12 +9,13 @@ from models.nice_approxbp import Logit, approx_backprop_score_matching, NICE
 from losses.score_matching import exact_score_matching
 from tqdm import tqdm
 
+
 def compute_scores(energy_net, samples, train=False, use_hessian=False):
     samples.requires_grad_(True)
     if use_hessian:
         scores = torch.zeros(samples.shape[0], device=samples.device)
         for i in tqdm.tqdm(range(samples.shape[1])):
-            logp = -energy_net(samples).sum()
+            logp = -energy_net(samples).sum() # 这个负号+
             grad1 = autograd.grad(logp, samples, create_graph=True)[0]
             grad = autograd.grad(grad1[:, i].sum(), samples)[0][:, i]
             scores += grad.detach()

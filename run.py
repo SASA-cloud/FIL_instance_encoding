@@ -52,22 +52,28 @@ def get_args():
     return args
 
 def run(args):
+    # 设定超参数
     print(args)
     torch.manual_seed(args.test_seed)
     random.seed(args.test_seed)
     np.random.seed(args.test_seed)
 
     if torch.cuda.is_available():
-        device = f"cuda:0"
+        device = f"cuda:1"
     else:
         device = "cpu"
 
+    # 取得edgenet模型
     model_file = get_model_name(args.model_path, args.model, args.dataset, args.split_layer, args.bottleneck_dim, args.jacloss_alpha, args.train_lb, args.standardize, args.input_noise, 1.0, args.activation, args.pooling, args.train_bs, args.train_seed)
     print(model_file)
 
+    # 取得数据集
     _, test_data, data_mu, data_sigma = get_dataset(args.dataset, args.standardize, gaussian_mu=args.gaussian_mu, gaussian_sigma=args.gaussian_sigma)
     net, tokenizer = get_model(args.model, args.dataset, args.split_layer, args.bottleneck_dim, args.activation, args.pooling, test_data, device, args.load_from_file, model_file)
-    
+    # 测试数据 loader
+    test_loader = torch.utils.data.DataLoader(test_data, batch_size=args.test_bs, shuffle=False, num_workers=0)
+
+    # 为hugging face的nlp模型做
     if tokenizer is not None:
         if args.test_bs > 1:
             raise AssertionError("Currently, I haven't implemented bs > 1 for transformers")
@@ -77,24 +83,23 @@ def run(args):
             features["labels"] = batch["label"]
             return features
         test_data = test_data.map(encode, remove_columns=['label'])
-
-    if args.dataset in ["cifar10", "cifar100", "mnist"]:
+    
+    if args.dataset in ["cifar10", "cifar100", "mnist"]: # 图像数据集
         loss_func = nn.CrossEntropyLoss()
         metrics = ["loss", "accuracy", "accuracy5"]
-    elif args.dataset == "synthetic_gaussian":
+    elif args.dataset == "synthetic_gaussian": # 伪造数据集
         loss_func = nn.CrossEntropyLoss()
         metrics = ["loss", "accuracy", "accuracy5"]
-    elif args.dataset == "movielens-20":
+    elif args.dataset == "movielens-20": # 表格数据集推荐
         loss_func = nn.BCELoss()
         metrics = ["loss", "auc"]
-    elif args.dataset == "glue-sst2":
+    elif args.dataset == "glue-sst2": # nlp？
         metrics = ["loss", "accuracy"]
-
-    test_loader = torch.utils.data.DataLoader(test_data, batch_size=args.test_bs, shuffle=False, num_workers=0)
 
     net.eval()
     print(net)
 
+    # 前向推理加的高斯噪声的标准差
     if args.target_lb > 0.0:
         tr_mean, d = calc_mean_tr(net, test_loader, calc_tr_transformer if args.dataset == "glue-sst2" else calc_tr, device, args.jvp_parallelism, emb_func=net.forward_embs if args.dataset in ["movielens-20", "glue-sst2"] else None)
         sigma = torch.sqrt(torch.tensor(args.target_lb * tr_mean / d)).to(device)
@@ -102,6 +107,7 @@ def run(args):
     else:
         sigma = None
 
+    # 攻击的超参数
     recon_params = {'method': args.reconstruct_method,
             'tv_lmbda': args.tv_lmbda,
             'gaussian_lmbda': args.gaussian_lmbda,
@@ -122,6 +128,7 @@ def run(args):
     y_preds = torch.tensor([]).to(device)
     ans = torch.tensor([]).to(device)
     print(f"{len(test_loader)}")
+    # 遍历testloader了
     for i, inputs in enumerate(test_loader):
         if args.dataset == "glue-sst2":
             x = inputs
@@ -147,7 +154,7 @@ def run(args):
         if args.input_noise > 0.0:
             x = x + torch.normal(torch.zeros_like(x), args.input_noise)
 
-        # Run noisy inference
+        # Run noisy inference noisy前向推理
         with torch.no_grad():
             # dFIL-based noise addition
             if args.dataset == "glue-sst2":
@@ -157,10 +164,10 @@ def run(args):
                 y_pred = net.forward_second(x, act, sigma=sigma)
                 loss = y_pred.loss
                 y_pred = y_pred.logits
-            else:
-                act = net.forward_first(x, for_jacobian=False)
+            else: # 推理加高斯噪声
+                act = net.forward_first(x, for_jacobian=False) # 前向推理
                 print(sigma)
-                y_pred = net.forward_second(act.detach().clone(), sigma=sigma)
+                y_pred = net.forward_second(act.detach().clone(), sigma=sigma) # 加高斯噪声
                 loss = loss_func(y_pred, y)
 
             total_loss += loss.detach().item() * y.shape[0]
@@ -189,11 +196,12 @@ def run(args):
 
             print(f"loss {loss}, acc {acc / y.shape[0]}, acc5 {acc5 / y.shape[0]}, auc {auc}")
 
-        # Run reconstruction
+        # Run reconstruction DRA攻击
         if args.reconstruct:
             # Load attack model
             # Attack model hyperparam only found for certain setups.
             if args.reconstruct_method == "cnn":
+                # 获取decoder模型
                 imodel_file = get_attack_model_name(args.model_path, model_file, args.dataset, args.split_layer, args.target_lb, args.input_noise, args.last_activation)
                 inet = get_attack_model(args.model, args.dataset, args.split_layer, args.last_activation, device)
 
