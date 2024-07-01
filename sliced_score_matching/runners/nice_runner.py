@@ -65,8 +65,8 @@ class NICERunner():
 
         val_logp = sum(val_logps) / len(val_logps)
         val_sm_loss = sum(val_sm_losses) / len(val_sm_losses)
-        self.results[model_type]['val_logp'] = np.asscalar(val_logp.detach().cpu().numpy())
-        self.results[model_type]['val_sm_loss'] = np.asscalar(val_sm_loss.detach().cpu().numpy())
+        self.results[model_type]['val_logp'] = val_logp.detach().cpu().numpy().item()
+        self.results[model_type]['val_sm_loss'] = val_sm_loss.detach().cpu().numpy().item()
         logging.info("Val logp: {}, score matching loss: {}".format(val_logp.item(), val_sm_loss.item()))
 
         logging.info("Evaluating on test set!")
@@ -89,8 +89,8 @@ class NICERunner():
 
         test_logp = sum(test_logps) / len(test_logps)
         test_sm_loss = sum(test_sm_losses) / len(test_sm_losses)
-        self.results[model_type]['test_logp'] = np.asscalar(test_logp.detach().cpu().numpy())
-        self.results[model_type]['test_sm_loss'] = np.asscalar(test_sm_loss.detach().cpu().numpy())
+        self.results[model_type]['test_logp'] = np.item(test_logp.detach().cpu().numpy())
+        self.results[model_type]['test_sm_loss'] = np.item(test_sm_loss.detach().cpu().numpy())
 
     def train(self):
 
@@ -129,6 +129,11 @@ class NICERunner():
 
         val_iter = iter(val_loader)
         
+        # 打印数据集的一些参数：
+        logging.info('Len train data: {}'.format(len(dataloader.dataset)))
+        logging.info('Len val data: {}'.format(len(val_loader.dataset)))
+        logging.info('Len test data: {}'.format(len(test_loader.dataset)))
+
         # input dim参数
         self.config.input_dim = self.config.data.image_size ** 2 * self.config.data.channels
 
@@ -328,6 +333,8 @@ class NICERunner():
                 step += 1
 
         self.results = {}
+
+        # 验证多个模型？
         self.evaluate_model(flow.state_dict(), "final", val_loader, test_loader, model_path)
         self.evaluate_model(best_model['val'], "best_on_val", val_loader, test_loader, model_path)
         self.evaluate_model(best_model['ll'], "best_on_ll", val_loader, test_loader, model_path)
@@ -340,3 +347,5 @@ class NICERunner():
         pickle_out = open(model_path + "/results.pkl", "wb")
         pickle.dump(self.results, pickle_out)
         pickle_out.close()
+
+        logging.info("training done!")

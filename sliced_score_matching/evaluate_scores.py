@@ -76,8 +76,8 @@ def evaluate_model(flow, val_loader, test_loader, device, noise_sigma = 0.0):
 
     val_logp = sum(val_logps) / len(val_logps)
     val_sm_loss = sum(val_sm_losses) / len(val_sm_losses)
-    results['val_logp'] = np.asscalar(val_logp.detach().cpu().numpy())
-    results['val_sm_loss'] = np.asscalar(val_sm_loss.detach().cpu().numpy())
+    results['val_logp'] = val_logp.detach().cpu().numpy().item()
+    results['val_sm_loss'] = val_sm_loss.detach().cpu().numpy().item()
     print("Val logp: {}, score matching loss: {}".format(val_logp.item(), val_sm_loss.item()))
 
     print("Evaluating on test set!")
@@ -97,8 +97,8 @@ def evaluate_model(flow, val_loader, test_loader, device, noise_sigma = 0.0):
 
     test_logp = sum(test_logps) / len(test_logps)
     test_sm_loss = sum(test_sm_losses) / len(test_sm_losses)
-    results['test_logp'] = np.asscalar(test_logp.detach().cpu().numpy())
-    results['test_sm_loss'] = np.asscalar(test_sm_loss.detach().cpu().numpy())
+    results['test_logp'] =test_logp.detach().cpu().numpy().item()
+    results['test_sm_loss'] =test_sm_loss.detach().cpu().numpy().item()
     print("Test logp: {}, score matching loss: {}".format(test_logp.item(), test_sm_loss.item()))
     
 sigma = 0.1
@@ -156,4 +156,4 @@ for dataset_name in ["MNIST", "CIFAR10"]:
     val_scores, test_scores = evaluate_scores(flow, val_loader, test_loader, device, noise_sigma=sigma)
     # test score是计算在所有数据集上的平均
     # 先平均再求迹等于先求迹再平均
-    print("%s: dFIL (prior) = %.2f" % (dataset_name, test_scores.mean() / d))
+    print("%s: dFIL (prior) = %.2f" % (dataset_name, test_scores.mean() / d)) 

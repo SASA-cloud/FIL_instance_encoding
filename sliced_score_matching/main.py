@@ -10,7 +10,7 @@ import torch
 import numpy as np
 from runners import *
 
-
+# 各种变量参数
 def parse_args_and_config():
     parser = argparse.ArgumentParser(description=globals()['__doc__'])
 
@@ -38,8 +38,8 @@ def parse_args_and_config():
         config = yaml.load(f,Loader=yaml.FullLoader)
     new_config = dict2namespace(config)
 
-    if not args.test:
-        if not args.resume_training:
+    if not args.test: # 训练
+        if not args.resume_training: # 重新训练
             if os.path.exists(args.log):
                 shutil.rmtree(args.log)
             os.makedirs(args.log)
@@ -62,11 +62,12 @@ def parse_args_and_config():
         logger.addHandler(handler2)
         logger.setLevel(level)
 
-    else:
+    else: # 测试
         level = getattr(logging, args.verbose.upper(), None)
         if not isinstance(level, int):
             raise ValueError('level {} not supported'.format(args.verbose))
 
+        # setup logger
         handler1 = logging.StreamHandler()
         formatter = logging.Formatter('%(levelname)s - %(filename)s - %(asctime)s - %(message)s')
         handler1.setFormatter(formatter)
@@ -87,7 +88,7 @@ def parse_args_and_config():
 
     return args, new_config
 
-
+# 解析yaml？
 def dict2namespace(config):
     namespace = argparse.Namespace()
     for key, value in config.items():
@@ -100,6 +101,7 @@ def dict2namespace(config):
 
 
 def main():
+    # 解析参数
     args, config = parse_args_and_config()
     logging.info("Writing log file to {}".format(args.log))
     logging.info("Exp instance id = {}".format(os.getpid()))
