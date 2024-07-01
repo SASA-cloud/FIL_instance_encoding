@@ -23,7 +23,7 @@ class NICERunner():
         self.args = args
         self.config = config
 
-    def get_optimizer(self, parameters):
+    def get_optimizer(self, parameters): # 优化器
         if self.config.optim.optimizer == 'Adam':
             return optim.Adam(parameters, lr=self.config.optim.lr, weight_decay=self.config.optim.weight_decay)
         elif self.config.optim.optimizer == 'RMSProp':
@@ -33,7 +33,7 @@ class NICERunner():
         else:
             raise NotImplementedError('Optimizer {} not understood.'.format(self.config.optim.optimizer))
 
-    def evaluate_model(self, state_dict, model_type, val_loader, test_loader, model_path):
+    def evaluate_model(self, state_dict, model_type, val_loader, test_loader, model_path): # 验证一个模型
         torch.save(state_dict, os.path.join(model_path, model_type + "_nice.pth"))
 
         flow = NICE(self.config.input_dim, self.config.model.hidden_size, self.config.model.num_layers).to(
@@ -49,7 +49,7 @@ class NICERunner():
         noise_sigma = self.config.data.noise_sigma
         self.results[model_type] = {}
 
-        for i, (X, y) in enumerate(val_loader):
+        for i, (X, y) in enumerate(val_loader): # 验证集
             X = X + (torch.rand_like(X) - 0.5) / 256.
             flattened_X = X.type(torch.float32).to(self.config.device).view(X.shape[0], -1)
             flattened_X.clamp_(1e-3, 1-1e-3)
@@ -73,7 +73,7 @@ class NICERunner():
         test_logps = []
         test_sm_losses = []
 
-        for i, (X, y) in enumerate(test_loader):
+        for i, (X, y) in enumerate(test_loader): # 测试集
             X = X + (torch.rand_like(X) - 0.5) / 256.
             flattened_X = X.type(torch.float32).to(self.config.device).view(X.shape[0], -1)
             flattened_X.clamp_(1e-3, 1-1e-3)
@@ -93,30 +93,33 @@ class NICERunner():
         self.results[model_type]['test_sm_loss'] = np.asscalar(test_sm_loss.detach().cpu().numpy())
 
     def train(self):
+
+        # 取数据集(mnist 和 cifar10)
         transform = transforms.Compose([
             transforms.Resize(self.config.data.image_size),
             transforms.ToTensor()
         ])
-
+        cifar10_route = '/cpfs01/projects-SSD/cfff-448d03a18a24_SSD/drj_22210240082/drj/DATASET/images/cifar10/'
+        mnist_route = '/cpfs01/projects-SSD/cfff-448d03a18a24_SSD/drj_22210240082/drj/DATASET/images/mnist/'
         if self.config.data.dataset == 'CIFAR10':
-            dataset = CIFAR10(os.path.join(self.args.run, 'datasets', 'cifar10'), train=True, download=True,
+            dataset = CIFAR10(cifar10_route, train=True, download=True,
                               transform=transform)
-            test_dataset = CIFAR10(os.path.join(self.args.run, 'datasets', 'cifar10'), train=False, download=True,
+            test_dataset = CIFAR10(cifar10_route, train=False, download=True,
                                    transform=transform)
         elif self.config.data.dataset == 'MNIST':
-            dataset = MNIST(os.path.join(self.args.run, 'datasets', 'mnist'), train=True, download=True,
+            dataset = MNIST(mnist_route, train=True, download=True,
                             transform=transform)
-            num_items = len(dataset)
-            indices = list(range(num_items))
-            random_state = np.random.get_state()
-            np.random.seed(2019)
-            np.random.shuffle(indices)
-            np.random.set_state(random_state)
-            train_indices, val_indices = indices[:int(num_items * 0.9)], indices[int(num_items * 0.9):]
-            val_dataset = Subset(dataset, val_indices)
-            dataset = Subset(dataset, train_indices)
-            test_dataset = MNIST(os.path.join(self.args.run, 'datasets', 'mnist'), train=False, download=True,
-                                 transform=transform)
+        num_items = len(dataset)
+        indices = list(range(num_items))
+        random_state = np.random.get_state()
+        np.random.seed(2019)
+        np.random.shuffle(indices)
+        np.random.set_state(random_state)
+        train_indices, val_indices = indices[:int(num_items * 0.9)], indices[int(num_items * 0.9):]
+        val_dataset = Subset(dataset, val_indices)
+        dataset = Subset(dataset, train_indices)
+        test_dataset = MNIST(mnist_route, train=False, download=True,
+                                transform=transform)
 
         dataloader = DataLoader(dataset, batch_size=self.config.training.batch_size, shuffle=True, num_workers=2)
         val_loader = DataLoader(val_dataset, batch_size=self.config.training.batch_size, shuffle=True,
@@ -125,8 +128,11 @@ class NICERunner():
                                  num_workers=2)
 
         val_iter = iter(val_loader)
+        
+        # input dim参数
         self.config.input_dim = self.config.data.image_size ** 2 * self.config.data.channels
 
+        # 一些路径设置
         tb_path = os.path.join(self.args.run, 'tensorboard', self.args.doc)
         if os.path.exists(tb_path):
             shutil.rmtree(tb_path)
@@ -137,9 +143,11 @@ class NICERunner():
 
         tb_logger = tensorboardX.SummaryWriter(log_dir=tb_path)
 
+        # 模型
         flow = NICE(self.config.input_dim, self.config.model.hidden_size, self.config.model.num_layers).to(
             self.config.device)
 
+        # 优化器
         optimizer = self.get_optimizer(flow.parameters())
 
         # Set up test data
@@ -187,8 +195,9 @@ class NICERunner():
         best_val_loss = {"val": 1e+10, "ll": -1e+10, "esm": 1e+10}
         best_val_iter = {"val": 0, "ll": 0, "esm": 0}
 
-        for _ in range(self.config.training.n_epochs):
-            for _, (X, y) in enumerate(dataloader):
+        # 迭代训练
+        for _ in range(self.config.training.n_epochs): # 遍历epochs
+            for _, (X, y) in enumerate(dataloader): # 遍历数据集
                 X = X + (torch.rand_like(X) - 0.5) / 256.
                 flattened_X = X.type(torch.float32).to(self.config.device).view(X.shape[0], -1)
                 flattened_X.clamp_(1e-3, 1-1e-3)
@@ -224,7 +233,7 @@ class NICERunner():
                 loss.backward()
                 optimizer.step()
 
-
+                # 打印logging
                 if step % 10 == 0:
                     try:
                         val_X, _ = next(val_iter)

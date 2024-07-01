@@ -1,0 +1,1549 @@
+nohup: ignoring input
+INFO - main.py - 2024-06-26 22:48:02,094 - Using device: cuda
+INFO - main.py - 2024-06-26 22:48:02,095 - Writing log file to run/logs/0
+INFO - main.py - 2024-06-26 22:48:02,095 - Exp instance id = 11393
+INFO - main.py - 2024-06-26 22:48:02,095 - Exp comment = 
+INFO - main.py - 2024-06-26 22:48:02,095 - Config =
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Namespace(training=Namespace(batch_size=128, n_epochs=100, algo='ssm_vr', noise_type='radermacher'), data=Namespace(dataset='CIFAR10', image_size=32, channels=3, noise_sigma=0.1), model=Namespace(hidden_size=1000, num_layers=5), optim=Namespace(weight_decay=0.0, optimizer='Adam', lr=3e-05), device=device(type='cuda'))
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Files already downloaded and verified
+Files already downloaded and verified
+ERROR - main.py - 2024-06-26 22:48:04,307 - Traceback (most recent call last):
+  File "/cpfs01/projects-SSD/cfff-448d03a18a24_SSD/drj_22210240082/drj/project/FIL_instance_encoding/sliced_score_matching/main.py", line 115, in main
+    runner.train()
+  File "/cpfs01/projects-SSD/cfff-448d03a18a24_SSD/drj_22210240082/drj/project/FIL_instance_encoding/sliced_score_matching/runners/nice_runner.py", line 123, in train
+    val_loader = DataLoader(val_dataset, batch_size=self.config.training.batch_size, shuffle=True,
+UnboundLocalError: local variable 'val_dataset' referenced before assignment
+
+nohup: ignoring input
+INFO - main.py - 2024-06-26 22:50:39,180 - Using device: cuda
+INFO - main.py - 2024-06-26 22:50:39,181 - Writing log file to run/logs/0
+INFO - main.py - 2024-06-26 22:50:39,181 - Exp instance id = 13393
+INFO - main.py - 2024-06-26 22:50:39,181 - Exp comment = 
+INFO - main.py - 2024-06-26 22:50:39,181 - Config =
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Namespace(training=Namespace(batch_size=128, n_epochs=100, algo='ssm_vr', noise_type='radermacher'), data=Namespace(dataset='CIFAR10', image_size=32, channels=3, noise_sigma=0.1), model=Namespace(hidden_size=1000, num_layers=5), optim=Namespace(weight_decay=0.0, optimizer='Adam', lr=3e-05), device=device(type='cuda'))
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Files already downloaded and verified
+Files already downloaded and verified
+INFO - nice_runner.py - 2024-06-26 22:50:49,505 - logp: -7535.598, val_logp: -7271.957, loss: 1642.199, val_loss: 1375.819
+INFO - nice_runner.py - 2024-06-26 22:50:50,059 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 22:51:08,670 - step: 0, exact score matching loss: 1188.916015625
+INFO - nice_runner.py - 2024-06-26 22:51:14,499 - logp: -6389.258, val_logp: -7743.947, loss: 477.827, val_loss: 1815.907
+INFO - nice_runner.py - 2024-06-26 22:51:18,184 - logp: -5997.329, val_logp: -7344.835, loss: 67.927, val_loss: 1376.812
+INFO - nice_runner.py - 2024-06-26 22:51:23,820 - logp: -6545.294, val_logp: -6737.247, loss: 536.223, val_loss: 685.787
+INFO - nice_runner.py - 2024-06-26 22:51:27,351 - logp: -6834.516, val_logp: -6205.825, loss: 605.430, val_loss: 25.462
+INFO - nice_runner.py - 2024-06-26 22:51:32,837 - logp: -5862.083, val_logp: -5378.971, loss: -294.525, val_loss: -676.071
+INFO - nice_runner.py - 2024-06-26 22:51:37,068 - logp: -5902.516, val_logp: -5132.615, loss: -177.342, val_loss: -895.313
+INFO - nice_runner.py - 2024-06-26 22:51:42,577 - logp: -5918.990, val_logp: -5144.018, loss: -154.935, val_loss: -916.633
+INFO - nice_runner.py - 2024-06-26 22:51:46,167 - logp: -5655.375, val_logp: -5771.900, loss: -460.696, val_loss: -396.908
+INFO - nice_runner.py - 2024-06-26 22:51:51,310 - logp: -5088.625, val_logp: -5306.345, loss: -1000.083, val_loss: -829.920
+INFO - nice_runner.py - 2024-06-26 22:51:55,284 - logp: -5478.365, val_logp: -5155.703, loss: -700.354, val_loss: -990.913
+INFO - nice_runner.py - 2024-06-26 22:51:55,761 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 22:52:14,431 - step: 100, exact score matching loss: -512.232421875
+INFO - nice_runner.py - 2024-06-26 22:52:20,308 - logp: -5528.701, val_logp: -5233.883, loss: -672.085, val_loss: -913.746
+INFO - nice_runner.py - 2024-06-26 22:52:24,070 - logp: -5057.097, val_logp: -5213.402, loss: -1137.480, val_loss: -918.474
+INFO - nice_runner.py - 2024-06-26 22:52:29,732 - logp: -5077.700, val_logp: -5197.056, loss: -1058.142, val_loss: -963.362
+INFO - nice_runner.py - 2024-06-26 22:52:33,941 - logp: -4805.624, val_logp: -5082.720, loss: -1295.176, val_loss: -1052.329
+INFO - nice_runner.py - 2024-06-26 22:52:39,339 - logp: -5189.592, val_logp: -5183.739, loss: -1022.665, val_loss: -1004.439
+INFO - nice_runner.py - 2024-06-26 22:52:44,448 - logp: -5160.100, val_logp: -5148.147, loss: -1019.651, val_loss: -1039.197
+INFO - nice_runner.py - 2024-06-26 22:52:49,251 - logp: -4906.422, val_logp: -5086.981, loss: -1275.994, val_loss: -1120.578
+INFO - nice_runner.py - 2024-06-26 22:52:54,048 - logp: -4845.724, val_logp: -4977.491, loss: -1329.287, val_loss: -1214.570
+INFO - nice_runner.py - 2024-06-26 22:52:59,304 - logp: -5214.891, val_logp: -4766.702, loss: -1003.406, val_loss: -1346.253
+INFO - nice_runner.py - 2024-06-26 22:53:03,922 - logp: -5201.754, val_logp: -4923.797, loss: -1098.692, val_loss: -1265.096
+INFO - nice_runner.py - 2024-06-26 22:53:04,330 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 22:53:22,602 - step: 200, exact score matching loss: -1305.100830078125
+INFO - nice_runner.py - 2024-06-26 22:53:27,766 - logp: -4858.719, val_logp: -4858.289, loss: -1343.213, val_loss: -1344.508
+INFO - nice_runner.py - 2024-06-26 22:53:32,616 - logp: -4886.515, val_logp: -4857.399, loss: -1371.170, val_loss: -1364.341
+INFO - nice_runner.py - 2024-06-26 22:53:37,252 - logp: -4849.493, val_logp: -4859.560, loss: -1348.861, val_loss: -1378.746
+INFO - nice_runner.py - 2024-06-26 22:53:42,684 - logp: -4889.699, val_logp: -4789.059, loss: -1346.516, val_loss: -1444.439
+INFO - nice_runner.py - 2024-06-26 22:53:47,420 - logp: -4683.158, val_logp: -5214.811, loss: -1538.768, val_loss: -1116.760
+INFO - nice_runner.py - 2024-06-26 22:53:53,052 - logp: -5092.671, val_logp: -4644.957, loss: -1192.040, val_loss: -1548.465
+INFO - nice_runner.py - 2024-06-26 22:53:57,177 - logp: -4480.325, val_logp: -4391.823, loss: -1688.232, val_loss: -1802.844
+INFO - nice_runner.py - 2024-06-26 22:54:04,049 - logp: -4809.984, val_logp: -4950.705, loss: -1419.339, val_loss: -1348.490
+INFO - nice_runner.py - 2024-06-26 22:54:07,752 - logp: -4632.773, val_logp: -4542.107, loss: -1567.290, val_loss: -1683.724
+INFO - nice_runner.py - 2024-06-26 22:54:13,378 - logp: -4651.417, val_logp: -4532.463, loss: -1553.219, val_loss: -1636.251
+INFO - nice_runner.py - 2024-06-26 22:54:13,866 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 22:54:31,700 - step: 300, exact score matching loss: -1353.324462890625
+INFO - nice_runner.py - 2024-06-26 22:54:35,287 - logp: -4688.285, val_logp: -4636.901, loss: -1571.846, val_loss: -1566.448
+INFO - nice_runner.py - 2024-06-26 22:54:41,773 - logp: -4691.234, val_logp: -4612.932, loss: -1562.420, val_loss: -1581.973
+INFO - nice_runner.py - 2024-06-26 22:54:45,469 - logp: -4566.301, val_logp: -4855.734, loss: -1653.885, val_loss: -1459.342
+INFO - nice_runner.py - 2024-06-26 22:54:50,623 - logp: -5028.402, val_logp: -4760.633, loss: -1267.931, val_loss: -1504.887
+INFO - nice_runner.py - 2024-06-26 22:54:55,189 - logp: -4534.141, val_logp: -4783.898, loss: -1728.120, val_loss: -1473.200
+INFO - nice_runner.py - 2024-06-26 22:55:01,924 - logp: -4561.312, val_logp: -4462.387, loss: -1666.634, val_loss: -1788.525
+INFO - nice_runner.py - 2024-06-26 22:55:06,294 - logp: -4588.057, val_logp: -4435.512, loss: -1623.703, val_loss: -1752.201
+INFO - nice_runner.py - 2024-06-26 22:55:10,967 - logp: -4596.265, val_logp: -4340.684, loss: -1669.721, val_loss: -1877.410
+INFO - nice_runner.py - 2024-06-26 22:55:17,182 - logp: -4545.885, val_logp: -4784.457, loss: -1680.401, val_loss: -1525.774
+INFO - nice_runner.py - 2024-06-26 22:55:20,949 - logp: -4532.559, val_logp: -4533.121, loss: -1677.548, val_loss: -1694.696
+INFO - nice_runner.py - 2024-06-26 22:55:21,162 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 22:55:38,603 - step: 400, exact score matching loss: -1707.9940185546875
+INFO - nice_runner.py - 2024-06-26 22:55:43,079 - logp: -4537.602, val_logp: -4449.551, loss: -1737.969, val_loss: -1762.151
+INFO - nice_runner.py - 2024-06-26 22:55:47,820 - logp: -4518.626, val_logp: -4307.639, loss: -1739.679, val_loss: -1885.442
+INFO - nice_runner.py - 2024-06-26 22:55:52,579 - logp: -4280.530, val_logp: -4382.267, loss: -1907.311, val_loss: -1821.186
+INFO - nice_runner.py - 2024-06-26 22:55:56,922 - logp: -4364.878, val_logp: -4838.024, loss: -1823.851, val_loss: -1484.510
+INFO - nice_runner.py - 2024-06-26 22:56:02,051 - logp: -4483.076, val_logp: -4443.201, loss: -1750.529, val_loss: -1775.880
+INFO - nice_runner.py - 2024-06-26 22:56:06,007 - logp: -4373.902, val_logp: -4622.874, loss: -1796.354, val_loss: -1636.275
+INFO - nice_runner.py - 2024-06-26 22:56:12,148 - logp: -4486.454, val_logp: -4608.502, loss: -1753.249, val_loss: -1650.952
+INFO - nice_runner.py - 2024-06-26 22:56:15,872 - logp: -4259.890, val_logp: -4606.813, loss: -1904.250, val_loss: -1637.289
+INFO - nice_runner.py - 2024-06-26 22:56:21,264 - logp: -4443.854, val_logp: -4431.006, loss: -1762.059, val_loss: -1765.387
+INFO - nice_runner.py - 2024-06-26 22:56:24,903 - logp: -4278.319, val_logp: -4443.533, loss: -1913.516, val_loss: -1779.657
+INFO - nice_runner.py - 2024-06-26 22:56:25,355 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 22:56:42,868 - step: 500, exact score matching loss: -1955.878173828125
+INFO - nice_runner.py - 2024-06-26 22:56:48,982 - logp: -4362.653, val_logp: -4502.000, loss: -1799.133, val_loss: -1754.964
+INFO - nice_runner.py - 2024-06-26 22:56:52,887 - logp: -4384.427, val_logp: -4456.671, loss: -1847.072, val_loss: -1793.775
+INFO - nice_runner.py - 2024-06-26 22:56:58,344 - logp: -4472.053, val_logp: -4216.871, loss: -1769.724, val_loss: -1966.326
+INFO - nice_runner.py - 2024-06-26 22:57:02,261 - logp: -4363.795, val_logp: -4369.676, loss: -1852.083, val_loss: -1826.255
+INFO - nice_runner.py - 2024-06-26 22:57:07,247 - logp: -4432.760, val_logp: -4450.337, loss: -1804.534, val_loss: -1771.707
+INFO - nice_runner.py - 2024-06-26 22:57:11,461 - logp: -4308.989, val_logp: -4280.926, loss: -1878.333, val_loss: -1930.840
+INFO - nice_runner.py - 2024-06-26 22:57:16,132 - logp: -4528.857, val_logp: -4238.959, loss: -1737.585, val_loss: -1937.936
+INFO - nice_runner.py - 2024-06-26 22:57:20,696 - logp: -4360.398, val_logp: -4509.953, loss: -1869.599, val_loss: -1745.312
+INFO - nice_runner.py - 2024-06-26 22:57:24,828 - logp: -4256.893, val_logp: -4223.363, loss: -1930.398, val_loss: -1993.578
+INFO - nice_runner.py - 2024-06-26 22:57:30,510 - logp: -4195.714, val_logp: -4355.377, loss: -1995.358, val_loss: -1862.398
+INFO - nice_runner.py - 2024-06-26 22:57:31,061 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 22:57:48,946 - step: 600, exact score matching loss: -1916.742919921875
+INFO - nice_runner.py - 2024-06-26 22:57:53,249 - logp: -4625.146, val_logp: -4389.506, loss: -1666.501, val_loss: -1813.471
+INFO - nice_runner.py - 2024-06-26 22:57:59,377 - logp: -4111.617, val_logp: -4373.607, loss: -2072.141, val_loss: -1835.764
+INFO - nice_runner.py - 2024-06-26 22:58:03,072 - logp: -4352.029, val_logp: -4423.140, loss: -1856.927, val_loss: -1833.734
+INFO - nice_runner.py - 2024-06-26 22:58:09,156 - logp: -4274.322, val_logp: -4537.717, loss: -1892.359, val_loss: -1746.663
+INFO - nice_runner.py - 2024-06-26 22:58:12,662 - logp: -4241.881, val_logp: -4302.171, loss: -1977.292, val_loss: -1886.376
+INFO - nice_runner.py - 2024-06-26 22:58:18,446 - logp: -4250.563, val_logp: -4462.110, loss: -1984.338, val_loss: -1771.986
+INFO - nice_runner.py - 2024-06-26 22:58:21,896 - logp: -4351.613, val_logp: -4240.925, loss: -1888.386, val_loss: -1983.050
+INFO - nice_runner.py - 2024-06-26 22:58:28,262 - logp: -4350.814, val_logp: -4430.138, loss: -1936.187, val_loss: -1778.621
+INFO - nice_runner.py - 2024-06-26 22:58:31,956 - logp: -4313.946, val_logp: -4326.167, loss: -1904.254, val_loss: -1886.497
+INFO - nice_runner.py - 2024-06-26 22:58:38,224 - logp: -4215.884, val_logp: -4097.946, loss: -1981.102, val_loss: -2083.113
+INFO - nice_runner.py - 2024-06-26 22:58:38,440 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 22:58:56,141 - step: 700, exact score matching loss: -2085.295166015625
+INFO - nice_runner.py - 2024-06-26 22:59:00,286 - logp: -4385.474, val_logp: -3961.991, loss: -1871.963, val_loss: -2188.873
+INFO - nice_runner.py - 2024-06-26 22:59:06,073 - logp: -4198.274, val_logp: -4247.718, loss: -2004.766, val_loss: -1959.643
+INFO - nice_runner.py - 2024-06-26 22:59:10,528 - logp: -4217.705, val_logp: -4342.336, loss: -1972.031, val_loss: -1887.156
+INFO - nice_runner.py - 2024-06-26 22:59:15,618 - logp: -4265.411, val_logp: -4130.156, loss: -1978.082, val_loss: -2064.687
+INFO - nice_runner.py - 2024-06-26 22:59:19,887 - logp: -4202.457, val_logp: -4308.188, loss: -1972.179, val_loss: -1916.375
+INFO - nice_runner.py - 2024-06-26 22:59:24,589 - logp: -4262.106, val_logp: -4311.314, loss: -1912.993, val_loss: -1912.533
+INFO - nice_runner.py - 2024-06-26 22:59:28,958 - logp: -4190.805, val_logp: -4147.705, loss: -1975.234, val_loss: -2041.794
+INFO - nice_runner.py - 2024-06-26 22:59:34,480 - logp: -4092.816, val_logp: -4135.812, loss: -2101.860, val_loss: -2074.655
+INFO - nice_runner.py - 2024-06-26 22:59:39,311 - logp: -4142.136, val_logp: -4586.637, loss: -2093.035, val_loss: -1736.879
+INFO - nice_runner.py - 2024-06-26 22:59:43,872 - logp: -4246.220, val_logp: -4177.291, loss: -1977.866, val_loss: -2020.261
+INFO - nice_runner.py - 2024-06-26 22:59:44,093 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:00:01,619 - step: 800, exact score matching loss: -1906.6387939453125
+INFO - nice_runner.py - 2024-06-26 23:00:07,149 - logp: -4332.906, val_logp: -4136.100, loss: -1937.381, val_loss: -2071.842
+INFO - nice_runner.py - 2024-06-26 23:00:11,311 - logp: -4260.174, val_logp: -4231.158, loss: -1960.379, val_loss: -1987.600
+INFO - nice_runner.py - 2024-06-26 23:00:16,489 - logp: -4342.623, val_logp: -4187.199, loss: -1909.363, val_loss: -2026.221
+INFO - nice_runner.py - 2024-06-26 23:00:20,189 - logp: -4385.797, val_logp: -4263.543, loss: -1873.256, val_loss: -1972.286
+INFO - nice_runner.py - 2024-06-26 23:00:26,042 - logp: -4295.847, val_logp: -4124.201, loss: -1960.809, val_loss: -2083.517
+INFO - nice_runner.py - 2024-06-26 23:00:29,478 - logp: -4157.312, val_logp: -4151.289, loss: -2052.023, val_loss: -2047.670
+INFO - nice_runner.py - 2024-06-26 23:00:35,073 - logp: -4312.258, val_logp: -4190.590, loss: -1917.905, val_loss: -2036.909
+INFO - nice_runner.py - 2024-06-26 23:00:39,042 - logp: -4052.857, val_logp: -4089.532, loss: -2136.949, val_loss: -2122.749
+INFO - nice_runner.py - 2024-06-26 23:00:44,351 - logp: -4073.544, val_logp: -4178.761, loss: -2125.018, val_loss: -2043.531
+INFO - nice_runner.py - 2024-06-26 23:00:48,499 - logp: -4256.011, val_logp: -4523.987, loss: -1982.128, val_loss: -1788.262
+INFO - nice_runner.py - 2024-06-26 23:00:48,996 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:01:06,561 - step: 900, exact score matching loss: -2159.718994140625
+INFO - nice_runner.py - 2024-06-26 23:01:11,980 - logp: -4230.179, val_logp: -4187.597, loss: -1987.242, val_loss: -2021.072
+INFO - nice_runner.py - 2024-06-26 23:01:16,049 - logp: -4160.424, val_logp: -4381.459, loss: -2066.229, val_loss: -1893.045
+INFO - nice_runner.py - 2024-06-26 23:01:20,859 - logp: -4346.560, val_logp: -4251.064, loss: -1930.371, val_loss: -1994.434
+INFO - nice_runner.py - 2024-06-26 23:01:24,716 - logp: -4219.261, val_logp: -4061.867, loss: -2015.522, val_loss: -2145.143
+INFO - nice_runner.py - 2024-06-26 23:01:29,376 - logp: -4279.403, val_logp: -4445.355, loss: -1974.277, val_loss: -1854.624
+INFO - nice_runner.py - 2024-06-26 23:01:34,298 - logp: -4241.197, val_logp: -4058.364, loss: -2004.518, val_loss: -2149.413
+INFO - nice_runner.py - 2024-06-26 23:01:39,400 - logp: -4254.384, val_logp: -4444.100, loss: -1984.161, val_loss: -1826.906
+INFO - nice_runner.py - 2024-06-26 23:01:44,085 - logp: -4192.246, val_logp: -4125.234, loss: -2036.208, val_loss: -2100.217
+INFO - nice_runner.py - 2024-06-26 23:01:48,185 - logp: -4111.448, val_logp: -4116.744, loss: -2100.011, val_loss: -2120.158
+INFO - nice_runner.py - 2024-06-26 23:01:53,563 - logp: -3927.242, val_logp: -4220.048, loss: -2255.619, val_loss: -2009.577
+INFO - nice_runner.py - 2024-06-26 23:01:54,095 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:02:11,754 - step: 1000, exact score matching loss: -2147.65185546875
+INFO - nice_runner.py - 2024-06-26 23:02:16,976 - logp: -4260.194, val_logp: -4214.453, loss: -2027.881, val_loss: -2035.120
+INFO - nice_runner.py - 2024-06-26 23:02:22,762 - logp: -4120.803, val_logp: -4216.496, loss: -2082.053, val_loss: -2011.971
+INFO - nice_runner.py - 2024-06-26 23:02:26,623 - logp: -4105.793, val_logp: -4049.397, loss: -2128.441, val_loss: -2175.980
+INFO - nice_runner.py - 2024-06-26 23:02:32,880 - logp: -4271.193, val_logp: -4081.614, loss: -1999.655, val_loss: -2119.815
+INFO - nice_runner.py - 2024-06-26 23:02:36,705 - logp: -4025.735, val_logp: -4144.772, loss: -2188.807, val_loss: -2088.910
+INFO - nice_runner.py - 2024-06-26 23:02:43,329 - logp: -4237.052, val_logp: -4066.453, loss: -2035.930, val_loss: -2142.699
+INFO - nice_runner.py - 2024-06-26 23:02:47,719 - logp: -4049.027, val_logp: -4380.924, loss: -2170.887, val_loss: -1902.045
+INFO - nice_runner.py - 2024-06-26 23:02:52,922 - logp: -4286.391, val_logp: -5162.195, loss: -1969.177, val_loss: -1404.145
+INFO - nice_runner.py - 2024-06-26 23:02:57,974 - logp: -4163.641, val_logp: -4101.658, loss: -2051.106, val_loss: -2098.369
+INFO - nice_runner.py - 2024-06-26 23:03:02,931 - logp: -4066.180, val_logp: -4026.852, loss: -2154.599, val_loss: -2164.953
+INFO - nice_runner.py - 2024-06-26 23:03:03,150 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:03:21,366 - step: 1100, exact score matching loss: -2155.161865234375
+INFO - nice_runner.py - 2024-06-26 23:03:25,676 - logp: -4152.327, val_logp: -4226.087, loss: -2114.275, val_loss: -2027.113
+INFO - nice_runner.py - 2024-06-26 23:03:30,227 - logp: -4114.209, val_logp: -4383.756, loss: -2138.363, val_loss: -1878.219
+INFO - nice_runner.py - 2024-06-26 23:03:35,300 - logp: -4070.499, val_logp: -4037.092, loss: -2140.150, val_loss: -2184.549
+INFO - nice_runner.py - 2024-06-26 23:03:39,371 - logp: -4088.368, val_logp: -4047.717, loss: -2119.803, val_loss: -2159.861
+INFO - nice_runner.py - 2024-06-26 23:03:44,801 - logp: -4108.372, val_logp: -4089.064, loss: -2114.239, val_loss: -2135.167
+INFO - nice_runner.py - 2024-06-26 23:03:48,668 - logp: -4128.422, val_logp: -4053.400, loss: -2108.391, val_loss: -2176.726
+INFO - nice_runner.py - 2024-06-26 23:03:54,184 - logp: -4153.776, val_logp: -4162.952, loss: -2098.312, val_loss: -2093.825
+INFO - nice_runner.py - 2024-06-26 23:03:57,965 - logp: -4097.287, val_logp: -4335.059, loss: -2135.776, val_loss: -1942.642
+INFO - nice_runner.py - 2024-06-26 23:04:04,802 - logp: -4121.848, val_logp: -4098.051, loss: -2121.860, val_loss: -2138.446
+INFO - nice_runner.py - 2024-06-26 23:04:09,683 - logp: -4184.749, val_logp: -3982.447, loss: -2093.346, val_loss: -2228.082
+INFO - nice_runner.py - 2024-06-26 23:04:10,193 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:04:29,112 - step: 1200, exact score matching loss: -1985.500244140625
+INFO - nice_runner.py - 2024-06-26 23:04:35,295 - logp: -4010.306, val_logp: -4032.905, loss: -2218.982, val_loss: -2208.674
+INFO - nice_runner.py - 2024-06-26 23:04:39,095 - logp: -3845.278, val_logp: -4153.204, loss: -2345.803, val_loss: -2103.417
+INFO - nice_runner.py - 2024-06-26 23:04:45,359 - logp: -4222.663, val_logp: -4130.904, loss: -2048.406, val_loss: -2102.657
+INFO - nice_runner.py - 2024-06-26 23:04:49,792 - logp: -4119.706, val_logp: -3968.102, loss: -2130.944, val_loss: -2259.673
+INFO - nice_runner.py - 2024-06-26 23:04:54,793 - logp: -4197.926, val_logp: -4121.759, loss: -2063.868, val_loss: -2102.246
+INFO - nice_runner.py - 2024-06-26 23:04:59,590 - logp: -4050.559, val_logp: -4017.032, loss: -2175.274, val_loss: -2222.141
+INFO - nice_runner.py - 2024-06-26 23:05:04,184 - logp: -4162.785, val_logp: -4201.461, loss: -2117.396, val_loss: -2101.530
+INFO - nice_runner.py - 2024-06-26 23:05:09,750 - logp: -4043.157, val_logp: -4082.848, loss: -2209.859, val_loss: -2163.954
+INFO - nice_runner.py - 2024-06-26 23:05:13,426 - logp: -4120.974, val_logp: -4081.157, loss: -2125.512, val_loss: -2200.310
+INFO - nice_runner.py - 2024-06-26 23:05:19,031 - logp: -4193.422, val_logp: -4125.034, loss: -2114.804, val_loss: -2125.283
+INFO - nice_runner.py - 2024-06-26 23:05:19,571 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:05:37,308 - step: 1300, exact score matching loss: -2101.8935546875
+INFO - nice_runner.py - 2024-06-26 23:05:41,320 - logp: -3997.120, val_logp: -4032.375, loss: -2153.329, val_loss: -2199.031
+INFO - nice_runner.py - 2024-06-26 23:05:47,033 - logp: -4120.896, val_logp: -3970.153, loss: -2133.571, val_loss: -2262.854
+INFO - nice_runner.py - 2024-06-26 23:05:50,485 - logp: -4166.651, val_logp: -4041.947, loss: -2117.747, val_loss: -2202.985
+INFO - nice_runner.py - 2024-06-26 23:05:56,230 - logp: -4154.949, val_logp: -4112.080, loss: -2115.396, val_loss: -2157.685
+INFO - nice_runner.py - 2024-06-26 23:05:59,822 - logp: -4027.799, val_logp: -4057.410, loss: -2236.950, val_loss: -2208.883
+INFO - nice_runner.py - 2024-06-26 23:06:05,517 - logp: -4165.134, val_logp: -4246.022, loss: -2117.395, val_loss: -2053.059
+INFO - nice_runner.py - 2024-06-26 23:06:09,652 - logp: -3845.534, val_logp: -4212.800, loss: -2360.381, val_loss: -2072.026
+INFO - nice_runner.py - 2024-06-26 23:06:14,618 - logp: -4197.943, val_logp: -3902.650, loss: -2083.391, val_loss: -2322.475
+INFO - nice_runner.py - 2024-06-26 23:06:19,387 - logp: -4190.715, val_logp: -4014.407, loss: -2110.862, val_loss: -2210.794
+INFO - nice_runner.py - 2024-06-26 23:06:23,716 - logp: -4164.169, val_logp: -4102.896, loss: -2100.059, val_loss: -2175.053
+INFO - nice_runner.py - 2024-06-26 23:06:23,923 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:06:41,700 - step: 1400, exact score matching loss: -2181.578125
+INFO - nice_runner.py - 2024-06-26 23:06:47,475 - logp: -3908.159, val_logp: -4067.449, loss: -2339.036, val_loss: -2190.052
+INFO - nice_runner.py - 2024-06-26 23:06:51,655 - logp: -4132.702, val_logp: -4070.266, loss: -2172.385, val_loss: -2192.385
+INFO - nice_runner.py - 2024-06-26 23:06:56,649 - logp: -3993.947, val_logp: -4020.256, loss: -2233.347, val_loss: -2252.485
+INFO - nice_runner.py - 2024-06-26 23:07:01,103 - logp: -4172.690, val_logp: -4059.835, loss: -2107.134, val_loss: -2227.219
+INFO - nice_runner.py - 2024-06-26 23:07:07,599 - logp: -4021.899, val_logp: -3982.651, loss: -2260.602, val_loss: -2271.800
+INFO - nice_runner.py - 2024-06-26 23:07:11,704 - logp: -4094.523, val_logp: -4046.000, loss: -2153.855, val_loss: -2213.898
+INFO - nice_runner.py - 2024-06-26 23:07:17,004 - logp: -3929.289, val_logp: -4037.461, loss: -2334.778, val_loss: -2222.786
+INFO - nice_runner.py - 2024-06-26 23:07:20,846 - logp: -4160.936, val_logp: -4039.622, loss: -2101.586, val_loss: -2201.868
+INFO - nice_runner.py - 2024-06-26 23:07:26,956 - logp: -4099.667, val_logp: -4034.317, loss: -2152.225, val_loss: -2223.395
+INFO - nice_runner.py - 2024-06-26 23:07:30,674 - logp: -4072.427, val_logp: -3932.506, loss: -2210.490, val_loss: -2324.298
+INFO - nice_runner.py - 2024-06-26 23:07:31,113 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:07:48,728 - step: 1500, exact score matching loss: -2261.88232421875
+INFO - nice_runner.py - 2024-06-26 23:07:54,379 - logp: -3955.162, val_logp: -3822.249, loss: -2326.864, val_loss: -2415.229
+INFO - nice_runner.py - 2024-06-26 23:07:57,976 - logp: -4094.230, val_logp: -4111.390, loss: -2193.301, val_loss: -2209.555
+INFO - nice_runner.py - 2024-06-26 23:08:03,995 - logp: -3810.659, val_logp: -4056.968, loss: -2409.698, val_loss: -2222.827
+INFO - nice_runner.py - 2024-06-26 23:08:08,169 - logp: -4087.805, val_logp: -4077.280, loss: -2162.687, val_loss: -2174.927
+INFO - nice_runner.py - 2024-06-26 23:08:13,730 - logp: -4072.523, val_logp: -3980.639, loss: -2209.442, val_loss: -2264.916
+INFO - nice_runner.py - 2024-06-26 23:08:17,929 - logp: -4097.869, val_logp: -4062.572, loss: -2168.755, val_loss: -2210.841
+INFO - nice_runner.py - 2024-06-26 23:08:22,947 - logp: -4104.118, val_logp: -3883.807, loss: -2160.421, val_loss: -2392.866
+INFO - nice_runner.py - 2024-06-26 23:08:27,317 - logp: -4000.595, val_logp: -3951.866, loss: -2291.167, val_loss: -2313.153
+INFO - nice_runner.py - 2024-06-26 23:08:31,979 - logp: -4039.847, val_logp: -4123.920, loss: -2240.431, val_loss: -2171.095
+INFO - nice_runner.py - 2024-06-26 23:08:37,319 - logp: -3977.629, val_logp: -4001.913, loss: -2312.416, val_loss: -2253.090
+INFO - nice_runner.py - 2024-06-26 23:08:37,747 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:08:55,516 - step: 1600, exact score matching loss: -2198.63671875
+INFO - nice_runner.py - 2024-06-26 23:08:59,867 - logp: -4050.782, val_logp: -4053.971, loss: -2221.985, val_loss: -2222.542
+INFO - nice_runner.py - 2024-06-26 23:09:04,860 - logp: -3986.346, val_logp: -3990.308, loss: -2252.084, val_loss: -2262.529
+INFO - nice_runner.py - 2024-06-26 23:09:09,005 - logp: -3927.245, val_logp: -4120.647, loss: -2320.562, val_loss: -2154.857
+INFO - nice_runner.py - 2024-06-26 23:09:14,451 - logp: -3973.084, val_logp: -4015.773, loss: -2282.260, val_loss: -2256.435
+INFO - nice_runner.py - 2024-06-26 23:09:18,255 - logp: -3982.387, val_logp: -4172.231, loss: -2293.924, val_loss: -2112.807
+INFO - nice_runner.py - 2024-06-26 23:09:23,891 - logp: -3844.108, val_logp: -4048.113, loss: -2401.320, val_loss: -2243.634
+INFO - nice_runner.py - 2024-06-26 23:09:27,756 - logp: -3984.643, val_logp: -3877.045, loss: -2299.624, val_loss: -2407.811
+INFO - nice_runner.py - 2024-06-26 23:09:33,277 - logp: -4131.396, val_logp: -4018.747, loss: -2177.567, val_loss: -2250.144
+INFO - nice_runner.py - 2024-06-26 23:09:37,074 - logp: -3958.219, val_logp: -4028.923, loss: -2327.505, val_loss: -2277.924
+INFO - nice_runner.py - 2024-06-26 23:09:43,152 - logp: -4209.458, val_logp: -3948.141, loss: -2082.577, val_loss: -2235.787
+INFO - nice_runner.py - 2024-06-26 23:09:43,567 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:10:01,280 - step: 1700, exact score matching loss: -2119.33349609375
+INFO - nice_runner.py - 2024-06-26 23:10:05,105 - logp: -4037.880, val_logp: -4180.350, loss: -2242.128, val_loss: -2107.194
+INFO - nice_runner.py - 2024-06-26 23:10:12,314 - logp: -3893.176, val_logp: -3970.328, loss: -2370.227, val_loss: -2289.674
+INFO - nice_runner.py - 2024-06-26 23:10:16,051 - logp: -3928.651, val_logp: -4060.660, loss: -2343.126, val_loss: -2189.248
+INFO - nice_runner.py - 2024-06-26 23:10:22,670 - logp: -4061.651, val_logp: -3806.010, loss: -2244.499, val_loss: -2457.022
+INFO - nice_runner.py - 2024-06-26 23:10:26,513 - logp: -4059.246, val_logp: -3919.224, loss: -2256.255, val_loss: -2344.287
+INFO - nice_runner.py - 2024-06-26 23:10:32,246 - logp: -4126.971, val_logp: -4020.482, loss: -2193.990, val_loss: -2290.919
+INFO - nice_runner.py - 2024-06-26 23:10:36,467 - logp: -4051.022, val_logp: -4144.220, loss: -2274.474, val_loss: -2206.755
+INFO - nice_runner.py - 2024-06-26 23:10:41,321 - logp: -3788.809, val_logp: -4024.737, loss: -2456.457, val_loss: -2282.843
+INFO - nice_runner.py - 2024-06-26 23:10:46,701 - logp: -4029.016, val_logp: -4008.953, loss: -2289.119, val_loss: -2297.170
+INFO - nice_runner.py - 2024-06-26 23:10:50,734 - logp: -4024.865, val_logp: -4004.729, loss: -2295.780, val_loss: -2275.477
+INFO - nice_runner.py - 2024-06-26 23:10:50,951 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:11:02,786 - step: 1800, exact score matching loss: -2695.2490234375
+INFO - nice_runner.py - 2024-06-26 23:11:08,471 - logp: -4029.110, val_logp: -3888.199, loss: -2289.531, val_loss: -2384.945
+INFO - nice_runner.py - 2024-06-26 23:11:13,261 - logp: -3980.883, val_logp: -3890.269, loss: -2302.433, val_loss: -2384.150
+INFO - nice_runner.py - 2024-06-26 23:11:17,823 - logp: -4138.192, val_logp: -4069.614, loss: -2211.929, val_loss: -2242.478
+INFO - nice_runner.py - 2024-06-26 23:11:22,601 - logp: -4013.255, val_logp: -3729.160, loss: -2269.779, val_loss: -2510.927
+INFO - nice_runner.py - 2024-06-26 23:11:26,738 - logp: -4045.219, val_logp: -3983.518, loss: -2266.144, val_loss: -2299.717
+INFO - nice_runner.py - 2024-06-26 23:11:32,552 - logp: -4074.875, val_logp: -3890.438, loss: -2235.399, val_loss: -2368.448
+INFO - nice_runner.py - 2024-06-26 23:11:36,404 - logp: -3911.012, val_logp: -3932.549, loss: -2375.299, val_loss: -2349.285
+INFO - nice_runner.py - 2024-06-26 23:11:42,660 - logp: -4006.804, val_logp: -4040.911, loss: -2293.085, val_loss: -2288.687
+INFO - nice_runner.py - 2024-06-26 23:11:46,300 - logp: -3908.875, val_logp: -3903.622, loss: -2394.659, val_loss: -2360.452
+INFO - nice_runner.py - 2024-06-26 23:11:51,723 - logp: -4009.329, val_logp: -3874.122, loss: -2291.561, val_loss: -2407.799
+INFO - nice_runner.py - 2024-06-26 23:11:51,923 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:12:09,703 - step: 1900, exact score matching loss: -2266.1494140625
+INFO - nice_runner.py - 2024-06-26 23:12:13,290 - logp: -3838.912, val_logp: -3977.675, loss: -2460.841, val_loss: -2315.733
+INFO - nice_runner.py - 2024-06-26 23:12:19,260 - logp: -3999.127, val_logp: -3956.918, loss: -2288.347, val_loss: -2361.512
+INFO - nice_runner.py - 2024-06-26 23:12:23,270 - logp: -4000.512, val_logp: -4066.602, loss: -2313.185, val_loss: -2250.371
+INFO - nice_runner.py - 2024-06-26 23:12:28,498 - logp: -4107.122, val_logp: -3939.601, loss: -2225.026, val_loss: -2351.030
+INFO - nice_runner.py - 2024-06-26 23:12:33,368 - logp: -3890.875, val_logp: -3888.130, loss: -2403.000, val_loss: -2402.575
+INFO - nice_runner.py - 2024-06-26 23:12:38,084 - logp: -3987.784, val_logp: -3886.575, loss: -2298.334, val_loss: -2413.563
+INFO - nice_runner.py - 2024-06-26 23:12:43,072 - logp: -3912.303, val_logp: -4184.914, loss: -2397.597, val_loss: -2143.409
+INFO - nice_runner.py - 2024-06-26 23:12:47,179 - logp: -3994.763, val_logp: -4101.919, loss: -2316.634, val_loss: -2211.940
+INFO - nice_runner.py - 2024-06-26 23:12:52,879 - logp: -3968.770, val_logp: -3907.025, loss: -2343.255, val_loss: -2390.119
+INFO - nice_runner.py - 2024-06-26 23:12:56,672 - logp: -3876.860, val_logp: -3821.516, loss: -2399.688, val_loss: -2474.418
+INFO - nice_runner.py - 2024-06-26 23:12:57,092 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:13:14,843 - step: 2000, exact score matching loss: -2296.742919921875
+INFO - nice_runner.py - 2024-06-26 23:13:20,956 - logp: -4113.456, val_logp: -3983.038, loss: -2229.981, val_loss: -2335.223
+INFO - nice_runner.py - 2024-06-26 23:13:24,562 - logp: -3972.368, val_logp: -4034.923, loss: -2322.281, val_loss: -2276.020
+INFO - nice_runner.py - 2024-06-26 23:13:29,767 - logp: -3900.735, val_logp: -3794.715, loss: -2411.912, val_loss: -2474.905
+INFO - nice_runner.py - 2024-06-26 23:13:33,661 - logp: -3924.570, val_logp: -4067.650, loss: -2357.259, val_loss: -2244.380
+INFO - nice_runner.py - 2024-06-26 23:13:38,413 - logp: -3983.514, val_logp: -3897.233, loss: -2339.834, val_loss: -2434.268
+INFO - nice_runner.py - 2024-06-26 23:13:43,092 - logp: -3853.948, val_logp: -3803.055, loss: -2460.930, val_loss: -2466.045
+INFO - nice_runner.py - 2024-06-26 23:13:47,151 - logp: -3976.914, val_logp: -3988.473, loss: -2339.221, val_loss: -2325.502
+INFO - nice_runner.py - 2024-06-26 23:13:52,878 - logp: -3905.411, val_logp: -3890.242, loss: -2375.307, val_loss: -2410.439
+INFO - nice_runner.py - 2024-06-26 23:13:56,550 - logp: -3956.763, val_logp: -3985.333, loss: -2340.531, val_loss: -2284.279
+INFO - nice_runner.py - 2024-06-26 23:14:02,504 - logp: -3886.522, val_logp: -4059.984, loss: -2422.542, val_loss: -2278.044
+INFO - nice_runner.py - 2024-06-26 23:14:02,972 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:14:21,180 - step: 2100, exact score matching loss: -2328.96142578125
+INFO - nice_runner.py - 2024-06-26 23:14:24,936 - logp: -3935.420, val_logp: -3789.708, loss: -2390.969, val_loss: -2502.965
+INFO - nice_runner.py - 2024-06-26 23:14:31,396 - logp: -3944.283, val_logp: -3963.931, loss: -2409.599, val_loss: -2370.277
+INFO - nice_runner.py - 2024-06-26 23:14:34,993 - logp: -3921.395, val_logp: -3825.824, loss: -2405.950, val_loss: -2499.301
+INFO - nice_runner.py - 2024-06-26 23:14:40,616 - logp: -3946.666, val_logp: -3982.929, loss: -2377.899, val_loss: -2340.088
+INFO - nice_runner.py - 2024-06-26 23:14:44,346 - logp: -3859.043, val_logp: -4030.489, loss: -2454.065, val_loss: -2311.058
+INFO - nice_runner.py - 2024-06-26 23:14:49,887 - logp: -3968.645, val_logp: -3899.112, loss: -2353.810, val_loss: -2445.088
+INFO - nice_runner.py - 2024-06-26 23:14:53,786 - logp: -3924.447, val_logp: -4138.384, loss: -2418.421, val_loss: -2279.274
+INFO - nice_runner.py - 2024-06-26 23:14:58,779 - logp: -3831.863, val_logp: -3743.655, loss: -2462.801, val_loss: -2565.192
+INFO - nice_runner.py - 2024-06-26 23:15:03,766 - logp: -3902.824, val_logp: -4158.442, loss: -2419.457, val_loss: -2192.976
+INFO - nice_runner.py - 2024-06-26 23:15:07,876 - logp: -3916.566, val_logp: -3965.416, loss: -2435.234, val_loss: -2358.796
+INFO - nice_runner.py - 2024-06-26 23:15:08,093 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:15:26,636 - step: 2200, exact score matching loss: -2385.162109375
+INFO - nice_runner.py - 2024-06-26 23:15:31,923 - logp: -3861.826, val_logp: -4038.976, loss: -2451.937, val_loss: -2287.621
+INFO - nice_runner.py - 2024-06-26 23:15:35,646 - logp: -3907.343, val_logp: -3980.257, loss: -2368.678, val_loss: -2347.832
+INFO - nice_runner.py - 2024-06-26 23:15:41,357 - logp: -3892.275, val_logp: -3870.493, loss: -2399.741, val_loss: -2460.499
+INFO - nice_runner.py - 2024-06-26 23:15:44,967 - logp: -3963.071, val_logp: -3914.198, loss: -2351.363, val_loss: -2435.121
+INFO - nice_runner.py - 2024-06-26 23:15:50,707 - logp: -3894.077, val_logp: -3838.198, loss: -2446.858, val_loss: -2492.496
+INFO - nice_runner.py - 2024-06-26 23:15:54,828 - logp: -4017.227, val_logp: -3852.412, loss: -2338.807, val_loss: -2467.202
+INFO - nice_runner.py - 2024-06-26 23:16:00,574 - logp: -4062.599, val_logp: -3852.988, loss: -2298.876, val_loss: -2455.103
+INFO - nice_runner.py - 2024-06-26 23:16:04,576 - logp: -3983.460, val_logp: -3972.674, loss: -2353.299, val_loss: -2364.481
+INFO - nice_runner.py - 2024-06-26 23:16:10,085 - logp: -3810.891, val_logp: -3807.250, loss: -2528.798, val_loss: -2494.231
+INFO - nice_runner.py - 2024-06-26 23:16:15,769 - logp: -3890.398, val_logp: -3961.105, loss: -2476.531, val_loss: -2390.054
+INFO - nice_runner.py - 2024-06-26 23:16:16,260 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:16:34,455 - step: 2300, exact score matching loss: -2433.296630859375
+INFO - nice_runner.py - 2024-06-26 23:16:39,371 - logp: -3904.652, val_logp: -4104.014, loss: -2455.296, val_loss: -2266.130
+INFO - nice_runner.py - 2024-06-26 23:16:43,578 - logp: -3864.454, val_logp: -3769.530, loss: -2470.876, val_loss: -2546.963
+INFO - nice_runner.py - 2024-06-26 23:16:48,726 - logp: -4016.030, val_logp: -3855.113, loss: -2344.764, val_loss: -2442.731
+INFO - nice_runner.py - 2024-06-26 23:16:53,485 - logp: -4007.043, val_logp: -3839.889, loss: -2334.815, val_loss: -2476.562
+INFO - nice_runner.py - 2024-06-26 23:16:57,790 - logp: -3906.206, val_logp: -4004.487, loss: -2417.734, val_loss: -2358.146
+INFO - nice_runner.py - 2024-06-26 23:17:03,387 - logp: -3934.703, val_logp: -3896.462, loss: -2394.288, val_loss: -2451.613
+INFO - nice_runner.py - 2024-06-26 23:17:07,182 - logp: -3813.379, val_logp: -3823.896, loss: -2513.730, val_loss: -2519.807
+INFO - nice_runner.py - 2024-06-26 23:17:12,910 - logp: -3857.581, val_logp: -3810.078, loss: -2501.013, val_loss: -2550.318
+INFO - nice_runner.py - 2024-06-26 23:17:16,551 - logp: -3908.494, val_logp: -4008.472, loss: -2441.137, val_loss: -2378.319
+INFO - nice_runner.py - 2024-06-26 23:17:21,812 - logp: -3883.402, val_logp: -3858.605, loss: -2484.477, val_loss: -2493.374
+INFO - nice_runner.py - 2024-06-26 23:17:22,016 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:17:39,821 - step: 2400, exact score matching loss: -2406.75341796875
+INFO - nice_runner.py - 2024-06-26 23:17:43,684 - logp: -3804.578, val_logp: -3903.392, loss: -2536.665, val_loss: -2433.051
+INFO - nice_runner.py - 2024-06-26 23:17:49,573 - logp: -3897.326, val_logp: -3802.788, loss: -2483.549, val_loss: -2540.486
+INFO - nice_runner.py - 2024-06-26 23:17:53,836 - logp: -3874.268, val_logp: -4012.415, loss: -2464.747, val_loss: -2368.239
+INFO - nice_runner.py - 2024-06-26 23:17:58,933 - logp: -3819.486, val_logp: -3887.901, loss: -2531.997, val_loss: -2454.459
+INFO - nice_runner.py - 2024-06-26 23:18:03,052 - logp: -3901.220, val_logp: -3663.150, loss: -2439.538, val_loss: -2644.128
+INFO - nice_runner.py - 2024-06-26 23:18:08,208 - logp: -3850.370, val_logp: -3734.908, loss: -2517.556, val_loss: -2618.863
+INFO - nice_runner.py - 2024-06-26 23:18:14,060 - logp: -3952.534, val_logp: -3879.938, loss: -2401.176, val_loss: -2445.769
+INFO - nice_runner.py - 2024-06-26 23:18:18,224 - logp: -3880.759, val_logp: -3770.212, loss: -2463.672, val_loss: -2596.018
+INFO - nice_runner.py - 2024-06-26 23:18:24,551 - logp: -3910.273, val_logp: -3965.900, loss: -2448.033, val_loss: -2392.803
+INFO - nice_runner.py - 2024-06-26 23:18:28,517 - logp: -3888.894, val_logp: -3955.827, loss: -2478.753, val_loss: -2419.779
+INFO - nice_runner.py - 2024-06-26 23:18:28,965 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:18:46,876 - step: 2500, exact score matching loss: -2474.159423828125
+INFO - nice_runner.py - 2024-06-26 23:18:52,554 - logp: -3869.026, val_logp: -3917.433, loss: -2517.133, val_loss: -2425.469
+INFO - nice_runner.py - 2024-06-26 23:18:56,345 - logp: -3847.487, val_logp: -3927.872, loss: -2507.495, val_loss: -2454.334
+INFO - nice_runner.py - 2024-06-26 23:19:02,700 - logp: -3910.019, val_logp: -3749.125, loss: -2415.998, val_loss: -2567.730
+INFO - nice_runner.py - 2024-06-26 23:19:07,330 - logp: -3833.792, val_logp: -3854.281, loss: -2524.789, val_loss: -2505.584
+INFO - nice_runner.py - 2024-06-26 23:19:13,015 - logp: -3779.992, val_logp: -3746.633, loss: -2599.770, val_loss: -2577.971
+INFO - nice_runner.py - 2024-06-26 23:19:17,004 - logp: -3883.515, val_logp: -3706.830, loss: -2460.155, val_loss: -2653.127
+INFO - nice_runner.py - 2024-06-26 23:19:21,753 - logp: -3888.746, val_logp: -3842.008, loss: -2493.792, val_loss: -2494.655
+INFO - nice_runner.py - 2024-06-26 23:19:26,750 - logp: -3924.302, val_logp: -3980.587, loss: -2429.390, val_loss: -2409.349
+INFO - nice_runner.py - 2024-06-26 23:19:31,105 - logp: -3834.688, val_logp: -3923.545, loss: -2533.890, val_loss: -2456.597
+INFO - nice_runner.py - 2024-06-26 23:19:36,146 - logp: -3943.131, val_logp: -3817.604, loss: -2448.106, val_loss: -2547.168
+INFO - nice_runner.py - 2024-06-26 23:19:36,557 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:19:55,029 - step: 2600, exact score matching loss: -2567.921630859375
+INFO - nice_runner.py - 2024-06-26 23:19:59,798 - logp: -3982.202, val_logp: -3851.889, loss: -2365.631, val_loss: -2513.179
+INFO - nice_runner.py - 2024-06-26 23:20:04,892 - logp: -3866.660, val_logp: -3845.409, loss: -2508.066, val_loss: -2526.804
+INFO - nice_runner.py - 2024-06-26 23:20:09,591 - logp: -3832.335, val_logp: -3787.442, loss: -2541.931, val_loss: -2578.934
+INFO - nice_runner.py - 2024-06-26 23:20:14,516 - logp: -3933.633, val_logp: -3780.537, loss: -2481.846, val_loss: -2586.133
+INFO - nice_runner.py - 2024-06-26 23:20:18,060 - logp: -3952.910, val_logp: -3844.105, loss: -2451.118, val_loss: -2541.910
+INFO - nice_runner.py - 2024-06-26 23:20:23,867 - logp: -3820.064, val_logp: -3745.699, loss: -2532.377, val_loss: -2606.158
+INFO - nice_runner.py - 2024-06-26 23:20:27,868 - logp: -3864.250, val_logp: -3886.982, loss: -2538.709, val_loss: -2493.421
+INFO - nice_runner.py - 2024-06-26 23:20:33,732 - logp: -3759.126, val_logp: -3709.030, loss: -2618.016, val_loss: -2643.045
+INFO - nice_runner.py - 2024-06-26 23:20:37,847 - logp: -3711.135, val_logp: -4145.771, loss: -2659.037, val_loss: -2302.798
+INFO - nice_runner.py - 2024-06-26 23:20:42,838 - logp: -3873.175, val_logp: -3988.286, loss: -2500.138, val_loss: -2388.999
+INFO - nice_runner.py - 2024-06-26 23:20:43,040 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:21:01,065 - step: 2700, exact score matching loss: -2511.006103515625
+INFO - nice_runner.py - 2024-06-26 23:21:05,055 - logp: -3878.963, val_logp: -3777.528, loss: -2513.281, val_loss: -2581.873
+INFO - nice_runner.py - 2024-06-26 23:21:10,408 - logp: -3810.068, val_logp: -3741.049, loss: -2585.548, val_loss: -2626.489
+INFO - nice_runner.py - 2024-06-26 23:21:14,477 - logp: -3613.281, val_logp: -3764.910, loss: -2739.899, val_loss: -2634.625
+INFO - nice_runner.py - 2024-06-26 23:21:19,594 - logp: -3783.846, val_logp: -3796.976, loss: -2569.424, val_loss: -2570.055
+INFO - nice_runner.py - 2024-06-26 23:21:24,571 - logp: -3939.762, val_logp: -3777.909, loss: -2488.594, val_loss: -2603.421
+INFO - nice_runner.py - 2024-06-26 23:21:29,151 - logp: -3740.613, val_logp: -3846.484, loss: -2634.413, val_loss: -2557.714
+INFO - nice_runner.py - 2024-06-26 23:21:34,382 - logp: -3803.806, val_logp: -3807.980, loss: -2589.896, val_loss: -2568.902
+INFO - nice_runner.py - 2024-06-26 23:21:38,147 - logp: -3856.662, val_logp: -4036.941, loss: -2540.570, val_loss: -2337.275
+INFO - nice_runner.py - 2024-06-26 23:21:44,166 - logp: -3907.713, val_logp: -3916.044, loss: -2480.909, val_loss: -2476.795
+INFO - nice_runner.py - 2024-06-26 23:21:48,359 - logp: -3832.022, val_logp: -3870.525, loss: -2557.763, val_loss: -2501.873
+INFO - nice_runner.py - 2024-06-26 23:21:48,770 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:22:07,346 - step: 2800, exact score matching loss: -2616.099609375
+INFO - nice_runner.py - 2024-06-26 23:22:12,673 - logp: -3765.899, val_logp: -3907.142, loss: -2617.331, val_loss: -2473.978
+INFO - nice_runner.py - 2024-06-26 23:22:17,148 - logp: -4002.058, val_logp: -3686.474, loss: -2468.092, val_loss: -2690.781
+INFO - nice_runner.py - 2024-06-26 23:22:22,427 - logp: -3797.752, val_logp: -3929.843, loss: -2602.398, val_loss: -2460.016
+INFO - nice_runner.py - 2024-06-26 23:22:26,559 - logp: -3918.582, val_logp: -3895.373, loss: -2517.295, val_loss: -2531.395
+INFO - nice_runner.py - 2024-06-26 23:22:31,518 - logp: -3791.811, val_logp: -3918.170, loss: -2607.016, val_loss: -2491.823
+INFO - nice_runner.py - 2024-06-26 23:22:36,146 - logp: -3874.253, val_logp: -3989.363, loss: -2519.100, val_loss: -2423.803
+INFO - nice_runner.py - 2024-06-26 23:22:40,642 - logp: -3777.481, val_logp: -3762.538, loss: -2632.994, val_loss: -2624.088
+INFO - nice_runner.py - 2024-06-26 23:22:45,504 - logp: -3894.397, val_logp: -3907.488, loss: -2515.323, val_loss: -2473.393
+INFO - nice_runner.py - 2024-06-26 23:22:49,578 - logp: -3953.544, val_logp: -3884.946, loss: -2466.480, val_loss: -2495.217
+INFO - nice_runner.py - 2024-06-26 23:22:55,495 - logp: -3756.701, val_logp: -3954.687, loss: -2620.574, val_loss: -2420.456
+INFO - nice_runner.py - 2024-06-26 23:22:56,054 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:23:14,792 - step: 2900, exact score matching loss: -2636.13818359375
+INFO - nice_runner.py - 2024-06-26 23:23:18,501 - logp: -3810.291, val_logp: -3768.302, loss: -2613.240, val_loss: -2608.203
+INFO - nice_runner.py - 2024-06-26 23:23:25,277 - logp: -3781.648, val_logp: -3855.409, loss: -2624.322, val_loss: -2575.277
+INFO - nice_runner.py - 2024-06-26 23:23:28,875 - logp: -3795.411, val_logp: -3716.306, loss: -2603.684, val_loss: -2676.290
+INFO - nice_runner.py - 2024-06-26 23:23:35,174 - logp: -3800.552, val_logp: -3769.629, loss: -2611.159, val_loss: -2629.245
+INFO - nice_runner.py - 2024-06-26 23:23:39,674 - logp: -3770.950, val_logp: -3692.032, loss: -2624.257, val_loss: -2689.300
+INFO - nice_runner.py - 2024-06-26 23:23:44,790 - logp: -3758.530, val_logp: -3803.807, loss: -2629.322, val_loss: -2591.329
+INFO - nice_runner.py - 2024-06-26 23:23:49,171 - logp: -3757.333, val_logp: -3880.322, loss: -2644.740, val_loss: -2514.656
+INFO - nice_runner.py - 2024-06-26 23:23:53,805 - logp: -3720.885, val_logp: -3829.680, loss: -2667.946, val_loss: -2577.667
+INFO - nice_runner.py - 2024-06-26 23:23:59,149 - logp: -3800.119, val_logp: -3828.149, loss: -2583.330, val_loss: -2568.545
+INFO - nice_runner.py - 2024-06-26 23:24:03,181 - logp: -3843.035, val_logp: -3842.140, loss: -2544.807, val_loss: -2559.692
+INFO - nice_runner.py - 2024-06-26 23:24:03,400 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:24:20,908 - step: 3000, exact score matching loss: -2508.5419921875
+INFO - nice_runner.py - 2024-06-26 23:24:26,404 - logp: -3836.516, val_logp: -3940.913, loss: -2589.482, val_loss: -2502.566
+INFO - nice_runner.py - 2024-06-26 23:24:31,121 - logp: -3852.068, val_logp: -3968.859, loss: -2570.138, val_loss: -2468.438
+INFO - nice_runner.py - 2024-06-26 23:24:36,641 - logp: -3794.397, val_logp: -3745.281, loss: -2570.002, val_loss: -2633.935
+INFO - nice_runner.py - 2024-06-26 23:24:40,472 - logp: -3823.165, val_logp: -3915.516, loss: -2584.083, val_loss: -2527.066
+INFO - nice_runner.py - 2024-06-26 23:24:46,218 - logp: -3890.513, val_logp: -3833.435, loss: -2575.105, val_loss: -2606.863
+INFO - nice_runner.py - 2024-06-26 23:24:50,351 - logp: -3779.446, val_logp: -3899.189, loss: -2643.882, val_loss: -2548.817
+INFO - nice_runner.py - 2024-06-26 23:24:56,620 - logp: -3809.782, val_logp: -3808.227, loss: -2587.925, val_loss: -2635.337
+INFO - nice_runner.py - 2024-06-26 23:25:00,088 - logp: -3730.308, val_logp: -3757.784, loss: -2658.332, val_loss: -2647.034
+INFO - nice_runner.py - 2024-06-26 23:25:06,877 - logp: -3747.970, val_logp: -3912.394, loss: -2667.158, val_loss: -2533.785
+INFO - nice_runner.py - 2024-06-26 23:25:11,204 - logp: -4041.577, val_logp: -3875.614, loss: -2398.041, val_loss: -2520.830
+INFO - nice_runner.py - 2024-06-26 23:25:11,774 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:25:29,602 - step: 3100, exact score matching loss: -2562.66015625
+INFO - nice_runner.py - 2024-06-26 23:25:34,655 - logp: -3775.639, val_logp: -3791.443, loss: -2614.542, val_loss: -2639.636
+INFO - nice_runner.py - 2024-06-26 23:25:38,701 - logp: -3879.464, val_logp: -3702.662, loss: -2565.264, val_loss: -2709.132
+INFO - nice_runner.py - 2024-06-26 23:25:43,925 - logp: -3789.007, val_logp: -3825.521, loss: -2658.779, val_loss: -2595.440
+INFO - nice_runner.py - 2024-06-26 23:25:48,257 - logp: -3754.389, val_logp: -3861.888, loss: -2686.076, val_loss: -2578.721
+INFO - nice_runner.py - 2024-06-26 23:25:53,005 - logp: -3720.561, val_logp: -3892.156, loss: -2720.999, val_loss: -2525.158
+INFO - nice_runner.py - 2024-06-26 23:25:58,247 - logp: -3938.199, val_logp: -3774.489, loss: -2457.938, val_loss: -2631.253
+INFO - nice_runner.py - 2024-06-26 23:26:02,897 - logp: -3717.070, val_logp: -3764.974, loss: -2718.948, val_loss: -2663.017
+INFO - nice_runner.py - 2024-06-26 23:26:07,882 - logp: -3694.575, val_logp: -3808.798, loss: -2743.347, val_loss: -2665.758
+INFO - nice_runner.py - 2024-06-26 23:26:13,398 - logp: -3872.847, val_logp: -3845.666, loss: -2581.686, val_loss: -2606.779
+INFO - nice_runner.py - 2024-06-26 23:26:18,879 - logp: -3878.837, val_logp: -3665.449, loss: -2608.063, val_loss: -2768.088
+INFO - nice_runner.py - 2024-06-26 23:26:19,453 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:26:37,340 - step: 3200, exact score matching loss: -2680.67919921875
+INFO - nice_runner.py - 2024-06-26 23:26:41,139 - logp: -3781.627, val_logp: -3790.597, loss: -2665.554, val_loss: -2678.975
+INFO - nice_runner.py - 2024-06-26 23:26:46,870 - logp: -3883.287, val_logp: -3677.158, loss: -2586.842, val_loss: -2750.867
+INFO - nice_runner.py - 2024-06-26 23:26:50,812 - logp: -3816.685, val_logp: -3735.233, loss: -2605.595, val_loss: -2680.803
+INFO - nice_runner.py - 2024-06-26 23:26:56,269 - logp: -3785.323, val_logp: -3746.804, loss: -2654.489, val_loss: -2710.862
+INFO - nice_runner.py - 2024-06-26 23:26:59,897 - logp: -3840.733, val_logp: -3756.301, loss: -2602.954, val_loss: -2692.530
+INFO - nice_runner.py - 2024-06-26 23:27:05,818 - logp: -3820.953, val_logp: -3535.289, loss: -2610.946, val_loss: -2873.413
+INFO - nice_runner.py - 2024-06-26 23:27:10,360 - logp: -3756.742, val_logp: -3844.477, loss: -2682.379, val_loss: -2622.989
+INFO - nice_runner.py - 2024-06-26 23:27:15,003 - logp: -3723.415, val_logp: -3715.284, loss: -2744.807, val_loss: -2737.550
+INFO - nice_runner.py - 2024-06-26 23:27:20,705 - logp: -3804.249, val_logp: -3756.085, loss: -2660.625, val_loss: -2646.638
+INFO - nice_runner.py - 2024-06-26 23:27:24,963 - logp: -3751.264, val_logp: -3779.229, loss: -2735.434, val_loss: -2670.042
+INFO - nice_runner.py - 2024-06-26 23:27:25,178 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:27:43,396 - step: 3300, exact score matching loss: -2679.2041015625
+INFO - nice_runner.py - 2024-06-26 23:27:48,292 - logp: -3719.495, val_logp: -3753.745, loss: -2736.645, val_loss: -2670.058
+INFO - nice_runner.py - 2024-06-26 23:27:52,593 - logp: -3829.804, val_logp: -3859.250, loss: -2623.833, val_loss: -2601.548
+INFO - nice_runner.py - 2024-06-26 23:27:57,672 - logp: -3979.381, val_logp: -3846.576, loss: -2525.690, val_loss: -2616.889
+INFO - nice_runner.py - 2024-06-26 23:28:01,885 - logp: -3757.730, val_logp: -3703.145, loss: -2694.862, val_loss: -2724.391
+INFO - nice_runner.py - 2024-06-26 23:28:07,096 - logp: -3800.432, val_logp: -3945.621, loss: -2652.995, val_loss: -2520.318
+INFO - nice_runner.py - 2024-06-26 23:28:10,874 - logp: -3836.587, val_logp: -3869.592, loss: -2637.091, val_loss: -2555.502
+INFO - nice_runner.py - 2024-06-26 23:28:16,766 - logp: -3683.812, val_logp: -3653.069, loss: -2786.725, val_loss: -2752.618
+INFO - nice_runner.py - 2024-06-26 23:28:20,511 - logp: -3740.128, val_logp: -3770.353, loss: -2697.905, val_loss: -2693.879
+INFO - nice_runner.py - 2024-06-26 23:28:26,250 - logp: -3694.000, val_logp: -3805.853, loss: -2773.842, val_loss: -2648.320
+INFO - nice_runner.py - 2024-06-26 23:28:30,043 - logp: -3771.262, val_logp: -3743.573, loss: -2718.427, val_loss: -2739.840
+INFO - nice_runner.py - 2024-06-26 23:28:30,490 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:28:47,932 - step: 3400, exact score matching loss: -2669.86328125
+INFO - nice_runner.py - 2024-06-26 23:28:53,858 - logp: -3747.050, val_logp: -3876.118, loss: -2670.477, val_loss: -2560.568
+INFO - nice_runner.py - 2024-06-26 23:28:57,378 - logp: -3808.523, val_logp: -3792.667, loss: -2665.837, val_loss: -2662.137
+INFO - nice_runner.py - 2024-06-26 23:29:03,312 - logp: -3713.902, val_logp: -3730.630, loss: -2757.498, val_loss: -2714.342
+INFO - nice_runner.py - 2024-06-26 23:29:07,079 - logp: -3868.765, val_logp: -3753.497, loss: -2588.939, val_loss: -2704.091
+INFO - nice_runner.py - 2024-06-26 23:29:12,658 - logp: -3736.207, val_logp: -3666.207, loss: -2751.285, val_loss: -2815.740
+INFO - nice_runner.py - 2024-06-26 23:29:16,768 - logp: -3817.096, val_logp: -3861.305, loss: -2645.443, val_loss: -2552.980
+INFO - nice_runner.py - 2024-06-26 23:29:22,193 - logp: -3685.554, val_logp: -3775.288, loss: -2769.510, val_loss: -2685.152
+INFO - nice_runner.py - 2024-06-26 23:29:26,703 - logp: -3853.866, val_logp: -3695.410, loss: -2647.744, val_loss: -2765.710
+INFO - nice_runner.py - 2024-06-26 23:29:32,395 - logp: -3733.050, val_logp: -3762.648, loss: -2727.830, val_loss: -2690.990
+INFO - nice_runner.py - 2024-06-26 23:29:37,346 - logp: -3829.208, val_logp: -3717.673, loss: -2660.460, val_loss: -2754.972
+INFO - nice_runner.py - 2024-06-26 23:29:37,764 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:29:56,649 - step: 3500, exact score matching loss: -2531.4853515625
+INFO - nice_runner.py - 2024-06-26 23:30:02,176 - logp: -3839.162, val_logp: -3871.459, loss: -2641.459, val_loss: -2611.649
+INFO - nice_runner.py - 2024-06-26 23:30:08,071 - logp: -3785.132, val_logp: -3839.316, loss: -2673.949, val_loss: -2627.289
+INFO - nice_runner.py - 2024-06-26 23:30:12,286 - logp: -3903.118, val_logp: -3865.264, loss: -2620.074, val_loss: -2614.118
+INFO - nice_runner.py - 2024-06-26 23:30:18,266 - logp: -3821.765, val_logp: -3878.866, loss: -2679.972, val_loss: -2593.460
+INFO - nice_runner.py - 2024-06-26 23:30:21,958 - logp: -3744.173, val_logp: -3685.172, loss: -2734.231, val_loss: -2778.556
+INFO - nice_runner.py - 2024-06-26 23:30:29,307 - logp: -3856.400, val_logp: -3706.853, loss: -2637.379, val_loss: -2768.382
+INFO - nice_runner.py - 2024-06-26 23:30:33,202 - logp: -3737.199, val_logp: -3683.337, loss: -2756.144, val_loss: -2803.088
+INFO - nice_runner.py - 2024-06-26 23:30:38,985 - logp: -3803.168, val_logp: -3596.683, loss: -2641.870, val_loss: -2889.349
+INFO - nice_runner.py - 2024-06-26 23:30:42,688 - logp: -3708.287, val_logp: -3684.901, loss: -2745.934, val_loss: -2803.040
+INFO - nice_runner.py - 2024-06-26 23:30:48,276 - logp: -3785.089, val_logp: -3795.151, loss: -2703.999, val_loss: -2674.469
+INFO - nice_runner.py - 2024-06-26 23:30:48,485 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:31:06,323 - step: 3600, exact score matching loss: -2828.2109375
+INFO - nice_runner.py - 2024-06-26 23:31:10,048 - logp: -3814.468, val_logp: -3690.828, loss: -2675.154, val_loss: -2803.237
+INFO - nice_runner.py - 2024-06-26 23:31:16,361 - logp: -3682.780, val_logp: -3077.104, loss: -2844.410, val_loss: -3358.837
+INFO - nice_runner.py - 2024-06-26 23:31:20,875 - logp: -3769.592, val_logp: -3668.456, loss: -2751.713, val_loss: -2833.265
+INFO - nice_runner.py - 2024-06-26 23:31:26,464 - logp: -3791.851, val_logp: -3748.093, loss: -2708.766, val_loss: -2733.393
+INFO - nice_runner.py - 2024-06-26 23:31:31,099 - logp: -3717.676, val_logp: -3713.391, loss: -2771.514, val_loss: -2777.342
+INFO - nice_runner.py - 2024-06-26 23:31:35,636 - logp: -3744.224, val_logp: -3769.038, loss: -2709.897, val_loss: -2730.391
+INFO - nice_runner.py - 2024-06-26 23:31:40,595 - logp: -3713.266, val_logp: -3805.496, loss: -2781.297, val_loss: -2684.129
+INFO - nice_runner.py - 2024-06-26 23:31:44,753 - logp: -3844.791, val_logp: -3729.506, loss: -2663.314, val_loss: -2758.627
+INFO - nice_runner.py - 2024-06-26 23:31:50,373 - logp: -3720.691, val_logp: -3701.222, loss: -2777.214, val_loss: -2793.422
+INFO - nice_runner.py - 2024-06-26 23:31:54,730 - logp: -3735.451, val_logp: -3627.141, loss: -2716.195, val_loss: -2799.642
+INFO - nice_runner.py - 2024-06-26 23:31:55,166 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:32:13,083 - step: 3700, exact score matching loss: -2734.239990234375
+INFO - nice_runner.py - 2024-06-26 23:32:18,472 - logp: -3756.965, val_logp: -3753.550, loss: -2750.441, val_loss: -2721.341
+INFO - nice_runner.py - 2024-06-26 23:32:22,099 - logp: -3778.787, val_logp: -3720.502, loss: -2730.221, val_loss: -2757.681
+INFO - nice_runner.py - 2024-06-26 23:32:28,278 - logp: -3820.842, val_logp: -3764.694, loss: -2694.987, val_loss: -2760.640
+INFO - nice_runner.py - 2024-06-26 23:32:31,882 - logp: -3834.130, val_logp: -3700.721, loss: -2720.300, val_loss: -2785.362
+INFO - nice_runner.py - 2024-06-26 23:32:38,506 - logp: -3748.704, val_logp: -3780.948, loss: -2717.504, val_loss: -2648.448
+INFO - nice_runner.py - 2024-06-26 23:32:42,264 - logp: -3688.895, val_logp: -3858.728, loss: -2807.769, val_loss: -2627.475
+INFO - nice_runner.py - 2024-06-26 23:32:48,191 - logp: -3733.333, val_logp: -3932.511, loss: -2768.447, val_loss: -2563.530
+INFO - nice_runner.py - 2024-06-26 23:32:52,249 - logp: -3683.251, val_logp: -3814.325, loss: -2812.001, val_loss: -2656.642
+INFO - nice_runner.py - 2024-06-26 23:32:57,521 - logp: -3770.505, val_logp: -3817.962, loss: -2722.712, val_loss: -2690.609
+INFO - nice_runner.py - 2024-06-26 23:33:02,108 - logp: -3747.626, val_logp: -3791.165, loss: -2792.226, val_loss: -2744.737
+INFO - nice_runner.py - 2024-06-26 23:33:02,578 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:33:19,513 - step: 3800, exact score matching loss: -2853.349609375
+INFO - nice_runner.py - 2024-06-26 23:33:24,751 - logp: -3719.820, val_logp: -3761.765, loss: -2807.052, val_loss: -2747.187
+INFO - nice_runner.py - 2024-06-26 23:33:29,265 - logp: -3649.727, val_logp: -3782.902, loss: -2855.566, val_loss: -2732.339
+INFO - nice_runner.py - 2024-06-26 23:33:34,473 - logp: -3698.262, val_logp: -3723.410, loss: -2810.334, val_loss: -2817.409
+INFO - nice_runner.py - 2024-06-26 23:33:38,991 - logp: -3750.011, val_logp: -3650.515, loss: -2752.327, val_loss: -2864.567
+INFO - nice_runner.py - 2024-06-26 23:33:42,776 - logp: -3739.029, val_logp: -3792.564, loss: -2726.056, val_loss: -2697.987
+INFO - nice_runner.py - 2024-06-26 23:33:48,468 - logp: -3620.355, val_logp: -3768.569, loss: -2881.117, val_loss: -2749.336
+INFO - nice_runner.py - 2024-06-26 23:33:52,222 - logp: -3826.508, val_logp: -3615.947, loss: -2733.452, val_loss: -2924.395
+INFO - nice_runner.py - 2024-06-26 23:33:59,083 - logp: -3721.923, val_logp: -3838.396, loss: -2837.678, val_loss: -2688.174
+INFO - nice_runner.py - 2024-06-26 23:34:02,704 - logp: -3724.517, val_logp: -3619.577, loss: -2846.154, val_loss: -2907.271
+INFO - nice_runner.py - 2024-06-26 23:34:08,718 - logp: -3830.338, val_logp: -3838.969, loss: -2723.172, val_loss: -2680.600
+INFO - nice_runner.py - 2024-06-26 23:34:09,204 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:34:26,594 - step: 3900, exact score matching loss: -2695.17529296875
+INFO - nice_runner.py - 2024-06-26 23:34:30,263 - logp: -3635.040, val_logp: -3723.546, loss: -2811.927, val_loss: -2779.088
+INFO - nice_runner.py - 2024-06-26 23:34:36,437 - logp: -3763.123, val_logp: -3810.920, loss: -2769.280, val_loss: -2702.788
+INFO - nice_runner.py - 2024-06-26 23:34:40,261 - logp: -3738.358, val_logp: -3744.235, loss: -2821.183, val_loss: -2806.220
+INFO - nice_runner.py - 2024-06-26 23:34:45,774 - logp: -3743.003, val_logp: -3783.296, loss: -2807.844, val_loss: -2752.539
+INFO - nice_runner.py - 2024-06-26 23:34:49,466 - logp: -3749.968, val_logp: -3715.013, loss: -2754.252, val_loss: -2809.133
+INFO - nice_runner.py - 2024-06-26 23:34:55,329 - logp: -3628.693, val_logp: -3611.499, loss: -2912.496, val_loss: -2933.279
+INFO - nice_runner.py - 2024-06-26 23:34:59,355 - logp: -3867.677, val_logp: -3706.665, loss: -2684.402, val_loss: -2804.615
+INFO - nice_runner.py - 2024-06-26 23:35:04,420 - logp: -3637.645, val_logp: -3676.689, loss: -2920.771, val_loss: -2876.456
+INFO - nice_runner.py - 2024-06-26 23:35:08,692 - logp: -3668.705, val_logp: -4025.600, loss: -2861.633, val_loss: -2447.577
+INFO - nice_runner.py - 2024-06-26 23:35:13,945 - logp: -3898.156, val_logp: -3797.652, loss: -2623.955, val_loss: -2708.060
+INFO - nice_runner.py - 2024-06-26 23:35:14,160 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:35:32,499 - step: 4000, exact score matching loss: -2859.34326171875
+INFO - nice_runner.py - 2024-06-26 23:35:37,973 - logp: -3663.287, val_logp: -3742.757, loss: -2863.639, val_loss: -2780.439
+INFO - nice_runner.py - 2024-06-26 23:35:43,285 - logp: -3676.178, val_logp: -3656.569, loss: -2879.839, val_loss: -2880.647
+INFO - nice_runner.py - 2024-06-26 23:35:48,492 - logp: -3766.858, val_logp: -3643.750, loss: -2787.076, val_loss: -2910.372
+INFO - nice_runner.py - 2024-06-26 23:35:52,530 - logp: -3722.686, val_logp: -3751.762, loss: -2838.744, val_loss: -2801.975
+INFO - nice_runner.py - 2024-06-26 23:35:57,895 - logp: -3621.775, val_logp: -3608.908, loss: -2938.493, val_loss: -2951.569
+INFO - nice_runner.py - 2024-06-26 23:36:02,609 - logp: -3686.774, val_logp: -3627.529, loss: -2876.702, val_loss: -2875.900
+INFO - nice_runner.py - 2024-06-26 23:36:09,304 - logp: -3698.387, val_logp: -3572.164, loss: -2821.295, val_loss: -2922.971
+INFO - nice_runner.py - 2024-06-26 23:36:13,169 - logp: -3649.121, val_logp: -3716.205, loss: -2920.712, val_loss: -2819.311
+INFO - nice_runner.py - 2024-06-26 23:36:18,807 - logp: -3672.130, val_logp: -3709.803, loss: -2883.322, val_loss: -2843.206
+INFO - nice_runner.py - 2024-06-26 23:36:22,361 - logp: -3799.441, val_logp: -3745.627, loss: -2708.826, val_loss: -2738.363
+INFO - nice_runner.py - 2024-06-26 23:36:22,853 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:36:41,313 - step: 4100, exact score matching loss: -2697.484619140625
+INFO - nice_runner.py - 2024-06-26 23:36:47,777 - logp: -3741.037, val_logp: -3694.176, loss: -2826.056, val_loss: -2851.452
+INFO - nice_runner.py - 2024-06-26 23:36:51,614 - logp: -3683.753, val_logp: -3741.865, loss: -2865.433, val_loss: -2806.696
+INFO - nice_runner.py - 2024-06-26 23:36:57,099 - logp: -3682.098, val_logp: -3693.195, loss: -2871.869, val_loss: -2864.701
+INFO - nice_runner.py - 2024-06-26 23:37:01,681 - logp: -3742.676, val_logp: -3755.150, loss: -2824.725, val_loss: -2814.773
+INFO - nice_runner.py - 2024-06-26 23:37:06,516 - logp: -3838.201, val_logp: -3624.367, loss: -2708.709, val_loss: -2892.876
+INFO - nice_runner.py - 2024-06-26 23:37:10,791 - logp: -3819.640, val_logp: -3679.671, loss: -2733.625, val_loss: -2874.636
+INFO - nice_runner.py - 2024-06-26 23:37:15,966 - logp: -3672.276, val_logp: -3671.238, loss: -2909.248, val_loss: -2900.972
+INFO - nice_runner.py - 2024-06-26 23:37:20,508 - logp: -3744.665, val_logp: -3732.970, loss: -2824.481, val_loss: -2821.155
+INFO - nice_runner.py - 2024-06-26 23:37:26,083 - logp: -3772.688, val_logp: -3654.833, loss: -2785.500, val_loss: -2884.482
+INFO - nice_runner.py - 2024-06-26 23:37:31,228 - logp: -3659.193, val_logp: -3647.812, loss: -2916.482, val_loss: -2887.922
+INFO - nice_runner.py - 2024-06-26 23:37:31,661 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:37:49,216 - step: 4200, exact score matching loss: -2790.56640625
+INFO - nice_runner.py - 2024-06-26 23:37:55,055 - logp: -3930.526, val_logp: -3648.820, loss: -2643.790, val_loss: -2913.275
+INFO - nice_runner.py - 2024-06-26 23:37:59,462 - logp: -3772.022, val_logp: -3692.241, loss: -2810.077, val_loss: -2867.648
+INFO - nice_runner.py - 2024-06-26 23:38:04,882 - logp: -3673.906, val_logp: -3908.481, loss: -2853.622, val_loss: -2669.503
+INFO - nice_runner.py - 2024-06-26 23:38:10,985 - logp: -3610.048, val_logp: -3590.239, loss: -2949.466, val_loss: -2959.958
+INFO - nice_runner.py - 2024-06-26 23:38:14,959 - logp: -3535.217, val_logp: -3518.346, loss: -3013.431, val_loss: -3009.958
+INFO - nice_runner.py - 2024-06-26 23:38:22,048 - logp: -3547.843, val_logp: -3705.781, loss: -3001.424, val_loss: -2855.438
+INFO - nice_runner.py - 2024-06-26 23:38:26,378 - logp: -3764.851, val_logp: -3930.404, loss: -2821.410, val_loss: -2617.222
+INFO - nice_runner.py - 2024-06-26 23:38:31,844 - logp: -3589.179, val_logp: -3935.471, loss: -2983.479, val_loss: -2621.582
+INFO - nice_runner.py - 2024-06-26 23:38:36,551 - logp: -3742.304, val_logp: -3805.159, loss: -2872.495, val_loss: -2797.014
+INFO - nice_runner.py - 2024-06-26 23:38:41,637 - logp: -3696.998, val_logp: -3668.407, loss: -2841.228, val_loss: -2878.286
+INFO - nice_runner.py - 2024-06-26 23:38:41,856 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:38:59,971 - step: 4300, exact score matching loss: -2860.416015625
+INFO - nice_runner.py - 2024-06-26 23:39:04,061 - logp: -3720.272, val_logp: -3712.096, loss: -2840.132, val_loss: -2856.729
+INFO - nice_runner.py - 2024-06-26 23:39:09,664 - logp: -3748.888, val_logp: -3729.655, loss: -2818.365, val_loss: -2821.534
+INFO - nice_runner.py - 2024-06-26 23:39:14,052 - logp: -3697.825, val_logp: -3708.411, loss: -2907.931, val_loss: -2871.893
+INFO - nice_runner.py - 2024-06-26 23:39:19,552 - logp: -3690.648, val_logp: -3782.012, loss: -2863.179, val_loss: -2762.087
+INFO - nice_runner.py - 2024-06-26 23:39:23,782 - logp: -3698.791, val_logp: -4332.048, loss: -2875.746, val_loss: -2197.605
+INFO - nice_runner.py - 2024-06-26 23:39:28,681 - logp: -3599.178, val_logp: -3764.000, loss: -2997.033, val_loss: -2825.878
+INFO - nice_runner.py - 2024-06-26 23:39:33,760 - logp: -3706.376, val_logp: -3547.890, loss: -2882.223, val_loss: -3049.051
+INFO - nice_runner.py - 2024-06-26 23:39:38,170 - logp: -3645.340, val_logp: -3761.178, loss: -2938.988, val_loss: -2815.641
+INFO - nice_runner.py - 2024-06-26 23:39:43,880 - logp: -3746.446, val_logp: -3843.685, loss: -2797.397, val_loss: -2696.937
+INFO - nice_runner.py - 2024-06-26 23:39:47,846 - logp: -3816.323, val_logp: -3582.717, loss: -2751.753, val_loss: -2981.671
+INFO - nice_runner.py - 2024-06-26 23:39:48,258 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:40:06,463 - step: 4400, exact score matching loss: -2785.968994140625
+INFO - nice_runner.py - 2024-06-26 23:40:11,999 - logp: -3706.889, val_logp: -3690.113, loss: -2877.127, val_loss: -2864.824
+INFO - nice_runner.py - 2024-06-26 23:40:15,576 - logp: -3649.854, val_logp: -3688.021, loss: -2928.279, val_loss: -2852.157
+INFO - nice_runner.py - 2024-06-26 23:40:21,393 - logp: -3769.662, val_logp: -3651.096, loss: -2803.382, val_loss: -2893.892
+INFO - nice_runner.py - 2024-06-26 23:40:25,758 - logp: -3709.208, val_logp: -3704.542, loss: -2889.784, val_loss: -2885.098
+INFO - nice_runner.py - 2024-06-26 23:40:32,360 - logp: -3800.632, val_logp: -3767.814, loss: -2846.464, val_loss: -2798.408
+INFO - nice_runner.py - 2024-06-26 23:40:36,270 - logp: -3665.478, val_logp: -3780.288, loss: -2904.817, val_loss: -2800.525
+INFO - nice_runner.py - 2024-06-26 23:40:41,673 - logp: -3805.026, val_logp: -3635.562, loss: -2797.141, val_loss: -2954.674
+INFO - nice_runner.py - 2024-06-26 23:40:46,559 - logp: -3704.389, val_logp: -3640.383, loss: -2905.113, val_loss: -2967.090
+INFO - nice_runner.py - 2024-06-26 23:40:52,177 - logp: -3753.796, val_logp: -3709.208, loss: -2864.536, val_loss: -2890.006
+INFO - nice_runner.py - 2024-06-26 23:40:57,189 - logp: -3821.761, val_logp: -3738.956, loss: -2786.557, val_loss: -2872.482
+INFO - nice_runner.py - 2024-06-26 23:40:57,653 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:41:15,350 - step: 4500, exact score matching loss: -2880.5908203125
+INFO - nice_runner.py - 2024-06-26 23:41:20,875 - logp: -3613.362, val_logp: -3773.448, loss: -3007.820, val_loss: -2787.617
+INFO - nice_runner.py - 2024-06-26 23:41:26,170 - logp: -3667.377, val_logp: -3635.343, loss: -2926.948, val_loss: -2937.639
+INFO - nice_runner.py - 2024-06-26 23:41:30,836 - logp: -3682.636, val_logp: -3727.577, loss: -2919.185, val_loss: -2891.907
+INFO - nice_runner.py - 2024-06-26 23:41:36,875 - logp: -3658.079, val_logp: -3568.923, loss: -2970.248, val_loss: -3055.326
+INFO - nice_runner.py - 2024-06-26 23:41:40,700 - logp: -3603.390, val_logp: -3544.472, loss: -3015.492, val_loss: -3086.268
+INFO - nice_runner.py - 2024-06-26 23:41:46,376 - logp: -3659.973, val_logp: -3755.706, loss: -2980.463, val_loss: -2849.564
+INFO - nice_runner.py - 2024-06-26 23:41:50,312 - logp: -3678.155, val_logp: -3630.587, loss: -2913.566, val_loss: -2985.209
+INFO - nice_runner.py - 2024-06-26 23:41:57,078 - logp: -3659.193, val_logp: -3777.589, loss: -2939.861, val_loss: -2815.055
+INFO - nice_runner.py - 2024-06-26 23:42:01,090 - logp: -3611.876, val_logp: -3602.718, loss: -3011.124, val_loss: -2994.036
+INFO - nice_runner.py - 2024-06-26 23:42:06,836 - logp: -3713.852, val_logp: -3711.739, loss: -2907.549, val_loss: -2907.119
+INFO - nice_runner.py - 2024-06-26 23:42:07,053 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:42:25,197 - step: 4600, exact score matching loss: -2969.24462890625
+INFO - nice_runner.py - 2024-06-26 23:42:29,088 - logp: -3866.481, val_logp: -3799.812, loss: -2749.661, val_loss: -2803.341
+INFO - nice_runner.py - 2024-06-26 23:42:35,079 - logp: -3648.300, val_logp: -3680.636, loss: -3002.848, val_loss: -2928.880
+INFO - nice_runner.py - 2024-06-26 23:42:38,875 - logp: -3614.250, val_logp: -3666.156, loss: -3010.431, val_loss: -2946.562
+INFO - nice_runner.py - 2024-06-26 23:42:44,910 - logp: -3619.424, val_logp: -3708.825, loss: -2987.997, val_loss: -2892.371
+INFO - nice_runner.py - 2024-06-26 23:42:48,485 - logp: -3820.431, val_logp: -3528.128, loss: -2812.885, val_loss: -3087.577
+INFO - nice_runner.py - 2024-06-26 23:42:54,332 - logp: -3677.759, val_logp: -3813.943, loss: -2963.218, val_loss: -2797.427
+INFO - nice_runner.py - 2024-06-26 23:42:58,614 - logp: -3683.587, val_logp: -3636.578, loss: -2962.998, val_loss: -3020.760
+INFO - nice_runner.py - 2024-06-26 23:43:05,058 - logp: -3801.689, val_logp: -3591.751, loss: -2826.816, val_loss: -2980.986
+INFO - nice_runner.py - 2024-06-26 23:43:09,267 - logp: -3737.990, val_logp: -3709.213, loss: -2850.661, val_loss: -2894.569
+INFO - nice_runner.py - 2024-06-26 23:43:14,383 - logp: -3839.693, val_logp: -3609.658, loss: -2740.499, val_loss: -2985.725
+INFO - nice_runner.py - 2024-06-26 23:43:14,590 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:43:32,422 - step: 4700, exact score matching loss: -2960.43212890625
+INFO - nice_runner.py - 2024-06-26 23:43:36,160 - logp: -3749.049, val_logp: -3774.202, loss: -2886.519, val_loss: -2851.901
+INFO - nice_runner.py - 2024-06-26 23:43:41,457 - logp: -3588.423, val_logp: -3740.312, loss: -3045.865, val_loss: -2863.062
+INFO - nice_runner.py - 2024-06-26 23:43:46,792 - logp: -3652.533, val_logp: -3679.280, loss: -2998.647, val_loss: -2977.150
+INFO - nice_runner.py - 2024-06-26 23:43:51,795 - logp: -3637.894, val_logp: -3587.665, loss: -2986.145, val_loss: -3056.705
+INFO - nice_runner.py - 2024-06-26 23:43:56,978 - logp: -3600.128, val_logp: -3597.979, loss: -3064.001, val_loss: -3008.103
+INFO - nice_runner.py - 2024-06-26 23:44:01,951 - logp: -3802.725, val_logp: -3719.293, loss: -2771.853, val_loss: -2853.618
+INFO - nice_runner.py - 2024-06-26 23:44:07,569 - logp: -3544.843, val_logp: -3715.121, loss: -3092.350, val_loss: -2899.073
+INFO - nice_runner.py - 2024-06-26 23:44:12,183 - logp: -3674.650, val_logp: -3812.025, loss: -2961.112, val_loss: -2803.102
+INFO - nice_runner.py - 2024-06-26 23:44:17,777 - logp: -3676.991, val_logp: -3611.105, loss: -2965.723, val_loss: -3042.598
+INFO - nice_runner.py - 2024-06-26 23:44:21,284 - logp: -3655.345, val_logp: -3649.948, loss: -2961.912, val_loss: -2999.770
+INFO - nice_runner.py - 2024-06-26 23:44:21,689 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:44:40,449 - step: 4800, exact score matching loss: -3040.32958984375
+INFO - nice_runner.py - 2024-06-26 23:44:45,659 - logp: -3843.729, val_logp: -3606.927, loss: -2777.006, val_loss: -3020.029
+INFO - nice_runner.py - 2024-06-26 23:44:49,246 - logp: -3687.278, val_logp: -3722.367, loss: -2955.628, val_loss: -2925.220
+INFO - nice_runner.py - 2024-06-26 23:44:55,892 - logp: -3578.472, val_logp: -3682.992, loss: -3087.716, val_loss: -2966.231
+INFO - nice_runner.py - 2024-06-26 23:44:59,591 - logp: -3635.235, val_logp: -3645.220, loss: -3008.870, val_loss: -2981.514
+INFO - nice_runner.py - 2024-06-26 23:45:05,595 - logp: -3585.861, val_logp: -3590.354, loss: -3049.456, val_loss: -2979.857
+INFO - nice_runner.py - 2024-06-26 23:45:09,358 - logp: -3605.258, val_logp: -3698.095, loss: -3045.928, val_loss: -2924.614
+INFO - nice_runner.py - 2024-06-26 23:45:15,565 - logp: -3693.527, val_logp: -3701.036, loss: -2963.674, val_loss: -2900.510
+INFO - nice_runner.py - 2024-06-26 23:45:19,683 - logp: -3698.423, val_logp: -3559.292, loss: -2960.007, val_loss: -3127.294
+INFO - nice_runner.py - 2024-06-26 23:45:25,205 - logp: -3690.250, val_logp: -3603.521, loss: -2952.660, val_loss: -3009.272
+INFO - nice_runner.py - 2024-06-26 23:45:29,450 - logp: -3685.102, val_logp: -3568.894, loss: -2971.796, val_loss: -3076.048
+INFO - nice_runner.py - 2024-06-26 23:45:29,875 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:45:47,487 - step: 4900, exact score matching loss: -3134.14404296875
+INFO - nice_runner.py - 2024-06-26 23:45:52,946 - logp: -3678.950, val_logp: -3742.205, loss: -2966.452, val_loss: -2904.856
+INFO - nice_runner.py - 2024-06-26 23:45:56,980 - logp: -3615.391, val_logp: -3717.496, loss: -2999.041, val_loss: -2906.227
+INFO - nice_runner.py - 2024-06-26 23:46:03,773 - logp: -3633.307, val_logp: -3607.181, loss: -3054.499, val_loss: -3036.129
+INFO - nice_runner.py - 2024-06-26 23:46:08,547 - logp: -3732.693, val_logp: -3670.434, loss: -2917.107, val_loss: -2993.541
+INFO - nice_runner.py - 2024-06-26 23:46:13,042 - logp: -3780.308, val_logp: -3643.039, loss: -2906.612, val_loss: -3039.488
+INFO - nice_runner.py - 2024-06-26 23:46:18,502 - logp: -3574.770, val_logp: -3676.543, loss: -3107.340, val_loss: -2996.621
+INFO - nice_runner.py - 2024-06-26 23:46:23,093 - logp: -3722.361, val_logp: -3766.134, loss: -2935.353, val_loss: -2895.458
+INFO - nice_runner.py - 2024-06-26 23:46:28,818 - logp: -3735.791, val_logp: -3620.049, loss: -2971.058, val_loss: -3017.658
+INFO - nice_runner.py - 2024-06-26 23:46:32,711 - logp: -3600.548, val_logp: -3696.715, loss: -3074.393, val_loss: -2972.926
+INFO - nice_runner.py - 2024-06-26 23:46:39,277 - logp: -3616.114, val_logp: -3584.802, loss: -3011.630, val_loss: -3033.030
+INFO - nice_runner.py - 2024-06-26 23:46:39,754 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:46:58,182 - step: 5000, exact score matching loss: -2953.0712890625
+INFO - nice_runner.py - 2024-06-26 23:47:02,853 - logp: -3700.953, val_logp: -3693.656, loss: -2954.555, val_loss: -2981.254
+INFO - nice_runner.py - 2024-06-26 23:47:09,473 - logp: -3621.192, val_logp: -3665.457, loss: -3047.618, val_loss: -2972.398
+INFO - nice_runner.py - 2024-06-26 23:47:13,072 - logp: -3596.811, val_logp: -3692.898, loss: -3081.338, val_loss: -2989.734
+INFO - nice_runner.py - 2024-06-26 23:47:18,672 - logp: -3514.370, val_logp: -3598.087, loss: -3184.268, val_loss: -3094.862
+INFO - nice_runner.py - 2024-06-26 23:47:22,495 - logp: -3679.616, val_logp: -3800.415, loss: -3020.358, val_loss: -2862.066
+INFO - nice_runner.py - 2024-06-26 23:47:28,561 - logp: -3628.643, val_logp: -3724.376, loss: -3024.760, val_loss: -2937.840
+INFO - nice_runner.py - 2024-06-26 23:47:31,969 - logp: -3431.899, val_logp: -3596.332, loss: -3248.838, val_loss: -3078.944
+INFO - nice_runner.py - 2024-06-26 23:47:37,606 - logp: -3686.171, val_logp: -3586.801, loss: -2973.038, val_loss: -3131.962
+INFO - nice_runner.py - 2024-06-26 23:47:43,012 - logp: -3703.329, val_logp: -3639.283, loss: -3004.335, val_loss: -3044.136
+INFO - nice_runner.py - 2024-06-26 23:47:48,277 - logp: -3751.326, val_logp: -3583.802, loss: -2917.187, val_loss: -3121.558
+INFO - nice_runner.py - 2024-06-26 23:47:48,494 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:48:07,203 - step: 5100, exact score matching loss: -3031.4716796875
+INFO - nice_runner.py - 2024-06-26 23:48:10,968 - logp: -3655.821, val_logp: -3789.816, loss: -2978.661, val_loss: -2815.238
+INFO - nice_runner.py - 2024-06-26 23:48:16,782 - logp: -3779.104, val_logp: -3795.914, loss: -2907.923, val_loss: -2801.792
+INFO - nice_runner.py - 2024-06-26 23:48:20,546 - logp: -3860.245, val_logp: -3576.827, loss: -2795.171, val_loss: -3106.334
+INFO - nice_runner.py - 2024-06-26 23:48:25,910 - logp: -3646.019, val_logp: -3584.967, loss: -3047.879, val_loss: -3126.668
+INFO - nice_runner.py - 2024-06-26 23:48:30,455 - logp: -3629.953, val_logp: -3566.470, loss: -3070.767, val_loss: -3091.999
+INFO - nice_runner.py - 2024-06-26 23:48:35,735 - logp: -3638.593, val_logp: -3737.053, loss: -3065.220, val_loss: -2938.729
+INFO - nice_runner.py - 2024-06-26 23:48:40,492 - logp: -3613.271, val_logp: -3583.921, loss: -3077.301, val_loss: -3094.726
+INFO - nice_runner.py - 2024-06-26 23:48:44,866 - logp: -3929.896, val_logp: -3678.264, loss: -2753.505, val_loss: -2986.978
+INFO - nice_runner.py - 2024-06-26 23:48:50,672 - logp: -3588.765, val_logp: -3679.035, loss: -3078.207, val_loss: -2991.468
+INFO - nice_runner.py - 2024-06-26 23:48:55,364 - logp: -3568.418, val_logp: -3535.254, loss: -3159.781, val_loss: -3136.939
+INFO - nice_runner.py - 2024-06-26 23:48:55,571 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:49:14,189 - step: 5200, exact score matching loss: -2887.076904296875
+INFO - nice_runner.py - 2024-06-26 23:49:19,224 - logp: -3513.896, val_logp: -3628.565, loss: -3156.800, val_loss: -3074.259
+INFO - nice_runner.py - 2024-06-26 23:49:23,870 - logp: -3524.254, val_logp: -3562.636, loss: -3189.454, val_loss: -3129.010
+INFO - nice_runner.py - 2024-06-26 23:49:29,311 - logp: -3738.852, val_logp: -3576.604, loss: -2963.921, val_loss: -3114.729
+INFO - nice_runner.py - 2024-06-26 23:49:33,099 - logp: -3747.979, val_logp: -3629.661, loss: -2918.619, val_loss: -3033.415
+INFO - nice_runner.py - 2024-06-26 23:49:38,667 - logp: -3554.438, val_logp: -3681.056, loss: -3133.811, val_loss: -3014.605
+INFO - nice_runner.py - 2024-06-26 23:49:42,471 - logp: -3643.729, val_logp: -3545.389, loss: -3094.778, val_loss: -3133.320
+INFO - nice_runner.py - 2024-06-26 23:49:48,657 - logp: -3698.940, val_logp: -3739.586, loss: -2996.613, val_loss: -2922.275
+INFO - nice_runner.py - 2024-06-26 23:49:53,402 - logp: -3738.258, val_logp: -3766.680, loss: -2936.425, val_loss: -2892.353
+INFO - nice_runner.py - 2024-06-26 23:49:59,439 - logp: -3678.625, val_logp: -3778.518, loss: -3045.924, val_loss: -2951.148
+INFO - nice_runner.py - 2024-06-26 23:50:03,848 - logp: -3638.216, val_logp: -3575.594, loss: -3073.883, val_loss: -3133.854
+INFO - nice_runner.py - 2024-06-26 23:50:04,187 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:50:22,841 - step: 5300, exact score matching loss: -3033.58203125
+INFO - nice_runner.py - 2024-06-26 23:50:27,649 - logp: -3756.009, val_logp: -3717.407, loss: -2964.102, val_loss: -2978.937
+INFO - nice_runner.py - 2024-06-26 23:50:31,764 - logp: -3647.231, val_logp: -3615.400, loss: -3094.472, val_loss: -3064.523
+INFO - nice_runner.py - 2024-06-26 23:50:36,960 - logp: -3445.743, val_logp: -3556.005, loss: -3275.323, val_loss: -3152.436
+INFO - nice_runner.py - 2024-06-26 23:50:41,794 - logp: -3657.594, val_logp: -3736.123, loss: -3060.993, val_loss: -2922.602
+INFO - nice_runner.py - 2024-06-26 23:50:46,186 - logp: -3643.099, val_logp: -3703.021, loss: -3033.781, val_loss: -2977.616
+INFO - nice_runner.py - 2024-06-26 23:50:51,997 - logp: -3552.890, val_logp: -3616.651, loss: -3167.544, val_loss: -3102.293
+INFO - nice_runner.py - 2024-06-26 23:50:55,774 - logp: -3557.819, val_logp: -3732.913, loss: -3193.911, val_loss: -3009.479
+INFO - nice_runner.py - 2024-06-26 23:51:02,122 - logp: -3653.065, val_logp: -3596.404, loss: -3066.591, val_loss: -3143.577
+INFO - nice_runner.py - 2024-06-26 23:51:06,266 - logp: -3598.541, val_logp: -3484.943, loss: -3110.615, val_loss: -3247.112
+INFO - nice_runner.py - 2024-06-26 23:51:11,596 - logp: -3550.770, val_logp: -3650.148, loss: -3194.993, val_loss: -3048.303
+INFO - nice_runner.py - 2024-06-26 23:51:11,804 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:51:29,677 - step: 5400, exact score matching loss: -3209.89794921875
+INFO - nice_runner.py - 2024-06-26 23:51:33,770 - logp: -3606.891, val_logp: -3592.878, loss: -3106.847, val_loss: -3123.367
+INFO - nice_runner.py - 2024-06-26 23:51:38,995 - logp: -3674.886, val_logp: -3550.354, loss: -3023.637, val_loss: -3129.142
+INFO - nice_runner.py - 2024-06-26 23:51:42,867 - logp: -3630.050, val_logp: -3649.311, loss: -3077.453, val_loss: -3064.710
+INFO - nice_runner.py - 2024-06-26 23:51:48,067 - logp: -3548.156, val_logp: -3983.099, loss: -3182.094, val_loss: -2565.705
+INFO - nice_runner.py - 2024-06-26 23:51:52,553 - logp: -3662.299, val_logp: -3586.307, loss: -3002.539, val_loss: -3115.020
+INFO - nice_runner.py - 2024-06-26 23:51:57,171 - logp: -3625.260, val_logp: -3563.122, loss: -3121.812, val_loss: -3148.469
+INFO - nice_runner.py - 2024-06-26 23:52:02,283 - logp: -3696.018, val_logp: -3567.889, loss: -3020.366, val_loss: -3142.861
+INFO - nice_runner.py - 2024-06-26 23:52:06,720 - logp: -3749.022, val_logp: -3695.580, loss: -2970.656, val_loss: -3031.949
+INFO - nice_runner.py - 2024-06-26 23:52:11,720 - logp: -3585.996, val_logp: -3659.138, loss: -3120.767, val_loss: -3051.357
+INFO - nice_runner.py - 2024-06-26 23:52:15,641 - logp: -3516.084, val_logp: -3682.186, loss: -3233.303, val_loss: -3069.803
+INFO - nice_runner.py - 2024-06-26 23:52:16,029 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:52:34,068 - step: 5500, exact score matching loss: -3030.865234375
+INFO - nice_runner.py - 2024-06-26 23:52:39,596 - logp: -3602.408, val_logp: -3578.562, loss: -3131.156, val_loss: -3196.917
+INFO - nice_runner.py - 2024-06-26 23:52:43,391 - logp: -3609.157, val_logp: -3660.268, loss: -3156.856, val_loss: -3059.838
+INFO - nice_runner.py - 2024-06-26 23:52:48,866 - logp: -3716.060, val_logp: -3712.268, loss: -3064.986, val_loss: -3029.339
+INFO - nice_runner.py - 2024-06-26 23:52:52,692 - logp: -3615.895, val_logp: -3779.018, loss: -3149.794, val_loss: -2919.720
+INFO - nice_runner.py - 2024-06-26 23:52:59,008 - logp: -3538.879, val_logp: -3512.902, loss: -3219.280, val_loss: -3212.068
+INFO - nice_runner.py - 2024-06-26 23:53:02,388 - logp: -3729.873, val_logp: -3564.624, loss: -3024.794, val_loss: -3158.085
+INFO - nice_runner.py - 2024-06-26 23:53:05,131 - logp: -3592.700, val_logp: -3616.389, loss: -3164.398, val_loss: -3123.609
+INFO - nice_runner.py - 2024-06-26 23:53:07,867 - logp: -3513.154, val_logp: -3551.165, loss: -3251.113, val_loss: -3216.195
+INFO - nice_runner.py - 2024-06-26 23:53:10,925 - logp: -3672.639, val_logp: -3727.505, loss: -3074.044, val_loss: -2991.950
+INFO - nice_runner.py - 2024-06-26 23:53:13,793 - logp: -3563.974, val_logp: -3632.631, loss: -3218.398, val_loss: -3158.988
+INFO - nice_runner.py - 2024-06-26 23:53:14,003 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:53:31,647 - step: 5600, exact score matching loss: -3159.38330078125
+INFO - nice_runner.py - 2024-06-26 23:53:34,548 - logp: -3772.339, val_logp: -3616.327, loss: -2943.841, val_loss: -3088.132
+INFO - nice_runner.py - 2024-06-26 23:53:37,268 - logp: -3601.460, val_logp: -3602.730, loss: -3164.490, val_loss: -3156.617
+INFO - nice_runner.py - 2024-06-26 23:53:40,102 - logp: -3697.924, val_logp: -3608.554, loss: -3053.166, val_loss: -3145.599
+INFO - nice_runner.py - 2024-06-26 23:53:43,166 - logp: -3604.062, val_logp: -3532.991, loss: -3197.726, val_loss: -3210.677
+INFO - nice_runner.py - 2024-06-26 23:53:46,027 - logp: -3456.924, val_logp: -3604.808, loss: -3259.413, val_loss: -3141.578
+INFO - nice_runner.py - 2024-06-26 23:53:48,807 - logp: -3593.156, val_logp: -3553.565, loss: -3153.511, val_loss: -3166.962
+INFO - nice_runner.py - 2024-06-26 23:53:51,788 - logp: -3563.769, val_logp: -3663.058, loss: -3215.821, val_loss: -3071.979
+INFO - nice_runner.py - 2024-06-26 23:53:54,657 - logp: -3726.639, val_logp: -3572.522, loss: -3054.709, val_loss: -3189.567
+INFO - nice_runner.py - 2024-06-26 23:53:57,522 - logp: -3739.171, val_logp: -3707.796, loss: -2990.935, val_loss: -2989.912
+INFO - nice_runner.py - 2024-06-26 23:54:00,282 - logp: -3646.317, val_logp: -3549.948, loss: -3157.096, val_loss: -3193.911
+INFO - nice_runner.py - 2024-06-26 23:54:00,502 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:54:17,930 - step: 5700, exact score matching loss: -3118.0947265625
+INFO - nice_runner.py - 2024-06-26 23:54:20,697 - logp: -3613.742, val_logp: -3682.998, loss: -3168.534, val_loss: -3048.396
+INFO - nice_runner.py - 2024-06-26 23:54:23,522 - logp: -3628.632, val_logp: -3593.661, loss: -3116.707, val_loss: -3161.002
+INFO - nice_runner.py - 2024-06-26 23:54:26,301 - logp: -3552.777, val_logp: -3441.611, loss: -3220.387, val_loss: -3349.265
+INFO - nice_runner.py - 2024-06-26 23:54:29,052 - logp: -3489.982, val_logp: -3777.585, loss: -3335.707, val_loss: -2964.584
+INFO - nice_runner.py - 2024-06-26 23:54:31,858 - logp: -3546.116, val_logp: -3627.511, loss: -3217.382, val_loss: -3168.787
+INFO - nice_runner.py - 2024-06-26 23:54:34,593 - logp: -3537.984, val_logp: -3735.227, loss: -3300.465, val_loss: -3021.213
+INFO - nice_runner.py - 2024-06-26 23:54:37,352 - logp: -3717.250, val_logp: -3546.908, loss: -3072.107, val_loss: -3151.883
+INFO - nice_runner.py - 2024-06-26 23:54:40,240 - logp: -3614.249, val_logp: -3539.947, loss: -3145.083, val_loss: -3211.658
+INFO - nice_runner.py - 2024-06-26 23:54:43,124 - logp: -3705.368, val_logp: -3702.221, loss: -3055.968, val_loss: -3070.130
+INFO - nice_runner.py - 2024-06-26 23:54:45,903 - logp: -3499.558, val_logp: -3648.031, loss: -3280.682, val_loss: -3089.391
+INFO - nice_runner.py - 2024-06-26 23:54:46,114 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:54:54,422 - step: 5800, exact score matching loss: -2924.33056640625
+INFO - nice_runner.py - 2024-06-26 23:54:57,316 - logp: -3610.987, val_logp: -3541.455, loss: -3226.017, val_loss: -3257.529
+INFO - nice_runner.py - 2024-06-26 23:55:00,078 - logp: -3786.195, val_logp: -3553.074, loss: -2992.151, val_loss: -3207.810
+INFO - nice_runner.py - 2024-06-26 23:55:02,698 - logp: -3586.680, val_logp: -3586.888, loss: -3246.480, val_loss: -3199.679
+INFO - nice_runner.py - 2024-06-26 23:55:05,339 - logp: -3534.404, val_logp: -3697.870, loss: -3297.544, val_loss: -3038.466
+INFO - nice_runner.py - 2024-06-26 23:55:07,944 - logp: -3585.569, val_logp: -3609.376, loss: -3235.057, val_loss: -3190.300
+INFO - nice_runner.py - 2024-06-26 23:55:10,573 - logp: -3770.486, val_logp: -3559.982, loss: -3023.391, val_loss: -3174.578
+INFO - nice_runner.py - 2024-06-26 23:55:13,313 - logp: -3526.985, val_logp: -3506.804, loss: -3237.536, val_loss: -3255.017
+INFO - nice_runner.py - 2024-06-26 23:55:15,939 - logp: -3507.326, val_logp: -3563.366, loss: -3322.733, val_loss: -3222.774
+INFO - nice_runner.py - 2024-06-26 23:55:18,686 - logp: -3682.046, val_logp: -3689.436, loss: -3132.604, val_loss: -3075.722
+INFO - nice_runner.py - 2024-06-26 23:55:21,309 - logp: -3571.129, val_logp: -3737.585, loss: -3240.298, val_loss: -3051.276
+INFO - nice_runner.py - 2024-06-26 23:55:21,527 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:55:29,653 - step: 5900, exact score matching loss: -3236.667724609375
+INFO - nice_runner.py - 2024-06-26 23:55:32,386 - logp: -3544.405, val_logp: -3550.238, loss: -3236.598, val_loss: -3244.994
+INFO - nice_runner.py - 2024-06-26 23:55:35,146 - logp: -3632.470, val_logp: -3668.145, loss: -3202.532, val_loss: -3115.816
+INFO - nice_runner.py - 2024-06-26 23:55:37,767 - logp: -3499.262, val_logp: -3689.602, loss: -3340.526, val_loss: -3101.460
+INFO - nice_runner.py - 2024-06-26 23:55:40,379 - logp: -3630.120, val_logp: -3592.620, loss: -3190.632, val_loss: -3240.679
+INFO - nice_runner.py - 2024-06-26 23:55:43,049 - logp: -3567.862, val_logp: -3637.997, loss: -3187.841, val_loss: -3094.576
+INFO - nice_runner.py - 2024-06-26 23:55:45,755 - logp: -3559.083, val_logp: -3577.838, loss: -3242.897, val_loss: -3243.360
+INFO - nice_runner.py - 2024-06-26 23:55:48,371 - logp: -3645.309, val_logp: -3757.022, loss: -3181.406, val_loss: -2993.844
+INFO - nice_runner.py - 2024-06-26 23:55:51,131 - logp: -3588.250, val_logp: -3743.500, loss: -3195.112, val_loss: -3011.188
+INFO - nice_runner.py - 2024-06-26 23:55:54,243 - logp: -3729.410, val_logp: -3725.007, loss: -3074.801, val_loss: -3040.335
+INFO - nice_runner.py - 2024-06-26 23:55:56,979 - logp: -3578.427, val_logp: -3582.322, loss: -3222.227, val_loss: -3225.521
+INFO - nice_runner.py - 2024-06-26 23:55:57,202 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:56:05,343 - step: 6000, exact score matching loss: -3285.685546875
+INFO - nice_runner.py - 2024-06-26 23:56:08,288 - logp: -3599.969, val_logp: -3419.514, loss: -3185.396, val_loss: -3378.946
+INFO - nice_runner.py - 2024-06-26 23:56:10,951 - logp: -3621.051, val_logp: -3611.060, loss: -3174.315, val_loss: -3235.040
+INFO - nice_runner.py - 2024-06-26 23:56:13,604 - logp: -3619.938, val_logp: -3585.609, loss: -3212.472, val_loss: -3230.386
+INFO - nice_runner.py - 2024-06-26 23:56:16,259 - logp: -3577.067, val_logp: -3795.304, loss: -3235.239, val_loss: -2992.859
+INFO - nice_runner.py - 2024-06-26 23:56:18,925 - logp: -3737.509, val_logp: -3605.759, loss: -3050.752, val_loss: -3195.034
+INFO - nice_runner.py - 2024-06-26 23:56:21,574 - logp: -3544.066, val_logp: -3483.901, loss: -3293.502, val_loss: -3380.316
+INFO - nice_runner.py - 2024-06-26 23:56:24,314 - logp: -3581.911, val_logp: -3679.220, loss: -3245.965, val_loss: -3108.783
+INFO - nice_runner.py - 2024-06-26 23:56:26,999 - logp: -3677.217, val_logp: -3605.241, loss: -3121.455, val_loss: -3164.522
+INFO - nice_runner.py - 2024-06-26 23:56:29,653 - logp: -3678.756, val_logp: -3570.254, loss: -3199.530, val_loss: -3239.003
+INFO - nice_runner.py - 2024-06-26 23:56:32,291 - logp: -3575.603, val_logp: -3636.941, loss: -3256.987, val_loss: -3154.576
+INFO - nice_runner.py - 2024-06-26 23:56:32,496 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:56:40,650 - step: 6100, exact score matching loss: -3263.3515625
+INFO - nice_runner.py - 2024-06-26 23:56:43,432 - logp: -3569.319, val_logp: -3630.177, loss: -3302.636, val_loss: -3200.250
+INFO - nice_runner.py - 2024-06-26 23:56:46,172 - logp: -3729.418, val_logp: -3596.189, loss: -3134.741, val_loss: -3252.541
+INFO - nice_runner.py - 2024-06-26 23:56:48,931 - logp: -3584.306, val_logp: -3540.290, loss: -3269.676, val_loss: -3282.673
+INFO - nice_runner.py - 2024-06-26 23:56:51,583 - logp: -3598.421, val_logp: -3657.102, loss: -3251.639, val_loss: -3150.627
+INFO - nice_runner.py - 2024-06-26 23:56:54,254 - logp: -3605.803, val_logp: -3536.574, loss: -3160.589, val_loss: -3251.967
+INFO - nice_runner.py - 2024-06-26 23:56:56,973 - logp: -3643.300, val_logp: -3571.157, loss: -3173.717, val_loss: -3259.406
+INFO - nice_runner.py - 2024-06-26 23:56:59,726 - logp: -3676.596, val_logp: -3418.059, loss: -3127.790, val_loss: -3502.744
+INFO - nice_runner.py - 2024-06-26 23:57:02,885 - logp: -3546.819, val_logp: -3766.949, loss: -3294.039, val_loss: -3053.294
+INFO - nice_runner.py - 2024-06-26 23:57:05,837 - logp: -3517.505, val_logp: -3594.103, loss: -3350.577, val_loss: -3201.717
+INFO - nice_runner.py - 2024-06-26 23:57:08,584 - logp: -3645.810, val_logp: -3579.882, loss: -3221.496, val_loss: -3260.018
+INFO - nice_runner.py - 2024-06-26 23:57:08,801 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:57:17,005 - step: 6200, exact score matching loss: -3146.53564453125
+INFO - nice_runner.py - 2024-06-26 23:57:19,670 - logp: -3636.523, val_logp: -3537.931, loss: -3175.281, val_loss: -3315.251
+INFO - nice_runner.py - 2024-06-26 23:57:22,370 - logp: -3576.601, val_logp: -3628.534, loss: -3298.203, val_loss: -3210.985
+INFO - nice_runner.py - 2024-06-26 23:57:25,102 - logp: -3772.896, val_logp: -3582.735, loss: -3064.496, val_loss: -3216.321
+INFO - nice_runner.py - 2024-06-26 23:57:27,763 - logp: -3641.470, val_logp: -3655.170, loss: -3168.736, val_loss: -3139.479
+INFO - nice_runner.py - 2024-06-26 23:57:30,462 - logp: -3568.317, val_logp: -3786.510, loss: -3309.756, val_loss: -3008.834
+INFO - nice_runner.py - 2024-06-26 23:57:33,108 - logp: -3689.093, val_logp: -3616.672, loss: -3178.509, val_loss: -3239.889
+INFO - nice_runner.py - 2024-06-26 23:57:35,776 - logp: -3589.536, val_logp: -3559.653, loss: -3232.701, val_loss: -3291.826
+INFO - nice_runner.py - 2024-06-26 23:57:38,422 - logp: -3627.303, val_logp: -3564.945, loss: -3229.787, val_loss: -3269.748
+INFO - nice_runner.py - 2024-06-26 23:57:41,141 - logp: -3558.039, val_logp: -3553.189, loss: -3287.811, val_loss: -3305.733
+INFO - nice_runner.py - 2024-06-26 23:57:43,859 - logp: -3388.245, val_logp: -3687.736, loss: -3489.210, val_loss: -3072.239
+INFO - nice_runner.py - 2024-06-26 23:57:44,064 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:57:52,201 - step: 6300, exact score matching loss: -3218.2734375
+INFO - nice_runner.py - 2024-06-26 23:57:55,003 - logp: -3694.151, val_logp: -3551.969, loss: -3151.189, val_loss: -3272.344
+INFO - nice_runner.py - 2024-06-26 23:57:57,736 - logp: -3548.042, val_logp: -3713.780, loss: -3282.288, val_loss: -3119.114
+INFO - nice_runner.py - 2024-06-26 23:58:00,518 - logp: -3553.480, val_logp: -3498.888, loss: -3326.624, val_loss: -3364.783
+INFO - nice_runner.py - 2024-06-26 23:58:03,612 - logp: -3609.874, val_logp: -3538.472, loss: -3257.516, val_loss: -3318.290
+INFO - nice_runner.py - 2024-06-26 23:58:06,377 - logp: -3675.940, val_logp: -3494.506, loss: -3151.945, val_loss: -3344.672
+INFO - nice_runner.py - 2024-06-26 23:58:09,196 - logp: -3469.109, val_logp: -3523.458, loss: -3387.286, val_loss: -3343.682
+INFO - nice_runner.py - 2024-06-26 23:58:11,981 - logp: -3649.374, val_logp: -3614.353, loss: -3210.606, val_loss: -3222.915
+INFO - nice_runner.py - 2024-06-26 23:58:14,779 - logp: -3620.446, val_logp: -3690.639, loss: -3231.772, val_loss: -3131.268
+INFO - nice_runner.py - 2024-06-26 23:58:17,541 - logp: -3624.531, val_logp: -3578.428, loss: -3283.779, val_loss: -3284.708
+INFO - nice_runner.py - 2024-06-26 23:58:20,274 - logp: -3472.458, val_logp: -3595.783, loss: -3423.533, val_loss: -3278.147
+INFO - nice_runner.py - 2024-06-26 23:58:20,483 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:58:28,639 - step: 6400, exact score matching loss: -3123.28173828125
+INFO - nice_runner.py - 2024-06-26 23:58:31,331 - logp: -3662.307, val_logp: -3631.327, loss: -3185.796, val_loss: -3232.167
+INFO - nice_runner.py - 2024-06-26 23:58:34,089 - logp: -3670.970, val_logp: -3494.324, loss: -3223.300, val_loss: -3381.913
+INFO - nice_runner.py - 2024-06-26 23:58:36,784 - logp: -3779.102, val_logp: -3505.438, loss: -3091.048, val_loss: -3335.550
+INFO - nice_runner.py - 2024-06-26 23:58:39,496 - logp: -3643.698, val_logp: -3716.972, loss: -3223.867, val_loss: -3127.172
+INFO - nice_runner.py - 2024-06-26 23:58:42,201 - logp: -3552.984, val_logp: -3537.197, loss: -3372.778, val_loss: -3369.341
+INFO - nice_runner.py - 2024-06-26 23:58:44,930 - logp: -3656.006, val_logp: -3439.184, loss: -3212.413, val_loss: -3437.753
+INFO - nice_runner.py - 2024-06-26 23:58:47,667 - logp: -3636.255, val_logp: -3595.422, loss: -3234.431, val_loss: -3245.312
+INFO - nice_runner.py - 2024-06-26 23:58:50,354 - logp: -3616.395, val_logp: -3631.508, loss: -3295.134, val_loss: -3229.614
+INFO - nice_runner.py - 2024-06-26 23:58:53,036 - logp: -3619.476, val_logp: -3457.754, loss: -3294.369, val_loss: -3488.746
+INFO - nice_runner.py - 2024-06-26 23:58:55,728 - logp: -3712.454, val_logp: -3543.510, loss: -3176.257, val_loss: -3385.456
+INFO - nice_runner.py - 2024-06-26 23:58:55,931 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:59:04,050 - step: 6500, exact score matching loss: -3290.52490234375
+INFO - nice_runner.py - 2024-06-26 23:59:06,925 - logp: -3695.024, val_logp: -3639.461, loss: -3201.134, val_loss: -3142.361
+INFO - nice_runner.py - 2024-06-26 23:59:09,646 - logp: -3497.107, val_logp: -3486.974, loss: -3411.331, val_loss: -3361.570
+INFO - nice_runner.py - 2024-06-26 23:59:12,263 - logp: -3769.336, val_logp: -3646.000, loss: -3133.394, val_loss: -3214.622
+INFO - nice_runner.py - 2024-06-26 23:59:15,186 - logp: -3677.377, val_logp: -3654.058, loss: -3151.743, val_loss: -3168.393
+INFO - nice_runner.py - 2024-06-26 23:59:17,855 - logp: -3674.349, val_logp: -3660.366, loss: -3218.646, val_loss: -3230.732
+INFO - nice_runner.py - 2024-06-26 23:59:20,540 - logp: -3635.816, val_logp: -3515.962, loss: -3267.041, val_loss: -3388.560
+INFO - nice_runner.py - 2024-06-26 23:59:23,269 - logp: -3643.128, val_logp: -3630.911, loss: -3321.212, val_loss: -3261.099
+INFO - nice_runner.py - 2024-06-26 23:59:26,069 - logp: -3511.534, val_logp: -3675.298, loss: -3401.590, val_loss: -3184.392
+INFO - nice_runner.py - 2024-06-26 23:59:28,784 - logp: -3587.477, val_logp: -3588.361, loss: -3287.669, val_loss: -3268.517
+INFO - nice_runner.py - 2024-06-26 23:59:31,489 - logp: -3486.344, val_logp: -3450.955, loss: -3433.757, val_loss: -3459.064
+INFO - nice_runner.py - 2024-06-26 23:59:31,689 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-26 23:59:39,841 - step: 6600, exact score matching loss: -3082.82958984375
+INFO - nice_runner.py - 2024-06-26 23:59:42,501 - logp: -3539.861, val_logp: -3561.470, loss: -3356.897, val_loss: -3316.978
+INFO - nice_runner.py - 2024-06-26 23:59:45,144 - logp: -3621.457, val_logp: -3477.895, loss: -3313.557, val_loss: -3458.423
+INFO - nice_runner.py - 2024-06-26 23:59:47,921 - logp: -3490.817, val_logp: -3629.920, loss: -3493.975, val_loss: -3277.661
+INFO - nice_runner.py - 2024-06-26 23:59:50,871 - logp: -3422.616, val_logp: -3620.593, loss: -3538.200, val_loss: -3284.838
+INFO - nice_runner.py - 2024-06-26 23:59:53,628 - logp: -3647.117, val_logp: -3451.558, loss: -3231.052, val_loss: -3465.792
+INFO - nice_runner.py - 2024-06-26 23:59:56,279 - logp: -3568.890, val_logp: -3579.125, loss: -3305.257, val_loss: -3326.850
+INFO - nice_runner.py - 2024-06-26 23:59:59,060 - logp: -3648.552, val_logp: -3659.475, loss: -3215.971, val_loss: -3242.970
+INFO - nice_runner.py - 2024-06-27 00:00:01,733 - logp: -3445.729, val_logp: -3622.481, loss: -3503.826, val_loss: -3221.420
+INFO - nice_runner.py - 2024-06-27 00:00:04,929 - logp: -3526.240, val_logp: -3640.176, loss: -3409.143, val_loss: -3259.754
+INFO - nice_runner.py - 2024-06-27 00:00:07,728 - logp: -3584.433, val_logp: -3422.503, loss: -3351.889, val_loss: -3529.240
+INFO - nice_runner.py - 2024-06-27 00:00:07,945 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:00:16,082 - step: 6700, exact score matching loss: -3301.885009765625
+INFO - nice_runner.py - 2024-06-27 00:00:18,917 - logp: -3632.912, val_logp: -3579.254, loss: -3252.592, val_loss: -3286.080
+INFO - nice_runner.py - 2024-06-27 00:00:21,634 - logp: -3494.373, val_logp: -3516.789, loss: -3469.648, val_loss: -3439.421
+INFO - nice_runner.py - 2024-06-27 00:00:24,295 - logp: -3589.082, val_logp: -3647.604, loss: -3359.980, val_loss: -3314.082
+INFO - nice_runner.py - 2024-06-27 00:00:27,229 - logp: -3523.277, val_logp: -3621.263, loss: -3376.749, val_loss: -3279.723
+INFO - nice_runner.py - 2024-06-27 00:00:29,943 - logp: -3693.649, val_logp: -3509.176, loss: -3197.940, val_loss: -3398.600
+INFO - nice_runner.py - 2024-06-27 00:00:32,656 - logp: -3554.895, val_logp: -3478.832, loss: -3358.211, val_loss: -3472.352
+INFO - nice_runner.py - 2024-06-27 00:00:35,346 - logp: -3655.000, val_logp: -3634.580, loss: -3283.832, val_loss: -3270.392
+INFO - nice_runner.py - 2024-06-27 00:00:38,014 - logp: -3579.520, val_logp: -3652.158, loss: -3377.586, val_loss: -3227.892
+INFO - nice_runner.py - 2024-06-27 00:00:40,908 - logp: -3553.942, val_logp: -3719.698, loss: -3398.314, val_loss: -3174.288
+INFO - nice_runner.py - 2024-06-27 00:00:43,588 - logp: -3577.036, val_logp: -3570.670, loss: -3399.838, val_loss: -3376.835
+INFO - nice_runner.py - 2024-06-27 00:00:43,802 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:00:52,033 - step: 6800, exact score matching loss: -3361.98486328125
+INFO - nice_runner.py - 2024-06-27 00:00:54,931 - logp: -3609.586, val_logp: -3725.900, loss: -3318.880, val_loss: -3183.673
+INFO - nice_runner.py - 2024-06-27 00:00:57,701 - logp: -3483.197, val_logp: -3560.544, loss: -3417.256, val_loss: -3243.550
+INFO - nice_runner.py - 2024-06-27 00:01:00,315 - logp: -3552.974, val_logp: -3447.934, loss: -3386.128, val_loss: -3442.127
+INFO - nice_runner.py - 2024-06-27 00:01:02,934 - logp: -3557.380, val_logp: -3630.291, loss: -3354.080, val_loss: -3282.572
+INFO - nice_runner.py - 2024-06-27 00:01:05,619 - logp: -3630.846, val_logp: -3572.373, loss: -3326.056, val_loss: -3304.866
+INFO - nice_runner.py - 2024-06-27 00:01:08,312 - logp: -3526.333, val_logp: -3542.620, loss: -3448.927, val_loss: -3404.046
+INFO - nice_runner.py - 2024-06-27 00:01:11,001 - logp: -3523.337, val_logp: -3578.977, loss: -3403.478, val_loss: -3362.323
+INFO - nice_runner.py - 2024-06-27 00:01:13,715 - logp: -3520.248, val_logp: -3451.396, loss: -3437.475, val_loss: -3532.333
+INFO - nice_runner.py - 2024-06-27 00:01:16,352 - logp: -3602.240, val_logp: -3518.185, loss: -3305.814, val_loss: -3407.352
+INFO - nice_runner.py - 2024-06-27 00:01:19,059 - logp: -3546.601, val_logp: -3513.575, loss: -3384.483, val_loss: -3444.726
+INFO - nice_runner.py - 2024-06-27 00:01:19,270 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:01:27,643 - step: 6900, exact score matching loss: -3242.294921875
+INFO - nice_runner.py - 2024-06-27 00:01:30,563 - logp: -3627.283, val_logp: -3590.496, loss: -3361.736, val_loss: -3352.835
+INFO - nice_runner.py - 2024-06-27 00:01:33,338 - logp: -3641.402, val_logp: -3478.616, loss: -3323.444, val_loss: -3495.036
+INFO - nice_runner.py - 2024-06-27 00:01:36,076 - logp: -3780.014, val_logp: -3589.690, loss: -3113.748, val_loss: -3332.294
+INFO - nice_runner.py - 2024-06-27 00:01:38,798 - logp: -3597.485, val_logp: -3718.695, loss: -3375.750, val_loss: -3166.042
+INFO - nice_runner.py - 2024-06-27 00:01:41,519 - logp: -3477.831, val_logp: -3594.589, loss: -3513.077, val_loss: -3360.718
+INFO - nice_runner.py - 2024-06-27 00:01:44,213 - logp: -3576.779, val_logp: -3705.709, loss: -3396.992, val_loss: -3173.964
+INFO - nice_runner.py - 2024-06-27 00:01:47,112 - logp: -3753.547, val_logp: -3536.166, loss: -3148.753, val_loss: -3458.129
+INFO - nice_runner.py - 2024-06-27 00:01:49,813 - logp: -3683.268, val_logp: -3533.810, loss: -3314.829, val_loss: -3423.379
+INFO - nice_runner.py - 2024-06-27 00:01:52,425 - logp: -3640.067, val_logp: -3609.812, loss: -3287.240, val_loss: -3348.602
+INFO - nice_runner.py - 2024-06-27 00:01:55,103 - logp: -3456.625, val_logp: -3676.245, loss: -3575.008, val_loss: -3287.977
+INFO - nice_runner.py - 2024-06-27 00:01:55,344 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:02:03,550 - step: 7000, exact score matching loss: -3491.0234375
+INFO - nice_runner.py - 2024-06-27 00:02:06,433 - logp: -3618.523, val_logp: -3447.117, loss: -3270.482, val_loss: -3564.329
+INFO - nice_runner.py - 2024-06-27 00:02:09,087 - logp: -3634.861, val_logp: -3773.389, loss: -3322.538, val_loss: -3141.253
+INFO - nice_runner.py - 2024-06-27 00:02:11,867 - logp: -3623.581, val_logp: -3595.030, loss: -3352.261, val_loss: -3356.809
+INFO - nice_runner.py - 2024-06-27 00:02:15,065 - logp: -3496.021, val_logp: -3520.032, loss: -3522.663, val_loss: -3447.191
+INFO - nice_runner.py - 2024-06-27 00:02:17,742 - logp: -3503.357, val_logp: -3571.029, loss: -3443.861, val_loss: -3352.730
+INFO - nice_runner.py - 2024-06-27 00:02:20,489 - logp: -3660.866, val_logp: -3541.132, loss: -3295.054, val_loss: -3377.308
+INFO - nice_runner.py - 2024-06-27 00:02:23,206 - logp: -3583.437, val_logp: -3671.164, loss: -3407.984, val_loss: -3264.099
+INFO - nice_runner.py - 2024-06-27 00:02:25,935 - logp: -3558.091, val_logp: -3723.959, loss: -3405.800, val_loss: -3203.130
+INFO - nice_runner.py - 2024-06-27 00:02:28,855 - logp: -3598.389, val_logp: -3601.736, loss: -3343.205, val_loss: -3323.475
+INFO - nice_runner.py - 2024-06-27 00:02:31,632 - logp: -3617.968, val_logp: -3525.251, loss: -3391.375, val_loss: -3476.006
+INFO - nice_runner.py - 2024-06-27 00:02:31,852 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:02:40,036 - step: 7100, exact score matching loss: -3361.68359375
+INFO - nice_runner.py - 2024-06-27 00:02:42,888 - logp: -3475.133, val_logp: -3508.686, loss: -3578.281, val_loss: -3519.071
+INFO - nice_runner.py - 2024-06-27 00:02:45,593 - logp: -3526.400, val_logp: -3612.727, loss: -3464.699, val_loss: -3282.419
+INFO - nice_runner.py - 2024-06-27 00:02:48,301 - logp: -3576.675, val_logp: -3575.261, loss: -3430.619, val_loss: -3353.571
+INFO - nice_runner.py - 2024-06-27 00:02:51,005 - logp: -3637.544, val_logp: -3506.147, loss: -3381.048, val_loss: -3484.277
+INFO - nice_runner.py - 2024-06-27 00:02:53,794 - logp: -3677.296, val_logp: -3558.278, loss: -3317.165, val_loss: -3465.926
+INFO - nice_runner.py - 2024-06-27 00:02:56,440 - logp: -3577.577, val_logp: -3528.316, loss: -3401.132, val_loss: -3472.331
+INFO - nice_runner.py - 2024-06-27 00:02:59,172 - logp: -3581.165, val_logp: -3673.656, loss: -3417.979, val_loss: -3335.175
+INFO - nice_runner.py - 2024-06-27 00:03:01,899 - logp: -3625.578, val_logp: -3520.269, loss: -3390.140, val_loss: -3459.852
+INFO - nice_runner.py - 2024-06-27 00:03:04,697 - logp: -3579.806, val_logp: -3546.248, loss: -3414.528, val_loss: -3416.376
+INFO - nice_runner.py - 2024-06-27 00:03:07,420 - logp: -3478.710, val_logp: -3496.649, loss: -3562.124, val_loss: -3509.592
+INFO - nice_runner.py - 2024-06-27 00:03:07,637 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:03:15,818 - step: 7200, exact score matching loss: -3352.842529296875
+INFO - nice_runner.py - 2024-06-27 00:03:18,563 - logp: -3531.726, val_logp: -3604.052, loss: -3493.040, val_loss: -3368.647
+INFO - nice_runner.py - 2024-06-27 00:03:21,231 - logp: -3523.822, val_logp: -3550.774, loss: -3536.356, val_loss: -3459.653
+INFO - nice_runner.py - 2024-06-27 00:03:23,930 - logp: -3661.156, val_logp: -3474.695, loss: -3303.888, val_loss: -3569.901
+INFO - nice_runner.py - 2024-06-27 00:03:26,725 - logp: -3529.905, val_logp: -3532.584, loss: -3510.230, val_loss: -3453.370
+INFO - nice_runner.py - 2024-06-27 00:03:29,419 - logp: -3662.651, val_logp: -3602.746, loss: -3334.179, val_loss: -3371.231
+INFO - nice_runner.py - 2024-06-27 00:03:32,132 - logp: -3682.839, val_logp: -3317.514, loss: -3302.563, val_loss: -3734.265
+INFO - nice_runner.py - 2024-06-27 00:03:35,084 - logp: -3470.650, val_logp: -3551.572, loss: -3598.548, val_loss: -3468.323
+INFO - nice_runner.py - 2024-06-27 00:03:37,857 - logp: -3557.216, val_logp: -3653.517, loss: -3466.698, val_loss: -3352.550
+INFO - nice_runner.py - 2024-06-27 00:03:40,641 - logp: -3525.497, val_logp: -3600.495, loss: -3462.304, val_loss: -3396.990
+INFO - nice_runner.py - 2024-06-27 00:03:43,303 - logp: -3742.336, val_logp: -3578.514, loss: -3240.817, val_loss: -3397.193
+INFO - nice_runner.py - 2024-06-27 00:03:43,501 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:03:51,651 - step: 7300, exact score matching loss: -3254.40234375
+INFO - nice_runner.py - 2024-06-27 00:03:54,322 - logp: -3677.383, val_logp: -3624.881, loss: -3367.814, val_loss: -3355.693
+INFO - nice_runner.py - 2024-06-27 00:03:57,070 - logp: -3501.635, val_logp: -3677.935, loss: -3585.341, val_loss: -3332.055
+INFO - nice_runner.py - 2024-06-27 00:03:59,968 - logp: -3505.363, val_logp: -3550.828, loss: -3587.204, val_loss: -3479.060
+INFO - nice_runner.py - 2024-06-27 00:04:02,634 - logp: -3624.503, val_logp: -3554.249, loss: -3417.985, val_loss: -3472.040
+INFO - nice_runner.py - 2024-06-27 00:04:05,354 - logp: -3590.575, val_logp: -3419.052, loss: -3479.259, val_loss: -3627.049
+INFO - nice_runner.py - 2024-06-27 00:04:08,060 - logp: -3600.449, val_logp: -3628.840, loss: -3424.771, val_loss: -3407.600
+INFO - nice_runner.py - 2024-06-27 00:04:10,785 - logp: -3681.577, val_logp: -3541.775, loss: -3308.313, val_loss: -3423.917
+INFO - nice_runner.py - 2024-06-27 00:04:13,445 - logp: -3480.188, val_logp: -3418.158, loss: -3535.725, val_loss: -3672.380
+INFO - nice_runner.py - 2024-06-27 00:04:16,075 - logp: -3518.188, val_logp: -3357.191, loss: -3555.601, val_loss: -3708.054
+INFO - nice_runner.py - 2024-06-27 00:04:19,168 - logp: -3569.450, val_logp: -3553.284, loss: -3509.483, val_loss: -3498.513
+INFO - nice_runner.py - 2024-06-27 00:04:19,377 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:04:27,553 - step: 7400, exact score matching loss: -3300.642578125
+INFO - nice_runner.py - 2024-06-27 00:04:30,413 - logp: -3557.845, val_logp: -3550.668, loss: -3537.031, val_loss: -3500.700
+INFO - nice_runner.py - 2024-06-27 00:04:33,138 - logp: -3582.451, val_logp: -3643.283, loss: -3515.521, val_loss: -3380.400
+INFO - nice_runner.py - 2024-06-27 00:04:35,939 - logp: -3570.151, val_logp: -3677.884, loss: -3439.980, val_loss: -3331.216
+INFO - nice_runner.py - 2024-06-27 00:04:38,581 - logp: -3620.591, val_logp: -3727.259, loss: -3410.852, val_loss: -3239.062
+INFO - nice_runner.py - 2024-06-27 00:04:41,427 - logp: -3520.187, val_logp: -3555.853, loss: -3565.022, val_loss: -3486.155
+INFO - nice_runner.py - 2024-06-27 00:04:44,171 - logp: -3498.323, val_logp: -3520.405, loss: -3585.353, val_loss: -3490.868
+INFO - nice_runner.py - 2024-06-27 00:04:46,993 - logp: -3636.324, val_logp: -3515.988, loss: -3450.885, val_loss: -3550.662
+INFO - nice_runner.py - 2024-06-27 00:04:49,639 - logp: -3549.286, val_logp: -3539.704, loss: -3544.285, val_loss: -3527.258
+INFO - nice_runner.py - 2024-06-27 00:04:52,446 - logp: -3604.679, val_logp: -3624.386, loss: -3456.837, val_loss: -3404.217
+INFO - nice_runner.py - 2024-06-27 00:04:55,109 - logp: -3617.950, val_logp: -3661.415, loss: -3460.957, val_loss: -3324.047
+INFO - nice_runner.py - 2024-06-27 00:04:55,314 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:05:03,454 - step: 7500, exact score matching loss: -3265.2646484375
+INFO - nice_runner.py - 2024-06-27 00:05:06,418 - logp: -3580.643, val_logp: -3562.640, loss: -3447.309, val_loss: -3442.147
+INFO - nice_runner.py - 2024-06-27 00:05:09,086 - logp: -3769.026, val_logp: -3607.044, loss: -3305.573, val_loss: -3442.480
+INFO - nice_runner.py - 2024-06-27 00:05:11,729 - logp: -3671.766, val_logp: -3707.341, loss: -3390.118, val_loss: -3319.153
+INFO - nice_runner.py - 2024-06-27 00:05:14,386 - logp: -3610.728, val_logp: -3581.002, loss: -3454.308, val_loss: -3508.029
+INFO - nice_runner.py - 2024-06-27 00:05:17,063 - logp: -3575.426, val_logp: -3519.510, loss: -3488.387, val_loss: -3499.742
+INFO - nice_runner.py - 2024-06-27 00:05:19,707 - logp: -3541.237, val_logp: -3687.844, loss: -3516.956, val_loss: -3356.550
+INFO - nice_runner.py - 2024-06-27 00:05:22,546 - logp: -3669.468, val_logp: -3500.416, loss: -3372.976, val_loss: -3518.282
+INFO - nice_runner.py - 2024-06-27 00:05:25,194 - logp: -3532.263, val_logp: -3821.289, loss: -3598.160, val_loss: -3156.408
+INFO - nice_runner.py - 2024-06-27 00:05:28,123 - logp: -3609.838, val_logp: -3574.062, loss: -3459.087, val_loss: -3462.710
+INFO - nice_runner.py - 2024-06-27 00:05:30,855 - logp: -3635.851, val_logp: -3532.502, loss: -3441.092, val_loss: -3553.291
+INFO - nice_runner.py - 2024-06-27 00:05:31,065 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:05:39,200 - step: 7600, exact score matching loss: -3476.56591796875
+INFO - nice_runner.py - 2024-06-27 00:05:41,888 - logp: -3595.509, val_logp: -3458.540, loss: -3532.803, val_loss: -3652.549
+INFO - nice_runner.py - 2024-06-27 00:05:44,585 - logp: -3468.131, val_logp: -3525.536, loss: -3639.425, val_loss: -3580.721
+INFO - nice_runner.py - 2024-06-27 00:05:47,481 - logp: -3634.958, val_logp: -3504.487, loss: -3467.795, val_loss: -3615.926
+INFO - nice_runner.py - 2024-06-27 00:05:50,278 - logp: -3561.349, val_logp: -3790.142, loss: -3503.436, val_loss: -3236.982
+INFO - nice_runner.py - 2024-06-27 00:05:53,086 - logp: -3564.558, val_logp: -3688.527, loss: -3543.578, val_loss: -3336.488
+INFO - nice_runner.py - 2024-06-27 00:05:56,058 - logp: -3591.552, val_logp: -3528.625, loss: -3519.872, val_loss: -3558.204
+INFO - nice_runner.py - 2024-06-27 00:05:58,798 - logp: -3663.273, val_logp: -3507.151, loss: -3395.095, val_loss: -3575.027
+INFO - nice_runner.py - 2024-06-27 00:06:01,569 - logp: -3696.246, val_logp: -3678.033, loss: -3360.449, val_loss: -3338.559
+INFO - nice_runner.py - 2024-06-27 00:06:04,260 - logp: -3553.546, val_logp: -3794.057, loss: -3553.971, val_loss: -3251.739
+INFO - nice_runner.py - 2024-06-27 00:06:07,307 - logp: -3602.932, val_logp: -3628.861, loss: -3531.044, val_loss: -3476.065
+INFO - nice_runner.py - 2024-06-27 00:06:07,520 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:06:15,632 - step: 7700, exact score matching loss: -3323.297119140625
+INFO - nice_runner.py - 2024-06-27 00:06:18,305 - logp: -3628.939, val_logp: -3504.578, loss: -3411.127, val_loss: -3581.941
+INFO - nice_runner.py - 2024-06-27 00:06:20,961 - logp: -3641.881, val_logp: -3587.647, loss: -3469.401, val_loss: -3489.406
+INFO - nice_runner.py - 2024-06-27 00:06:23,684 - logp: -3526.178, val_logp: -3612.882, loss: -3601.638, val_loss: -3514.757
+INFO - nice_runner.py - 2024-06-27 00:06:26,379 - logp: -3648.938, val_logp: -3502.091, loss: -3465.559, val_loss: -3645.449
+INFO - nice_runner.py - 2024-06-27 00:06:29,697 - logp: -3531.732, val_logp: -3455.059, loss: -3642.942, val_loss: -3726.920
+INFO - nice_runner.py - 2024-06-27 00:06:32,460 - logp: -3654.075, val_logp: -3470.387, loss: -3467.418, val_loss: -3693.481
+INFO - nice_runner.py - 2024-06-27 00:06:35,226 - logp: -3610.120, val_logp: -3455.410, loss: -3484.834, val_loss: -3713.140
+INFO - nice_runner.py - 2024-06-27 00:06:37,851 - logp: -3580.781, val_logp: -3547.931, loss: -3547.812, val_loss: -3597.548
+INFO - nice_runner.py - 2024-06-27 00:06:40,836 - logp: -3632.738, val_logp: -3715.351, loss: -3510.242, val_loss: -3377.540
+INFO - nice_runner.py - 2024-06-27 00:06:43,518 - logp: -3606.130, val_logp: -3606.341, loss: -3511.947, val_loss: -3574.077
+INFO - nice_runner.py - 2024-06-27 00:06:43,723 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:06:51,975 - step: 7800, exact score matching loss: -3584.3720703125
+INFO - nice_runner.py - 2024-06-27 00:06:54,660 - logp: -3614.766, val_logp: -3643.906, loss: -3519.565, val_loss: -3504.188
+INFO - nice_runner.py - 2024-06-27 00:06:57,373 - logp: -3596.933, val_logp: -3601.378, loss: -3586.399, val_loss: -3546.261
+INFO - nice_runner.py - 2024-06-27 00:07:00,059 - logp: -3530.257, val_logp: -3623.022, loss: -3663.020, val_loss: -3602.254
+INFO - nice_runner.py - 2024-06-27 00:07:02,723 - logp: -3580.716, val_logp: -3617.454, loss: -3555.845, val_loss: -3486.353
+INFO - nice_runner.py - 2024-06-27 00:07:05,442 - logp: -3508.484, val_logp: -3591.492, loss: -3707.202, val_loss: -3560.085
+INFO - nice_runner.py - 2024-06-27 00:07:08,156 - logp: -3656.000, val_logp: -3680.369, loss: -3485.541, val_loss: -3450.347
+INFO - nice_runner.py - 2024-06-27 00:07:10,877 - logp: -3618.580, val_logp: -3505.543, loss: -3535.975, val_loss: -3681.286
+INFO - nice_runner.py - 2024-06-27 00:07:13,531 - logp: -3644.252, val_logp: -3505.295, loss: -3522.871, val_loss: -3623.810
+INFO - nice_runner.py - 2024-06-27 00:07:16,234 - logp: -3542.743, val_logp: -3672.403, loss: -3642.375, val_loss: -3436.876
+INFO - nice_runner.py - 2024-06-27 00:07:18,968 - logp: -3645.240, val_logp: -3642.902, loss: -3514.077, val_loss: -3446.824
+INFO - nice_runner.py - 2024-06-27 00:07:19,174 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:07:27,289 - step: 7900, exact score matching loss: -3343.61669921875
+INFO - nice_runner.py - 2024-06-27 00:07:29,948 - logp: -3575.060, val_logp: -3564.125, loss: -3542.568, val_loss: -3548.404
+INFO - nice_runner.py - 2024-06-27 00:07:32,584 - logp: -3596.352, val_logp: -3594.449, loss: -3560.284, val_loss: -3500.516
+INFO - nice_runner.py - 2024-06-27 00:07:35,231 - logp: -3681.337, val_logp: -3705.426, loss: -3426.372, val_loss: -3465.009
+INFO - nice_runner.py - 2024-06-27 00:07:37,868 - logp: -3539.930, val_logp: -3512.555, loss: -3635.750, val_loss: -3657.299
+INFO - nice_runner.py - 2024-06-27 00:07:40,534 - logp: -3664.932, val_logp: -3589.251, loss: -3507.219, val_loss: -3550.037
+INFO - nice_runner.py - 2024-06-27 00:07:43,180 - logp: -3598.472, val_logp: -3680.470, loss: -3571.140, val_loss: -3446.365
+INFO - nice_runner.py - 2024-06-27 00:07:45,826 - logp: -3744.437, val_logp: -3595.494, loss: -3399.009, val_loss: -3528.275
+INFO - nice_runner.py - 2024-06-27 00:07:48,496 - logp: -3634.716, val_logp: -3659.681, loss: -3526.908, val_loss: -3478.227
+INFO - nice_runner.py - 2024-06-27 00:07:51,120 - logp: -3683.712, val_logp: -3597.042, loss: -3502.009, val_loss: -3428.683
+INFO - nice_runner.py - 2024-06-27 00:07:54,082 - logp: -3598.133, val_logp: -3496.234, loss: -3567.118, val_loss: -3727.132
+INFO - nice_runner.py - 2024-06-27 00:07:54,288 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:08:02,548 - step: 8000, exact score matching loss: -3546.9892578125
+INFO - nice_runner.py - 2024-06-27 00:08:05,451 - logp: -3569.707, val_logp: -3449.661, loss: -3626.205, val_loss: -3772.879
+INFO - nice_runner.py - 2024-06-27 00:08:08,150 - logp: -3614.777, val_logp: -3565.153, loss: -3595.530, val_loss: -3572.583
+INFO - nice_runner.py - 2024-06-27 00:08:10,836 - logp: -3773.478, val_logp: -3503.730, loss: -3350.551, val_loss: -3670.500
+INFO - nice_runner.py - 2024-06-27 00:08:13,600 - logp: -3683.984, val_logp: -3612.680, loss: -3529.552, val_loss: -3573.576
+INFO - nice_runner.py - 2024-06-27 00:08:16,361 - logp: -3530.351, val_logp: -3547.010, loss: -3686.818, val_loss: -3682.204
+INFO - nice_runner.py - 2024-06-27 00:08:19,017 - logp: -3708.946, val_logp: -3678.878, loss: -3471.493, val_loss: -3486.008
+INFO - nice_runner.py - 2024-06-27 00:08:21,672 - logp: -3531.947, val_logp: -3680.402, loss: -3710.276, val_loss: -3514.574
+INFO - nice_runner.py - 2024-06-27 00:08:24,392 - logp: -3576.547, val_logp: -3672.820, loss: -3635.485, val_loss: -3515.332
+INFO - nice_runner.py - 2024-06-27 00:08:27,113 - logp: -3575.020, val_logp: -3810.180, loss: -3656.228, val_loss: -3365.617
+INFO - nice_runner.py - 2024-06-27 00:08:30,412 - logp: -3540.607, val_logp: -3469.184, loss: -3706.992, val_loss: -3772.583
+INFO - nice_runner.py - 2024-06-27 00:08:30,613 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:08:38,749 - step: 8100, exact score matching loss: -3489.291259765625
+INFO - nice_runner.py - 2024-06-27 00:08:41,446 - logp: -3686.588, val_logp: -3678.334, loss: -3491.342, val_loss: -3475.713
+INFO - nice_runner.py - 2024-06-27 00:08:44,202 - logp: -3653.739, val_logp: -3391.179, loss: -3602.103, val_loss: -3893.339
+INFO - nice_runner.py - 2024-06-27 00:08:46,911 - logp: -3714.264, val_logp: -3642.039, loss: -3480.379, val_loss: -3567.296
+INFO - nice_runner.py - 2024-06-27 00:08:49,714 - logp: -3672.641, val_logp: -3717.549, loss: -3477.051, val_loss: -3365.145
+INFO - nice_runner.py - 2024-06-27 00:08:52,657 - logp: -3803.931, val_logp: -3644.153, loss: -3366.485, val_loss: -3495.438
+INFO - nice_runner.py - 2024-06-27 00:08:55,375 - logp: -3597.523, val_logp: -3608.943, loss: -3666.350, val_loss: -3608.764
+INFO - nice_runner.py - 2024-06-27 00:08:58,060 - logp: -3653.994, val_logp: -3728.126, loss: -3597.420, val_loss: -3451.378
+INFO - nice_runner.py - 2024-06-27 00:09:00,712 - logp: -3655.569, val_logp: -3664.391, loss: -3511.206, val_loss: -3541.485
+INFO - nice_runner.py - 2024-06-27 00:09:03,434 - logp: -3522.765, val_logp: -3548.439, loss: -3754.408, val_loss: -3692.115
+INFO - nice_runner.py - 2024-06-27 00:09:06,111 - logp: -3625.893, val_logp: -3632.789, loss: -3584.647, val_loss: -3552.164
+INFO - nice_runner.py - 2024-06-27 00:09:06,318 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:09:14,451 - step: 8200, exact score matching loss: -3618.86328125
+INFO - nice_runner.py - 2024-06-27 00:09:17,363 - logp: -3527.022, val_logp: -3738.865, loss: -3717.570, val_loss: -3480.546
+INFO - nice_runner.py - 2024-06-27 00:09:20,096 - logp: -3569.886, val_logp: -3755.071, loss: -3698.249, val_loss: -3454.501
+INFO - nice_runner.py - 2024-06-27 00:09:22,889 - logp: -3561.121, val_logp: -3631.633, loss: -3712.118, val_loss: -3635.716
+INFO - nice_runner.py - 2024-06-27 00:09:25,678 - logp: -3723.541, val_logp: -3612.723, loss: -3542.421, val_loss: -3602.510
+INFO - nice_runner.py - 2024-06-27 00:09:28,451 - logp: -3586.350, val_logp: -3554.096, loss: -3674.188, val_loss: -3741.449
+INFO - nice_runner.py - 2024-06-27 00:09:31,126 - logp: -3572.623, val_logp: -3671.508, loss: -3713.142, val_loss: -3552.256
+INFO - nice_runner.py - 2024-06-27 00:09:33,842 - logp: -3497.302, val_logp: -3788.589, loss: -3796.700, val_loss: -3375.449
+INFO - nice_runner.py - 2024-06-27 00:09:36,628 - logp: -3563.075, val_logp: -3664.845, loss: -3739.054, val_loss: -3531.102
+INFO - nice_runner.py - 2024-06-27 00:09:39,316 - logp: -3642.903, val_logp: -3654.515, loss: -3629.023, val_loss: -3595.248
+INFO - nice_runner.py - 2024-06-27 00:09:41,969 - logp: -3590.606, val_logp: -3618.892, loss: -3754.361, val_loss: -3653.029
+INFO - nice_runner.py - 2024-06-27 00:09:42,179 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:09:50,379 - step: 8300, exact score matching loss: -3669.501220703125
+INFO - nice_runner.py - 2024-06-27 00:09:53,089 - logp: -3582.436, val_logp: -3636.433, loss: -3733.149, val_loss: -3657.361
+INFO - nice_runner.py - 2024-06-27 00:09:55,819 - logp: -3686.032, val_logp: -3763.010, loss: -3628.018, val_loss: -3403.958
+INFO - nice_runner.py - 2024-06-27 00:09:58,490 - logp: -3585.027, val_logp: -3530.806, loss: -3717.116, val_loss: -3801.516
+INFO - nice_runner.py - 2024-06-27 00:10:01,128 - logp: -3670.158, val_logp: -3561.530, loss: -3651.497, val_loss: -3774.542
+INFO - nice_runner.py - 2024-06-27 00:10:03,808 - logp: -3629.566, val_logp: -3515.728, loss: -3756.024, val_loss: -3857.029
+INFO - nice_runner.py - 2024-06-27 00:10:06,858 - logp: -3529.360, val_logp: -3721.093, loss: -3835.970, val_loss: -3520.461
+INFO - nice_runner.py - 2024-06-27 00:10:09,629 - logp: -3709.289, val_logp: -3559.176, loss: -3610.825, val_loss: -3781.447
+INFO - nice_runner.py - 2024-06-27 00:10:12,262 - logp: -3611.574, val_logp: -3531.027, loss: -3706.117, val_loss: -3775.740
+INFO - nice_runner.py - 2024-06-27 00:10:14,968 - logp: -3630.455, val_logp: -3627.932, loss: -3688.119, val_loss: -3647.902
+INFO - nice_runner.py - 2024-06-27 00:10:17,642 - logp: -3817.963, val_logp: -3908.981, loss: -3429.320, val_loss: -3212.582
+INFO - nice_runner.py - 2024-06-27 00:10:17,852 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:10:26,078 - step: 8400, exact score matching loss: -3575.3515625
+INFO - nice_runner.py - 2024-06-27 00:10:28,844 - logp: -3537.315, val_logp: -3706.159, loss: -3792.276, val_loss: -3562.584
+INFO - nice_runner.py - 2024-06-27 00:10:31,572 - logp: -3756.688, val_logp: -3603.024, loss: -3519.336, val_loss: -3784.921
+INFO - nice_runner.py - 2024-06-27 00:10:34,281 - logp: -3709.306, val_logp: -3723.987, loss: -3545.265, val_loss: -3516.557
+INFO - nice_runner.py - 2024-06-27 00:10:37,062 - logp: -3743.614, val_logp: -3600.500, loss: -3628.927, val_loss: -3718.313
+INFO - nice_runner.py - 2024-06-27 00:10:40,184 - logp: -3649.449, val_logp: -3699.886, loss: -3747.031, val_loss: -3606.252
+INFO - nice_runner.py - 2024-06-27 00:10:42,979 - logp: -3618.167, val_logp: -3723.802, loss: -3699.208, val_loss: -3457.605
+INFO - nice_runner.py - 2024-06-27 00:10:45,706 - logp: -3779.608, val_logp: -3638.595, loss: -3541.356, val_loss: -3652.291
+INFO - nice_runner.py - 2024-06-27 00:10:48,413 - logp: -3745.995, val_logp: -3607.834, loss: -3560.935, val_loss: -3693.835
+INFO - nice_runner.py - 2024-06-27 00:10:51,130 - logp: -3668.560, val_logp: -3716.868, loss: -3703.894, val_loss: -3669.599
+INFO - nice_runner.py - 2024-06-27 00:10:53,851 - logp: -3662.562, val_logp: -3691.644, loss: -3739.185, val_loss: -3667.239
+INFO - nice_runner.py - 2024-06-27 00:10:54,066 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:11:02,204 - step: 8500, exact score matching loss: -3628.30078125
+INFO - nice_runner.py - 2024-06-27 00:11:05,138 - logp: -3722.679, val_logp: -3622.469, loss: -3644.143, val_loss: -3749.004
+INFO - nice_runner.py - 2024-06-27 00:11:07,918 - logp: -3575.055, val_logp: -3620.700, loss: -3831.177, val_loss: -3735.604
+INFO - nice_runner.py - 2024-06-27 00:11:10,562 - logp: -3640.171, val_logp: -3682.181, loss: -3778.762, val_loss: -3639.023
+INFO - nice_runner.py - 2024-06-27 00:11:13,299 - logp: -3742.804, val_logp: -3955.941, loss: -3616.808, val_loss: -3259.143
+INFO - nice_runner.py - 2024-06-27 00:11:15,920 - logp: -3698.530, val_logp: -3755.466, loss: -3681.455, val_loss: -3553.515
+INFO - nice_runner.py - 2024-06-27 00:11:18,585 - logp: -3725.233, val_logp: -3840.882, loss: -3654.499, val_loss: -3502.740
+INFO - nice_runner.py - 2024-06-27 00:11:21,221 - logp: -3678.719, val_logp: -3783.768, loss: -3613.807, val_loss: -3453.542
+INFO - nice_runner.py - 2024-06-27 00:11:23,898 - logp: -3488.760, val_logp: -3620.814, loss: -3890.551, val_loss: -3718.581
+INFO - nice_runner.py - 2024-06-27 00:11:26,578 - logp: -3709.771, val_logp: -3548.461, loss: -3577.463, val_loss: -3791.641
+INFO - nice_runner.py - 2024-06-27 00:11:29,246 - logp: -3770.561, val_logp: -3815.396, loss: -3543.285, val_loss: -3361.531
+INFO - nice_runner.py - 2024-06-27 00:11:29,453 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:11:37,597 - step: 8600, exact score matching loss: -3747.3408203125
+INFO - nice_runner.py - 2024-06-27 00:11:40,379 - logp: -3886.226, val_logp: -3523.259, loss: -3421.564, val_loss: -3856.380
+INFO - nice_runner.py - 2024-06-27 00:11:43,049 - logp: -3823.947, val_logp: -3804.356, loss: -3498.623, val_loss: -3431.302
+INFO - nice_runner.py - 2024-06-27 00:11:45,782 - logp: -3568.669, val_logp: -3690.230, loss: -3854.094, val_loss: -3605.236
+INFO - nice_runner.py - 2024-06-27 00:11:48,577 - logp: -3748.905, val_logp: -3602.981, loss: -3636.420, val_loss: -3797.175
+INFO - nice_runner.py - 2024-06-27 00:11:51,300 - logp: -3565.274, val_logp: -3628.589, loss: -3866.843, val_loss: -3854.674
+INFO - nice_runner.py - 2024-06-27 00:11:53,973 - logp: -3820.319, val_logp: -3632.409, loss: -3585.441, val_loss: -3848.300
+INFO - nice_runner.py - 2024-06-27 00:11:56,654 - logp: -3602.586, val_logp: -3712.217, loss: -3782.407, val_loss: -3663.476
+INFO - nice_runner.py - 2024-06-27 00:11:59,362 - logp: -3671.858, val_logp: -3588.993, loss: -3787.495, val_loss: -3899.013
+INFO - nice_runner.py - 2024-06-27 00:12:02,090 - logp: -3694.211, val_logp: -3608.428, loss: -3753.196, val_loss: -3860.583
+INFO - nice_runner.py - 2024-06-27 00:12:04,798 - logp: -3705.415, val_logp: -3696.757, loss: -3686.494, val_loss: -3771.977
+INFO - nice_runner.py - 2024-06-27 00:12:05,004 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:12:13,131 - step: 8700, exact score matching loss: -3619.3076171875
+INFO - nice_runner.py - 2024-06-27 00:12:15,738 - logp: -3898.053, val_logp: -3527.473, loss: -3529.923, val_loss: -4079.400
+INFO - nice_runner.py - 2024-06-27 00:12:18,663 - logp: -3582.658, val_logp: -3807.979, loss: -3916.995, val_loss: -3576.166
+INFO - nice_runner.py - 2024-06-27 00:12:21,313 - logp: -3679.224, val_logp: -3846.576, loss: -3788.926, val_loss: -3577.519
+INFO - nice_runner.py - 2024-06-27 00:12:23,991 - logp: -3673.271, val_logp: -3795.616, loss: -3850.989, val_loss: -3637.897
+INFO - nice_runner.py - 2024-06-27 00:12:26,720 - logp: -3924.121, val_logp: -3688.505, loss: -3496.208, val_loss: -3733.065
+INFO - nice_runner.py - 2024-06-27 00:12:29,498 - logp: -3717.735, val_logp: -3788.913, loss: -3729.113, val_loss: -3642.341
+INFO - nice_runner.py - 2024-06-27 00:12:32,198 - logp: -3660.185, val_logp: -3695.494, loss: -3807.880, val_loss: -3744.686
+INFO - nice_runner.py - 2024-06-27 00:12:34,864 - logp: -3638.197, val_logp: -3609.850, loss: -3842.486, val_loss: -3834.439
+INFO - nice_runner.py - 2024-06-27 00:12:37,562 - logp: -3656.237, val_logp: -3795.640, loss: -3828.421, val_loss: -3630.614
+INFO - nice_runner.py - 2024-06-27 00:12:40,772 - logp: -3814.974, val_logp: -3619.242, loss: -3626.800, val_loss: -3868.659
+INFO - nice_runner.py - 2024-06-27 00:12:40,984 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:12:49,183 - step: 8800, exact score matching loss: -3825.2626953125
+INFO - nice_runner.py - 2024-06-27 00:12:51,964 - logp: -3660.522, val_logp: -3691.625, loss: -3836.908, val_loss: -3877.309
+INFO - nice_runner.py - 2024-06-27 00:12:54,699 - logp: -3716.828, val_logp: -3668.911, loss: -3778.483, val_loss: -3801.177
+INFO - nice_runner.py - 2024-06-27 00:12:57,468 - logp: -3752.764, val_logp: -3774.765, loss: -3788.358, val_loss: -3716.791
+INFO - nice_runner.py - 2024-06-27 00:13:00,159 - logp: -3837.345, val_logp: -3759.894, loss: -3646.016, val_loss: -3751.155
+INFO - nice_runner.py - 2024-06-27 00:13:02,825 - logp: -3861.551, val_logp: -3617.232, loss: -3635.208, val_loss: -3920.133
+INFO - nice_runner.py - 2024-06-27 00:13:05,481 - logp: -3735.546, val_logp: -3747.153, loss: -3728.215, val_loss: -3696.413
+INFO - nice_runner.py - 2024-06-27 00:13:08,098 - logp: -3828.235, val_logp: -3719.540, loss: -3668.600, val_loss: -3786.037
+INFO - nice_runner.py - 2024-06-27 00:13:10,969 - logp: -3929.318, val_logp: -3877.607, loss: -3504.024, val_loss: -3533.878
+INFO - nice_runner.py - 2024-06-27 00:13:13,738 - logp: -3752.691, val_logp: -3858.606, loss: -3696.725, val_loss: -3560.243
+INFO - nice_runner.py - 2024-06-27 00:13:16,430 - logp: -3841.461, val_logp: -3876.854, loss: -3661.755, val_loss: -3572.446
+INFO - nice_runner.py - 2024-06-27 00:13:16,645 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:13:24,763 - step: 8900, exact score matching loss: -3663.31884765625
+INFO - nice_runner.py - 2024-06-27 00:13:27,473 - logp: -3775.482, val_logp: -3767.536, loss: -3758.934, val_loss: -3703.334
+INFO - nice_runner.py - 2024-06-27 00:13:30,204 - logp: -3826.798, val_logp: -3775.954, loss: -3622.335, val_loss: -3660.672
+INFO - nice_runner.py - 2024-06-27 00:13:32,899 - logp: -3779.642, val_logp: -3807.347, loss: -3738.867, val_loss: -3725.610
+INFO - nice_runner.py - 2024-06-27 00:13:35,628 - logp: -3657.763, val_logp: -3803.197, loss: -3978.965, val_loss: -3733.582
+INFO - nice_runner.py - 2024-06-27 00:13:38,400 - logp: -3709.454, val_logp: -3812.208, loss: -3856.594, val_loss: -3752.894
+INFO - nice_runner.py - 2024-06-27 00:13:41,127 - logp: -3722.957, val_logp: -3814.142, loss: -3721.480, val_loss: -3653.631
+INFO - nice_runner.py - 2024-06-27 00:13:43,826 - logp: -3862.492, val_logp: -3813.573, loss: -3626.899, val_loss: -3621.685
+INFO - nice_runner.py - 2024-06-27 00:13:46,536 - logp: -3826.979, val_logp: -3740.780, loss: -3737.386, val_loss: -3771.391
+INFO - nice_runner.py - 2024-06-27 00:13:49,304 - logp: -3788.666, val_logp: -3775.926, loss: -3781.043, val_loss: -3809.377
+INFO - nice_runner.py - 2024-06-27 00:13:51,969 - logp: -3740.627, val_logp: -3623.988, loss: -3862.230, val_loss: -4086.941
+INFO - nice_runner.py - 2024-06-27 00:13:52,180 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:14:00,322 - step: 9000, exact score matching loss: -3757.345703125
+INFO - nice_runner.py - 2024-06-27 00:14:03,413 - logp: -3789.757, val_logp: -3752.481, loss: -3799.438, val_loss: -3807.448
+INFO - nice_runner.py - 2024-06-27 00:14:06,101 - logp: -3764.860, val_logp: -3827.283, loss: -3871.028, val_loss: -3692.133
+INFO - nice_runner.py - 2024-06-27 00:14:08,810 - logp: -3699.069, val_logp: -3819.148, loss: -3956.989, val_loss: -3699.830
+INFO - nice_runner.py - 2024-06-27 00:14:11,496 - logp: -3816.147, val_logp: -3866.161, loss: -3797.549, val_loss: -3621.939
+INFO - nice_runner.py - 2024-06-27 00:14:14,210 - logp: -3738.855, val_logp: -3731.261, loss: -3913.097, val_loss: -3889.204
+INFO - nice_runner.py - 2024-06-27 00:14:16,874 - logp: -3728.496, val_logp: -3849.144, loss: -3883.190, val_loss: -3757.404
+INFO - nice_runner.py - 2024-06-27 00:14:19,522 - logp: -3829.183, val_logp: -3978.855, loss: -3680.060, val_loss: -3415.559
+INFO - nice_runner.py - 2024-06-27 00:14:22,213 - logp: -3956.570, val_logp: -3351.861, loss: -3566.731, val_loss: -4510.580
+INFO - nice_runner.py - 2024-06-27 00:14:25,099 - logp: -3856.444, val_logp: -3746.660, loss: -3703.695, val_loss: -3893.559
+INFO - nice_runner.py - 2024-06-27 00:14:27,804 - logp: -3662.599, val_logp: -3752.718, loss: -4036.585, val_loss: -3895.683
+INFO - nice_runner.py - 2024-06-27 00:14:28,021 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:14:36,265 - step: 9100, exact score matching loss: -3720.326416015625
+INFO - nice_runner.py - 2024-06-27 00:14:39,067 - logp: -3829.865, val_logp: -4125.347, loss: -3740.886, val_loss: -3304.616
+INFO - nice_runner.py - 2024-06-27 00:14:41,838 - logp: -3769.088, val_logp: -3586.379, loss: -3889.532, val_loss: -4208.577
+INFO - nice_runner.py - 2024-06-27 00:14:44,470 - logp: -3828.421, val_logp: -3887.461, loss: -3874.176, val_loss: -3754.451
+INFO - nice_runner.py - 2024-06-27 00:14:47,114 - logp: -3785.991, val_logp: -3877.074, loss: -3863.425, val_loss: -3746.881
+INFO - nice_runner.py - 2024-06-27 00:14:49,762 - logp: -3900.696, val_logp: -3770.365, loss: -3744.072, val_loss: -3872.444
+INFO - nice_runner.py - 2024-06-27 00:14:52,974 - logp: -3988.235, val_logp: -3733.775, loss: -3566.438, val_loss: -3860.583
+INFO - nice_runner.py - 2024-06-27 00:14:55,801 - logp: -3762.255, val_logp: -3978.114, loss: -3900.770, val_loss: -3567.049
+INFO - nice_runner.py - 2024-06-27 00:14:58,506 - logp: -4001.242, val_logp: -3906.506, loss: -3591.310, val_loss: -3629.804
+INFO - nice_runner.py - 2024-06-27 00:15:01,169 - logp: -3875.445, val_logp: -3830.340, loss: -3778.406, val_loss: -3875.137
+INFO - nice_runner.py - 2024-06-27 00:15:03,846 - logp: -3758.519, val_logp: -3981.049, loss: -3961.873, val_loss: -3590.162
+INFO - nice_runner.py - 2024-06-27 00:15:04,056 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:15:12,211 - step: 9200, exact score matching loss: -3814.601318359375
+INFO - nice_runner.py - 2024-06-27 00:15:14,998 - logp: -3841.737, val_logp: -3828.087, loss: -3825.701, val_loss: -3882.318
+INFO - nice_runner.py - 2024-06-27 00:15:17,682 - logp: -3785.559, val_logp: -3897.923, loss: -3950.145, val_loss: -3698.404
+INFO - nice_runner.py - 2024-06-27 00:15:20,449 - logp: -3831.015, val_logp: -3851.960, loss: -3851.663, val_loss: -3765.307
+INFO - nice_runner.py - 2024-06-27 00:15:23,130 - logp: -3925.459, val_logp: -3873.668, loss: -3806.570, val_loss: -3829.863
+INFO - nice_runner.py - 2024-06-27 00:15:25,850 - logp: -3901.741, val_logp: -3884.555, loss: -3752.681, val_loss: -3753.233
+INFO - nice_runner.py - 2024-06-27 00:15:28,524 - logp: -3971.590, val_logp: -3871.979, loss: -3705.856, val_loss: -3835.250
+INFO - nice_runner.py - 2024-06-27 00:15:31,273 - logp: -3858.811, val_logp: -3980.276, loss: -3782.007, val_loss: -3543.236
+INFO - nice_runner.py - 2024-06-27 00:15:34,040 - logp: -3939.981, val_logp: -3844.819, loss: -3803.882, val_loss: -3837.719
+INFO - nice_runner.py - 2024-06-27 00:15:36,668 - logp: -4026.101, val_logp: -3957.487, loss: -3629.529, val_loss: -3725.984
+INFO - nice_runner.py - 2024-06-27 00:15:39,302 - logp: -3906.949, val_logp: -3854.245, loss: -3801.917, val_loss: -3894.423
+INFO - nice_runner.py - 2024-06-27 00:15:39,515 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:15:47,677 - step: 9300, exact score matching loss: -3999.90380859375
+INFO - nice_runner.py - 2024-06-27 00:15:50,417 - logp: -3949.000, val_logp: -3758.080, loss: -3716.056, val_loss: -4065.557
+INFO - nice_runner.py - 2024-06-27 00:15:53,188 - logp: -4053.572, val_logp: -3799.949, loss: -3459.054, val_loss: -3866.199
+INFO - nice_runner.py - 2024-06-27 00:15:55,926 - logp: -3906.330, val_logp: -3891.081, loss: -3792.178, val_loss: -3806.075
+INFO - nice_runner.py - 2024-06-27 00:15:58,668 - logp: -3997.227, val_logp: -4036.594, loss: -3730.575, val_loss: -3668.899
+INFO - nice_runner.py - 2024-06-27 00:16:01,399 - logp: -4059.637, val_logp: -3940.565, loss: -3630.377, val_loss: -3720.084
+INFO - nice_runner.py - 2024-06-27 00:16:04,118 - logp: -3900.466, val_logp: -3987.482, loss: -3768.697, val_loss: -3708.602
+INFO - nice_runner.py - 2024-06-27 00:16:06,875 - logp: -3953.573, val_logp: -3780.777, loss: -3765.487, val_loss: -4048.713
+INFO - nice_runner.py - 2024-06-27 00:16:09,583 - logp: -3988.676, val_logp: -3887.343, loss: -3838.832, val_loss: -3891.412
+INFO - nice_runner.py - 2024-06-27 00:16:12,253 - logp: -3928.191, val_logp: -4052.989, loss: -3841.695, val_loss: -3609.102
+INFO - nice_runner.py - 2024-06-27 00:16:14,942 - logp: -3794.589, val_logp: -3958.529, loss: -4036.585, val_loss: -3739.447
+INFO - nice_runner.py - 2024-06-27 00:16:15,145 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:16:23,299 - step: 9400, exact score matching loss: -3832.62841796875
+INFO - nice_runner.py - 2024-06-27 00:16:26,013 - logp: -3873.061, val_logp: -3856.657, loss: -3914.042, val_loss: -3916.432
+INFO - nice_runner.py - 2024-06-27 00:16:28,812 - logp: -3825.988, val_logp: -3903.170, loss: -4081.615, val_loss: -3963.148
+INFO - nice_runner.py - 2024-06-27 00:16:31,525 - logp: -3811.137, val_logp: -3852.527, loss: -4037.626, val_loss: -4004.485
+INFO - nice_runner.py - 2024-06-27 00:16:34,152 - logp: -3855.151, val_logp: -3801.936, loss: -4005.246, val_loss: -4102.184
+INFO - nice_runner.py - 2024-06-27 00:16:37,085 - logp: -3957.231, val_logp: -3815.715, loss: -3880.987, val_loss: -3988.815
+INFO - nice_runner.py - 2024-06-27 00:16:39,835 - logp: -4009.175, val_logp: -3838.119, loss: -3808.497, val_loss: -4001.174
+INFO - nice_runner.py - 2024-06-27 00:16:42,695 - logp: -4004.261, val_logp: -3938.404, loss: -3808.572, val_loss: -3841.786
+INFO - nice_runner.py - 2024-06-27 00:16:45,440 - logp: -3925.259, val_logp: -4038.387, loss: -3921.395, val_loss: -3728.160
+INFO - nice_runner.py - 2024-06-27 00:16:48,083 - logp: -4066.462, val_logp: -3988.597, loss: -3714.800, val_loss: -3816.986
+INFO - nice_runner.py - 2024-06-27 00:16:50,863 - logp: -3979.718, val_logp: -3967.047, loss: -3885.160, val_loss: -3846.757
+INFO - nice_runner.py - 2024-06-27 00:16:51,079 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:16:59,189 - step: 9500, exact score matching loss: -3741.53271484375
+INFO - nice_runner.py - 2024-06-27 00:17:02,529 - logp: -4046.068, val_logp: -3959.774, loss: -3802.342, val_loss: -3895.523
+INFO - nice_runner.py - 2024-06-27 00:17:05,374 - logp: -4022.208, val_logp: -4045.336, loss: -3819.897, val_loss: -3779.868
+INFO - nice_runner.py - 2024-06-27 00:17:08,323 - logp: -3849.954, val_logp: -3935.367, loss: -4047.454, val_loss: -3831.303
+INFO - nice_runner.py - 2024-06-27 00:17:10,974 - logp: -4081.867, val_logp: -3948.448, loss: -3810.925, val_loss: -3937.699
+INFO - nice_runner.py - 2024-06-27 00:17:13,670 - logp: -3951.167, val_logp: -3917.936, loss: -3976.474, val_loss: -3963.377
+INFO - nice_runner.py - 2024-06-27 00:17:16,393 - logp: -3664.007, val_logp: -3913.934, loss: -4371.611, val_loss: -3936.793
+INFO - nice_runner.py - 2024-06-27 00:17:19,165 - logp: -4145.779, val_logp: -4010.972, loss: -3712.909, val_loss: -3888.035
+INFO - nice_runner.py - 2024-06-27 00:17:21,922 - logp: -4169.768, val_logp: -4075.860, loss: -3693.142, val_loss: -3827.771
+INFO - nice_runner.py - 2024-06-27 00:17:24,629 - logp: -4006.815, val_logp: -3956.797, loss: -3990.867, val_loss: -3867.273
+INFO - nice_runner.py - 2024-06-27 00:17:27,363 - logp: -4072.342, val_logp: -3871.523, loss: -3788.698, val_loss: -4040.879
+INFO - nice_runner.py - 2024-06-27 00:17:27,577 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:17:35,757 - step: 9600, exact score matching loss: -3978.4052734375
+INFO - nice_runner.py - 2024-06-27 00:17:38,636 - logp: -3871.087, val_logp: -3987.804, loss: -4123.508, val_loss: -3950.818
+INFO - nice_runner.py - 2024-06-27 00:17:41,601 - logp: -4012.194, val_logp: -3945.629, loss: -3891.996, val_loss: -3870.005
+INFO - nice_runner.py - 2024-06-27 00:17:44,290 - logp: -4082.829, val_logp: -4060.731, loss: -3812.168, val_loss: -3868.344
+INFO - nice_runner.py - 2024-06-27 00:17:47,076 - logp: -4037.363, val_logp: -3970.464, loss: -3891.904, val_loss: -3939.015
+INFO - nice_runner.py - 2024-06-27 00:17:49,860 - logp: -4062.617, val_logp: -3941.510, loss: -3751.350, val_loss: -3932.751
+INFO - nice_runner.py - 2024-06-27 00:17:52,559 - logp: -3986.844, val_logp: -4166.527, loss: -3860.027, val_loss: -3584.539
+INFO - nice_runner.py - 2024-06-27 00:17:55,234 - logp: -4176.484, val_logp: -4069.366, loss: -3766.562, val_loss: -3835.131
+INFO - nice_runner.py - 2024-06-27 00:17:57,884 - logp: -4027.717, val_logp: -4011.034, loss: -3862.800, val_loss: -3879.208
+INFO - nice_runner.py - 2024-06-27 00:18:00,524 - logp: -3983.077, val_logp: -4039.975, loss: -4012.065, val_loss: -3890.372
+INFO - nice_runner.py - 2024-06-27 00:18:03,243 - logp: -3901.398, val_logp: -4138.240, loss: -4151.998, val_loss: -3737.037
+INFO - nice_runner.py - 2024-06-27 00:18:03,453 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:18:11,597 - step: 9700, exact score matching loss: -3844.608642578125
+INFO - nice_runner.py - 2024-06-27 00:18:14,262 - logp: -3955.481, val_logp: -4233.264, loss: -3977.098, val_loss: -3519.576
+INFO - nice_runner.py - 2024-06-27 00:18:17,103 - logp: -4091.625, val_logp: -4044.571, loss: -3828.028, val_loss: -3966.353
+INFO - nice_runner.py - 2024-06-27 00:18:19,784 - logp: -4008.835, val_logp: -4079.790, loss: -4067.945, val_loss: -3904.842
+INFO - nice_runner.py - 2024-06-27 00:18:22,490 - logp: -4089.320, val_logp: -4102.937, loss: -3896.919, val_loss: -3828.352
+INFO - nice_runner.py - 2024-06-27 00:18:25,156 - logp: -4125.026, val_logp: -4020.713, loss: -3830.249, val_loss: -3982.195
+INFO - nice_runner.py - 2024-06-27 00:18:27,844 - logp: -4072.472, val_logp: -4143.140, loss: -3867.737, val_loss: -3719.686
+INFO - nice_runner.py - 2024-06-27 00:18:30,662 - logp: -4197.870, val_logp: -4065.285, loss: -3829.207, val_loss: -3969.446
+INFO - nice_runner.py - 2024-06-27 00:18:33,444 - logp: -3941.384, val_logp: -4027.074, loss: -4226.905, val_loss: -4023.253
+INFO - nice_runner.py - 2024-06-27 00:18:36,301 - logp: -4004.618, val_logp: -3969.708, loss: -4085.742, val_loss: -4067.085
+INFO - nice_runner.py - 2024-06-27 00:18:39,030 - logp: -4125.694, val_logp: -4159.245, loss: -3889.005, val_loss: -3792.839
+INFO - nice_runner.py - 2024-06-27 00:18:39,240 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:18:47,271 - step: 9800, exact score matching loss: -3369.11572265625
+INFO - nice_runner.py - 2024-06-27 00:18:50,207 - logp: -3994.042, val_logp: -3981.402, loss: -4039.920, val_loss: -4019.093
+INFO - nice_runner.py - 2024-06-27 00:18:52,911 - logp: -4183.765, val_logp: -4158.557, loss: -3753.402, val_loss: -3764.976
+INFO - nice_runner.py - 2024-06-27 00:18:55,615 - logp: -4175.777, val_logp: -3948.660, loss: -3798.201, val_loss: -4113.602
+INFO - nice_runner.py - 2024-06-27 00:18:58,281 - logp: -4014.690, val_logp: -4075.353, loss: -4107.987, val_loss: -3897.143
+INFO - nice_runner.py - 2024-06-27 00:19:00,962 - logp: -4043.063, val_logp: -4178.830, loss: -4000.467, val_loss: -3832.378
+INFO - nice_runner.py - 2024-06-27 00:19:04,021 - logp: -4189.322, val_logp: -4113.506, loss: -3916.229, val_loss: -3932.813
+INFO - nice_runner.py - 2024-06-27 00:19:06,734 - logp: -4120.927, val_logp: -4163.526, loss: -3915.980, val_loss: -3922.443
+INFO - nice_runner.py - 2024-06-27 00:19:09,460 - logp: -3947.071, val_logp: -4071.013, loss: -4111.347, val_loss: -3924.697
+INFO - nice_runner.py - 2024-06-27 00:19:12,201 - logp: -4033.759, val_logp: -4173.263, loss: -4108.484, val_loss: -3922.235
+INFO - nice_runner.py - 2024-06-27 00:19:14,882 - logp: -4169.973, val_logp: -4044.391, loss: -3800.390, val_loss: -4025.319
+INFO - nice_runner.py - 2024-06-27 00:19:15,109 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:19:23,226 - step: 9900, exact score matching loss: -3946.99560546875
+INFO - nice_runner.py - 2024-06-27 00:19:25,972 - logp: -4198.354, val_logp: -4028.562, loss: -3920.007, val_loss: -4147.969
+INFO - nice_runner.py - 2024-06-27 00:19:28,711 - logp: -4005.970, val_logp: -4262.359, loss: -4201.805, val_loss: -3736.717
+INFO - nice_runner.py - 2024-06-27 00:19:31,480 - logp: -4169.998, val_logp: -4126.053, loss: -3951.557, val_loss: -3942.811
+INFO - nice_runner.py - 2024-06-27 00:19:34,210 - logp: -4102.390, val_logp: -4221.986, loss: -4054.880, val_loss: -3761.260
+INFO - nice_runner.py - 2024-06-27 00:19:36,992 - logp: -4079.677, val_logp: -4230.297, loss: -4057.004, val_loss: -3758.944
+INFO - nice_runner.py - 2024-06-27 00:19:39,769 - logp: -4089.242, val_logp: -4106.123, loss: -4051.854, val_loss: -3994.668
+INFO - nice_runner.py - 2024-06-27 00:19:42,482 - logp: -3986.503, val_logp: -4115.509, loss: -4196.441, val_loss: -3981.492
+INFO - nice_runner.py - 2024-06-27 00:19:45,180 - logp: -4083.998, val_logp: -4111.856, loss: -4020.354, val_loss: -4013.323
+INFO - nice_runner.py - 2024-06-27 00:19:47,842 - logp: -3970.176, val_logp: -4100.719, loss: -4190.846, val_loss: -3893.384
+INFO - nice_runner.py - 2024-06-27 00:19:50,538 - logp: -4185.712, val_logp: -4263.191, loss: -3952.957, val_loss: -3725.940
+INFO - nice_runner.py - 2024-06-27 00:19:50,747 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:19:58,958 - step: 10000, exact score matching loss: -3905.025390625
+INFO - nice_runner.py - 2024-06-27 00:20:01,923 - logp: -4192.127, val_logp: -4167.018, loss: -3905.984, val_loss: -3927.190
+INFO - nice_runner.py - 2024-06-27 00:20:04,706 - logp: -4178.196, val_logp: -4095.661, loss: -4011.267, val_loss: -4178.682
+INFO - nice_runner.py - 2024-06-27 00:20:07,477 - logp: -4427.785, val_logp: -4206.907, loss: -3629.007, val_loss: -3861.552
+INFO - nice_runner.py - 2024-06-27 00:20:10,159 - logp: -4105.145, val_logp: -4160.193, loss: -4130.893, val_loss: -3998.865
+INFO - nice_runner.py - 2024-06-27 00:20:12,940 - logp: -4333.345, val_logp: -4192.745, loss: -3819.941, val_loss: -3902.424
+INFO - nice_runner.py - 2024-06-27 00:20:15,647 - logp: -4261.813, val_logp: -4093.236, loss: -3977.842, val_loss: -4160.848
+INFO - nice_runner.py - 2024-06-27 00:20:18,353 - logp: -4276.744, val_logp: -4109.970, loss: -3873.597, val_loss: -4042.322
+INFO - nice_runner.py - 2024-06-27 00:20:21,231 - logp: -4113.332, val_logp: -4102.403, loss: -4010.762, val_loss: -3983.297
+INFO - nice_runner.py - 2024-06-27 00:20:23,993 - logp: -4286.386, val_logp: -4358.208, loss: -3883.963, val_loss: -3729.140
+INFO - nice_runner.py - 2024-06-27 00:20:26,787 - logp: -3979.807, val_logp: -4184.312, loss: -4327.410, val_loss: -3936.018
+INFO - nice_runner.py - 2024-06-27 00:20:27,001 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:20:35,209 - step: 10100, exact score matching loss: -4160.9521484375
+INFO - nice_runner.py - 2024-06-27 00:20:37,904 - logp: -4035.581, val_logp: -4323.517, loss: -4165.481, val_loss: -3699.604
+INFO - nice_runner.py - 2024-06-27 00:20:40,684 - logp: -3955.775, val_logp: -4187.883, loss: -4398.764, val_loss: -4040.360
+INFO - nice_runner.py - 2024-06-27 00:20:43,413 - logp: -4370.872, val_logp: -4157.696, loss: -3802.919, val_loss: -3977.440
+INFO - nice_runner.py - 2024-06-27 00:20:46,125 - logp: -4255.534, val_logp: -4133.126, loss: -3859.126, val_loss: -4055.142
+INFO - nice_runner.py - 2024-06-27 00:20:48,968 - logp: -4088.365, val_logp: -4163.963, loss: -4257.045, val_loss: -4115.655
+INFO - nice_runner.py - 2024-06-27 00:20:51,677 - logp: -4240.801, val_logp: -4130.605, loss: -4047.792, val_loss: -4174.915
+INFO - nice_runner.py - 2024-06-27 00:20:54,375 - logp: -4167.750, val_logp: -3956.151, loss: -4209.389, val_loss: -4293.475
+INFO - nice_runner.py - 2024-06-27 00:20:57,485 - logp: -4212.335, val_logp: -4323.887, loss: -4201.596, val_loss: -3847.655
+INFO - nice_runner.py - 2024-06-27 00:21:00,450 - logp: -4240.239, val_logp: -4230.400, loss: -4031.333, val_loss: -3959.318
+INFO - nice_runner.py - 2024-06-27 00:21:03,178 - logp: -4163.603, val_logp: -4250.264, loss: -4257.466, val_loss: -4024.411
+INFO - nice_runner.py - 2024-06-27 00:21:03,394 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:21:11,609 - step: 10200, exact score matching loss: -3868.992431640625
+INFO - nice_runner.py - 2024-06-27 00:21:14,722 - logp: -4396.722, val_logp: -4176.248, loss: -3777.607, val_loss: -3957.664
+INFO - nice_runner.py - 2024-06-27 00:21:17,514 - logp: -4258.598, val_logp: -4107.336, loss: -4045.460, val_loss: -4187.209
+INFO - nice_runner.py - 2024-06-27 00:21:20,233 - logp: -4129.420, val_logp: -4208.635, loss: -4317.641, val_loss: -4148.639
+INFO - nice_runner.py - 2024-06-27 00:21:22,953 - logp: -4286.488, val_logp: -4239.823, loss: -3998.031, val_loss: -3962.120
+INFO - nice_runner.py - 2024-06-27 00:21:25,606 - logp: -4112.760, val_logp: -4244.097, loss: -4283.987, val_loss: -4096.387
+INFO - nice_runner.py - 2024-06-27 00:21:28,311 - logp: -4234.312, val_logp: -4318.432, loss: -4061.375, val_loss: -3913.237
+INFO - nice_runner.py - 2024-06-27 00:21:31,075 - logp: -4338.171, val_logp: -4236.127, loss: -3917.217, val_loss: -4074.740
+INFO - nice_runner.py - 2024-06-27 00:21:33,789 - logp: -4352.301, val_logp: -4201.337, loss: -3940.906, val_loss: -4147.154
+INFO - nice_runner.py - 2024-06-27 00:21:36,528 - logp: -4357.210, val_logp: -4178.587, loss: -3959.846, val_loss: -4286.947
+INFO - nice_runner.py - 2024-06-27 00:21:39,243 - logp: -4277.200, val_logp: -4172.856, loss: -3988.163, val_loss: -4183.809
+INFO - nice_runner.py - 2024-06-27 00:21:39,457 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:21:47,631 - step: 10300, exact score matching loss: -3809.91650390625
+INFO - nice_runner.py - 2024-06-27 00:21:50,321 - logp: -4305.626, val_logp: -4367.641, loss: -4011.116, val_loss: -3839.828
+INFO - nice_runner.py - 2024-06-27 00:21:52,975 - logp: -4224.124, val_logp: -4150.785, loss: -4103.704, val_loss: -4180.956
+INFO - nice_runner.py - 2024-06-27 00:21:55,631 - logp: -4313.535, val_logp: -4420.590, loss: -4023.295, val_loss: -3848.931
+INFO - nice_runner.py - 2024-06-27 00:21:58,297 - logp: -4280.238, val_logp: -4416.838, loss: -4002.728, val_loss: -3753.532
+INFO - nice_runner.py - 2024-06-27 00:22:01,010 - logp: -4149.296, val_logp: -4248.834, loss: -4211.783, val_loss: -4052.094
+INFO - nice_runner.py - 2024-06-27 00:22:03,783 - logp: -4322.136, val_logp: -4350.853, loss: -4091.409, val_loss: -3970.414
+INFO - nice_runner.py - 2024-06-27 00:22:06,441 - logp: -4295.943, val_logp: -4178.581, loss: -4033.430, val_loss: -4103.512
+INFO - nice_runner.py - 2024-06-27 00:22:09,084 - logp: -4228.439, val_logp: -4339.964, loss: -4199.921, val_loss: -4083.918
+INFO - nice_runner.py - 2024-06-27 00:22:11,834 - logp: -4351.414, val_logp: -4253.387, loss: -4097.774, val_loss: -4059.262
+INFO - nice_runner.py - 2024-06-27 00:22:14,772 - logp: -4166.815, val_logp: -4040.514, loss: -4279.416, val_loss: -4422.416
+INFO - nice_runner.py - 2024-06-27 00:22:14,976 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:22:23,269 - step: 10400, exact score matching loss: -4064.421630859375
+INFO - nice_runner.py - 2024-06-27 00:22:25,922 - logp: -4245.260, val_logp: -4281.343, loss: -4209.890, val_loss: -4194.429
+INFO - nice_runner.py - 2024-06-27 00:22:28,770 - logp: -4311.678, val_logp: -4600.935, loss: -4207.623, val_loss: -3513.600
+INFO - nice_runner.py - 2024-06-27 00:22:31,572 - logp: -4377.527, val_logp: -4273.199, loss: -3812.605, val_loss: -4150.248
+INFO - nice_runner.py - 2024-06-27 00:22:34,249 - logp: -4292.966, val_logp: -4276.086, loss: -4137.017, val_loss: -4115.213
+INFO - nice_runner.py - 2024-06-27 00:22:37,060 - logp: -4218.981, val_logp: -4224.898, loss: -4138.880, val_loss: -4116.606
+INFO - nice_runner.py - 2024-06-27 00:22:39,835 - logp: -4394.492, val_logp: -4389.028, loss: -3926.010, val_loss: -3952.170
+INFO - nice_runner.py - 2024-06-27 00:22:42,527 - logp: -4164.040, val_logp: -4269.474, loss: -4408.225, val_loss: -4255.129
+INFO - nice_runner.py - 2024-06-27 00:22:45,236 - logp: -4210.218, val_logp: -4311.726, loss: -4374.225, val_loss: -4126.680
+INFO - nice_runner.py - 2024-06-27 00:22:48,009 - logp: -4276.267, val_logp: -4355.743, loss: -4251.742, val_loss: -4076.451
+INFO - nice_runner.py - 2024-06-27 00:22:50,710 - logp: -4158.369, val_logp: -4233.886, loss: -4463.685, val_loss: -4302.070
+INFO - nice_runner.py - 2024-06-27 00:22:50,914 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:22:59,061 - step: 10500, exact score matching loss: -4041.818359375
+INFO - nice_runner.py - 2024-06-27 00:23:02,084 - logp: -4329.146, val_logp: -4173.335, loss: -4066.613, val_loss: -4302.219
+INFO - nice_runner.py - 2024-06-27 00:23:04,972 - logp: -4378.979, val_logp: -4481.466, loss: -4030.351, val_loss: -3795.981
+INFO - nice_runner.py - 2024-06-27 00:23:07,703 - logp: -4555.380, val_logp: -5017.246, loss: -3700.950, val_loss: -3026.214
+INFO - nice_runner.py - 2024-06-27 00:23:10,666 - logp: -4397.362, val_logp: -4219.927, loss: -3988.314, val_loss: -4250.658
+INFO - nice_runner.py - 2024-06-27 00:23:13,504 - logp: -4243.661, val_logp: -4286.214, loss: -4269.637, val_loss: -4207.333
+INFO - nice_runner.py - 2024-06-27 00:23:16,671 - logp: -4335.824, val_logp: -4436.706, loss: -4198.445, val_loss: -4066.029
+INFO - nice_runner.py - 2024-06-27 00:23:19,414 - logp: -4501.625, val_logp: -4378.983, loss: -3814.149, val_loss: -4008.349
+INFO - nice_runner.py - 2024-06-27 00:23:22,177 - logp: -4385.631, val_logp: -4347.277, loss: -4035.564, val_loss: -4058.533
+INFO - nice_runner.py - 2024-06-27 00:23:24,841 - logp: -4304.568, val_logp: -4257.926, loss: -4219.239, val_loss: -4293.152
+INFO - nice_runner.py - 2024-06-27 00:23:27,539 - logp: -4448.188, val_logp: -4330.978, loss: -3994.069, val_loss: -4171.512
+INFO - nice_runner.py - 2024-06-27 00:23:27,761 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:23:36,031 - step: 10600, exact score matching loss: -4273.0869140625
+INFO - nice_runner.py - 2024-06-27 00:23:38,826 - logp: -4223.934, val_logp: -4458.518, loss: -4280.448, val_loss: -4031.896
+INFO - nice_runner.py - 2024-06-27 00:23:41,533 - logp: -4262.760, val_logp: -4426.218, loss: -4378.125, val_loss: -3958.184
+INFO - nice_runner.py - 2024-06-27 00:23:44,211 - logp: -4384.551, val_logp: -4378.894, loss: -4207.952, val_loss: -4053.741
+INFO - nice_runner.py - 2024-06-27 00:23:46,949 - logp: -4430.302, val_logp: -4461.668, loss: -4141.766, val_loss: -4006.544
+INFO - nice_runner.py - 2024-06-27 00:23:49,656 - logp: -4372.110, val_logp: -4521.337, loss: -4180.479, val_loss: -4002.698
+INFO - nice_runner.py - 2024-06-27 00:23:52,345 - logp: -4428.561, val_logp: -4370.590, loss: -4221.271, val_loss: -4302.976
+INFO - nice_runner.py - 2024-06-27 00:23:55,011 - logp: -4386.497, val_logp: -4616.548, loss: -4111.482, val_loss: -3651.243
+INFO - nice_runner.py - 2024-06-27 00:23:57,778 - logp: -4397.688, val_logp: -4341.055, loss: -4157.261, val_loss: -4232.665
+INFO - nice_runner.py - 2024-06-27 00:24:00,615 - logp: -4331.366, val_logp: -4429.979, loss: -4225.366, val_loss: -4024.573
+INFO - nice_runner.py - 2024-06-27 00:24:03,308 - logp: -4515.496, val_logp: -4319.337, loss: -4023.449, val_loss: -4338.964
+INFO - nice_runner.py - 2024-06-27 00:24:03,521 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:24:11,663 - step: 10700, exact score matching loss: -4026.07470703125
+INFO - nice_runner.py - 2024-06-27 00:24:14,438 - logp: -4540.340, val_logp: -4277.540, loss: -3942.386, val_loss: -4144.024
+INFO - nice_runner.py - 2024-06-27 00:24:17,061 - logp: -4500.059, val_logp: -4408.152, loss: -3936.648, val_loss: -4018.086
+INFO - nice_runner.py - 2024-06-27 00:24:19,762 - logp: -4445.255, val_logp: -4343.899, loss: -4148.479, val_loss: -4328.654
+INFO - nice_runner.py - 2024-06-27 00:24:22,475 - logp: -4332.845, val_logp: -4482.558, loss: -4253.519, val_loss: -4066.564
+INFO - nice_runner.py - 2024-06-27 00:24:25,188 - logp: -4431.759, val_logp: -4440.682, loss: -4118.486, val_loss: -4087.364
+INFO - nice_runner.py - 2024-06-27 00:24:27,892 - logp: -4328.241, val_logp: -4350.307, loss: -4312.902, val_loss: -4201.792
+INFO - nice_runner.py - 2024-06-27 00:24:30,600 - logp: -4584.227, val_logp: -4375.773, loss: -3931.781, val_loss: -4116.413
+INFO - nice_runner.py - 2024-06-27 00:24:33,344 - logp: -4536.025, val_logp: -4476.545, loss: -4056.949, val_loss: -4078.466
+INFO - nice_runner.py - 2024-06-27 00:24:36,102 - logp: -4452.436, val_logp: -4460.122, loss: -4089.250, val_loss: -4039.440
+INFO - nice_runner.py - 2024-06-27 00:24:38,757 - logp: -4368.533, val_logp: -4259.131, loss: -4199.100, val_loss: -4335.513
+INFO - nice_runner.py - 2024-06-27 00:24:38,969 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:24:47,133 - step: 10800, exact score matching loss: -4117.1865234375
+INFO - nice_runner.py - 2024-06-27 00:24:49,894 - logp: -4326.879, val_logp: -4442.003, loss: -4419.222, val_loss: -4124.086
+INFO - nice_runner.py - 2024-06-27 00:24:52,579 - logp: -4428.877, val_logp: -4502.725, loss: -4246.220, val_loss: -4063.945
+INFO - nice_runner.py - 2024-06-27 00:24:55,409 - logp: -4338.292, val_logp: -4446.848, loss: -4366.672, val_loss: -4146.097
+INFO - nice_runner.py - 2024-06-27 00:24:58,120 - logp: -4425.907, val_logp: -4528.057, loss: -4305.719, val_loss: -4144.603
+INFO - nice_runner.py - 2024-06-27 00:25:00,794 - logp: -4446.069, val_logp: -4442.989, loss: -4318.357, val_loss: -4179.355
+INFO - nice_runner.py - 2024-06-27 00:25:03,577 - logp: -4461.660, val_logp: -4570.396, loss: -4292.944, val_loss: -3989.886
+INFO - nice_runner.py - 2024-06-27 00:25:06,276 - logp: -4393.967, val_logp: -4423.649, loss: -4405.513, val_loss: -4355.329
+INFO - nice_runner.py - 2024-06-27 00:25:08,931 - logp: -4396.099, val_logp: -4424.356, loss: -4378.439, val_loss: -4346.424
+INFO - nice_runner.py - 2024-06-27 00:25:11,605 - logp: -4529.905, val_logp: -4475.639, loss: -4194.772, val_loss: -4184.659
+INFO - nice_runner.py - 2024-06-27 00:25:14,458 - logp: -4460.203, val_logp: -4659.189, loss: -4170.184, val_loss: -4286.584
+INFO - nice_runner.py - 2024-06-27 00:25:14,665 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:25:23,027 - step: 10900, exact score matching loss: -4047.228759765625
+INFO - nice_runner.py - 2024-06-27 00:25:25,810 - logp: -4418.956, val_logp: -4568.681, loss: -4351.406, val_loss: -3968.180
+INFO - nice_runner.py - 2024-06-27 00:25:28,942 - logp: -4325.650, val_logp: -4509.569, loss: -4390.736, val_loss: -4143.359
+INFO - nice_runner.py - 2024-06-27 00:25:31,577 - logp: -4447.523, val_logp: -4426.825, loss: -4221.111, val_loss: -4188.072
+INFO - nice_runner.py - 2024-06-27 00:25:34,253 - logp: -4480.792, val_logp: -4473.314, loss: -4309.887, val_loss: -4211.271
+INFO - nice_runner.py - 2024-06-27 00:25:36,957 - logp: -4317.854, val_logp: -4663.932, loss: -4560.403, val_loss: -4033.328
+INFO - nice_runner.py - 2024-06-27 00:25:39,613 - logp: -4519.176, val_logp: -4464.474, loss: -4214.930, val_loss: -4271.298
+INFO - nice_runner.py - 2024-06-27 00:25:42,319 - logp: -4526.373, val_logp: -4549.641, loss: -4203.068, val_loss: -4147.020
+INFO - nice_runner.py - 2024-06-27 00:25:45,037 - logp: -4583.570, val_logp: -4372.306, loss: -4132.452, val_loss: -4445.416
+INFO - nice_runner.py - 2024-06-27 00:25:47,733 - logp: -4643.008, val_logp: -4513.429, loss: -4132.507, val_loss: -4143.204
+INFO - nice_runner.py - 2024-06-27 00:25:50,472 - logp: -4553.250, val_logp: -4497.479, loss: -4181.879, val_loss: -4252.493
+INFO - nice_runner.py - 2024-06-27 00:25:50,682 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:25:58,806 - step: 11000, exact score matching loss: -4072.26416015625
+INFO - nice_runner.py - 2024-06-27 00:26:01,717 - logp: -4492.307, val_logp: -4395.515, loss: -4249.144, val_loss: -4347.081
+INFO - nice_runner.py - 2024-06-27 00:26:04,379 - logp: -4538.774, val_logp: -4563.875, loss: -4239.502, val_loss: -4037.181
+INFO - nice_runner.py - 2024-06-27 00:26:07,031 - logp: -4476.814, val_logp: -4590.561, loss: -4324.903, val_loss: -4142.089
+INFO - nice_runner.py - 2024-06-27 00:26:09,680 - logp: -4575.355, val_logp: -4599.399, loss: -4216.313, val_loss: -4084.967
+INFO - nice_runner.py - 2024-06-27 00:26:12,368 - logp: -4611.913, val_logp: -4483.167, loss: -4068.106, val_loss: -4251.133
+INFO - nice_runner.py - 2024-06-27 00:26:14,989 - logp: -4441.313, val_logp: -4426.246, loss: -4317.806, val_loss: -4377.607
+INFO - nice_runner.py - 2024-06-27 00:26:17,615 - logp: -4429.919, val_logp: -4589.399, loss: -4456.750, val_loss: -4108.987
+INFO - nice_runner.py - 2024-06-27 00:26:20,341 - logp: -4514.494, val_logp: -4583.962, loss: -4289.149, val_loss: -4153.246
+INFO - nice_runner.py - 2024-06-27 00:26:22,994 - logp: -4520.997, val_logp: -4489.471, loss: -4249.052, val_loss: -4282.523
+INFO - nice_runner.py - 2024-06-27 00:26:25,678 - logp: -4527.167, val_logp: -4537.334, loss: -4407.289, val_loss: -4222.001
+INFO - nice_runner.py - 2024-06-27 00:26:25,885 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:26:34,012 - step: 11100, exact score matching loss: -4249.84326171875
+INFO - nice_runner.py - 2024-06-27 00:26:36,767 - logp: -4714.983, val_logp: -4434.289, loss: -3991.229, val_loss: -4389.348
+INFO - nice_runner.py - 2024-06-27 00:26:39,406 - logp: -4559.226, val_logp: -4572.578, loss: -4317.346, val_loss: -4157.380
+INFO - nice_runner.py - 2024-06-27 00:26:42,119 - logp: -4450.186, val_logp: -4443.836, loss: -4499.859, val_loss: -4464.113
+INFO - nice_runner.py - 2024-06-27 00:26:44,870 - logp: -4439.834, val_logp: -4456.935, loss: -4485.113, val_loss: -4344.704
+INFO - nice_runner.py - 2024-06-27 00:26:47,609 - logp: -4445.281, val_logp: -4471.652, loss: -4358.808, val_loss: -4353.017
+INFO - nice_runner.py - 2024-06-27 00:26:50,232 - logp: -4569.718, val_logp: -4466.922, loss: -4098.790, val_loss: -4331.022
+INFO - nice_runner.py - 2024-06-27 00:26:52,932 - logp: -4486.672, val_logp: -4543.343, loss: -4253.162, val_loss: -4216.635
+INFO - nice_runner.py - 2024-06-27 00:26:55,635 - logp: -4465.120, val_logp: -4425.313, loss: -4452.478, val_loss: -4431.788
+INFO - nice_runner.py - 2024-06-27 00:26:58,313 - logp: -4641.916, val_logp: -4770.337, loss: -4227.847, val_loss: -3938.712
+INFO - nice_runner.py - 2024-06-27 00:27:00,963 - logp: -4568.583, val_logp: -4535.828, loss: -4358.521, val_loss: -4418.093
+INFO - nice_runner.py - 2024-06-27 00:27:01,172 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:27:09,398 - step: 11200, exact score matching loss: -4274.36083984375
+INFO - nice_runner.py - 2024-06-27 00:27:12,056 - logp: -4496.131, val_logp: -4789.038, loss: -4402.134, val_loss: -4021.037
+INFO - nice_runner.py - 2024-06-27 00:27:14,798 - logp: -4623.243, val_logp: -4603.520, loss: -4173.841, val_loss: -4205.867
+INFO - nice_runner.py - 2024-06-27 00:27:17,506 - logp: -4799.498, val_logp: -4696.265, loss: -3978.328, val_loss: -4174.853
+INFO - nice_runner.py - 2024-06-27 00:27:20,192 - logp: -4520.744, val_logp: -4659.801, loss: -4360.168, val_loss: -4066.935
+INFO - nice_runner.py - 2024-06-27 00:27:22,850 - logp: -4596.541, val_logp: -4656.121, loss: -4333.272, val_loss: -4245.255
+INFO - nice_runner.py - 2024-06-27 00:27:25,589 - logp: -4423.030, val_logp: -4252.320, loss: -4459.368, val_loss: -4849.571
+INFO - nice_runner.py - 2024-06-27 00:27:28,881 - logp: -4569.121, val_logp: -4563.794, loss: -4350.159, val_loss: -4343.515
+INFO - nice_runner.py - 2024-06-27 00:27:31,574 - logp: -4592.498, val_logp: -4806.259, loss: -4442.550, val_loss: -3996.956
+INFO - nice_runner.py - 2024-06-27 00:27:34,525 - logp: -4611.394, val_logp: -4593.673, loss: -4334.637, val_loss: -4352.531
+INFO - nice_runner.py - 2024-06-27 00:27:37,261 - logp: -4659.917, val_logp: -4929.567, loss: -4217.937, val_loss: -3731.609
+INFO - nice_runner.py - 2024-06-27 00:27:37,470 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:27:45,691 - step: 11300, exact score matching loss: -4129.4169921875
+INFO - nice_runner.py - 2024-06-27 00:27:48,348 - logp: -4736.362, val_logp: -4622.910, loss: -4120.373, val_loss: -4219.689
+INFO - nice_runner.py - 2024-06-27 00:27:51,191 - logp: -4747.853, val_logp: -4716.481, loss: -4190.048, val_loss: -4105.693
+INFO - nice_runner.py - 2024-06-27 00:27:53,895 - logp: -4683.121, val_logp: -4662.043, loss: -4332.092, val_loss: -4297.693
+INFO - nice_runner.py - 2024-06-27 00:27:56,580 - logp: -4546.142, val_logp: -4843.938, loss: -4339.223, val_loss: -3808.053
+INFO - nice_runner.py - 2024-06-27 00:27:59,285 - logp: -4659.275, val_logp: -4547.008, loss: -4329.654, val_loss: -4556.558
+INFO - nice_runner.py - 2024-06-27 00:28:01,960 - logp: -4647.572, val_logp: -4436.064, loss: -4274.278, val_loss: -4525.988
+INFO - nice_runner.py - 2024-06-27 00:28:04,812 - logp: -4661.827, val_logp: -4484.229, loss: -4245.481, val_loss: -4407.469
+INFO - nice_runner.py - 2024-06-27 00:28:07,543 - logp: -4673.818, val_logp: -4634.667, loss: -4208.824, val_loss: -4156.299
+INFO - nice_runner.py - 2024-06-27 00:28:10,311 - logp: -4660.616, val_logp: -4613.155, loss: -4208.945, val_loss: -4181.825
+INFO - nice_runner.py - 2024-06-27 00:28:12,986 - logp: -4755.761, val_logp: -4578.653, loss: -4122.786, val_loss: -4260.029
+INFO - nice_runner.py - 2024-06-27 00:28:13,189 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:28:21,307 - step: 11400, exact score matching loss: -4076.443603515625
+INFO - nice_runner.py - 2024-06-27 00:28:23,989 - logp: -4729.771, val_logp: -4527.412, loss: -4184.350, val_loss: -4547.378
+INFO - nice_runner.py - 2024-06-27 00:28:26,712 - logp: -4618.341, val_logp: -4701.960, loss: -4452.876, val_loss: -4206.149
+INFO - nice_runner.py - 2024-06-27 00:28:29,364 - logp: -4580.788, val_logp: -4639.497, loss: -4527.136, val_loss: -4411.494
+INFO - nice_runner.py - 2024-06-27 00:28:31,997 - logp: -4692.831, val_logp: -4705.205, loss: -4368.366, val_loss: -4262.161
+INFO - nice_runner.py - 2024-06-27 00:28:34,630 - logp: -4628.964, val_logp: -4601.627, loss: -4359.466, val_loss: -4338.165
+INFO - nice_runner.py - 2024-06-27 00:28:37,266 - logp: -4664.285, val_logp: -4686.103, loss: -4401.013, val_loss: -4298.518
+INFO - nice_runner.py - 2024-06-27 00:28:39,958 - logp: -4695.056, val_logp: -4643.308, loss: -4247.648, val_loss: -4271.575
+INFO - nice_runner.py - 2024-06-27 00:28:42,815 - logp: -4623.703, val_logp: -4575.966, loss: -4342.366, val_loss: -4412.829
+INFO - nice_runner.py - 2024-06-27 00:28:45,440 - logp: -4671.113, val_logp: -4439.821, loss: -4246.336, val_loss: -4712.547
+INFO - nice_runner.py - 2024-06-27 00:28:48,051 - logp: -4613.992, val_logp: -4633.914, loss: -4526.097, val_loss: -4386.246
+INFO - nice_runner.py - 2024-06-27 00:28:48,258 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:28:56,414 - step: 11500, exact score matching loss: -4551.169921875
+INFO - nice_runner.py - 2024-06-27 00:28:59,437 - logp: -4621.039, val_logp: -4825.976, loss: -4524.067, val_loss: -4213.939
+INFO - nice_runner.py - 2024-06-27 00:29:02,227 - logp: -4792.005, val_logp: -4768.232, loss: -4322.152, val_loss: -4136.225
+INFO - nice_runner.py - 2024-06-27 00:29:04,870 - logp: -4739.426, val_logp: -4685.020, loss: -4307.323, val_loss: -4289.564
+INFO - nice_runner.py - 2024-06-27 00:29:07,518 - logp: -4619.340, val_logp: -4650.950, loss: -4375.886, val_loss: -4329.220
+INFO - nice_runner.py - 2024-06-27 00:29:10,478 - logp: -4612.846, val_logp: -4918.805, loss: -4572.701, val_loss: -3980.688
+INFO - nice_runner.py - 2024-06-27 00:29:13,161 - logp: -4688.356, val_logp: -4570.391, loss: -4421.906, val_loss: -4508.954
+INFO - nice_runner.py - 2024-06-27 00:29:15,907 - logp: -4753.355, val_logp: -4767.553, loss: -4384.433, val_loss: -4286.478
+INFO - nice_runner.py - 2024-06-27 00:29:18,635 - logp: -4880.018, val_logp: -4673.659, loss: -4216.027, val_loss: -4353.318
+INFO - nice_runner.py - 2024-06-27 00:29:21,393 - logp: -4605.566, val_logp: -4663.042, loss: -4534.431, val_loss: -4450.312
+INFO - nice_runner.py - 2024-06-27 00:29:24,049 - logp: -4697.718, val_logp: -4837.247, loss: -4388.820, val_loss: -4073.451
+INFO - nice_runner.py - 2024-06-27 00:29:24,255 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:29:32,394 - step: 11600, exact score matching loss: -4243.71240234375
+INFO - nice_runner.py - 2024-06-27 00:29:35,107 - logp: -4760.161, val_logp: -4507.683, loss: -4204.231, val_loss: -4715.963
+INFO - nice_runner.py - 2024-06-27 00:29:38,312 - logp: -4772.023, val_logp: -4835.875, loss: -4278.070, val_loss: -3997.037
+INFO - nice_runner.py - 2024-06-27 00:29:41,287 - logp: -4666.530, val_logp: -4869.743, loss: -4486.728, val_loss: -4030.142
+INFO - nice_runner.py - 2024-06-27 00:29:43,984 - logp: -4637.033, val_logp: -4578.813, loss: -4515.521, val_loss: -4629.710
+INFO - nice_runner.py - 2024-06-27 00:29:46,779 - logp: -4982.706, val_logp: -4916.535, loss: -4126.509, val_loss: -4146.881
+INFO - nice_runner.py - 2024-06-27 00:29:49,521 - logp: -4685.658, val_logp: -4950.438, loss: -4599.807, val_loss: -3987.286
+INFO - nice_runner.py - 2024-06-27 00:29:52,451 - logp: -4705.759, val_logp: -4890.470, loss: -4383.515, val_loss: -4048.184
+INFO - nice_runner.py - 2024-06-27 00:29:55,207 - logp: -4740.980, val_logp: -4766.518, loss: -4507.415, val_loss: -4472.407
+INFO - nice_runner.py - 2024-06-27 00:29:58,037 - logp: -4673.680, val_logp: -4585.171, loss: -4462.106, val_loss: -4557.301
+INFO - nice_runner.py - 2024-06-27 00:30:00,682 - logp: -4522.483, val_logp: -4672.885, loss: -4684.044, val_loss: -4528.384
+INFO - nice_runner.py - 2024-06-27 00:30:00,899 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:30:09,133 - step: 11700, exact score matching loss: -4305.1708984375
+INFO - nice_runner.py - 2024-06-27 00:30:11,972 - logp: -4746.362, val_logp: -4784.416, loss: -4212.015, val_loss: -4266.302
+INFO - nice_runner.py - 2024-06-27 00:30:14,643 - logp: -4715.396, val_logp: -4721.300, loss: -4513.475, val_loss: -4534.114
+INFO - nice_runner.py - 2024-06-27 00:30:17,330 - logp: -4619.101, val_logp: -4700.814, loss: -4683.867, val_loss: -4418.758
+INFO - nice_runner.py - 2024-06-27 00:30:20,012 - logp: -4820.347, val_logp: -4736.712, loss: -4293.574, val_loss: -4414.842
+INFO - nice_runner.py - 2024-06-27 00:30:22,965 - logp: -4661.834, val_logp: -4665.640, loss: -4580.844, val_loss: -4428.940
+INFO - nice_runner.py - 2024-06-27 00:30:25,727 - logp: -4905.478, val_logp: -4801.489, loss: -4143.773, val_loss: -4104.662
+INFO - nice_runner.py - 2024-06-27 00:30:28,371 - logp: -4661.752, val_logp: -4622.180, loss: -4669.126, val_loss: -4620.646
+INFO - nice_runner.py - 2024-06-27 00:30:30,972 - logp: -4661.347, val_logp: -4543.001, loss: -4753.879, val_loss: -4856.872
+INFO - nice_runner.py - 2024-06-27 00:30:33,621 - logp: -4885.943, val_logp: -4823.677, loss: -4316.878, val_loss: -4385.458
+INFO - nice_runner.py - 2024-06-27 00:30:36,290 - logp: -4730.784, val_logp: -4785.996, loss: -4569.933, val_loss: -4370.160
+INFO - nice_runner.py - 2024-06-27 00:30:36,497 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:30:44,617 - step: 11800, exact score matching loss: -4357.453125
+INFO - nice_runner.py - 2024-06-27 00:30:47,279 - logp: -4669.506, val_logp: -4844.941, loss: -4695.946, val_loss: -4356.977
+INFO - nice_runner.py - 2024-06-27 00:30:49,947 - logp: -4625.061, val_logp: -4628.075, loss: -4547.919, val_loss: -4544.256
+INFO - nice_runner.py - 2024-06-27 00:30:52,617 - logp: -4847.943, val_logp: -4803.723, loss: -4242.199, val_loss: -4260.481
+INFO - nice_runner.py - 2024-06-27 00:30:55,264 - logp: -4961.567, val_logp: -4872.729, loss: -4135.720, val_loss: -4263.058
+INFO - nice_runner.py - 2024-06-27 00:30:57,876 - logp: -4601.422, val_logp: -4753.927, loss: -4754.751, val_loss: -4429.533
+INFO - nice_runner.py - 2024-06-27 00:31:00,553 - logp: -4783.230, val_logp: -4879.077, loss: -4564.086, val_loss: -4248.114
+INFO - nice_runner.py - 2024-06-27 00:31:03,370 - logp: -4823.731, val_logp: -4857.339, loss: -4335.130, val_loss: -4283.327
+INFO - nice_runner.py - 2024-06-27 00:31:06,041 - logp: -4718.852, val_logp: -4721.341, loss: -4554.861, val_loss: -4459.198
+INFO - nice_runner.py - 2024-06-27 00:31:08,718 - logp: -4996.920, val_logp: -4749.342, loss: -4132.428, val_loss: -4458.266
+INFO - nice_runner.py - 2024-06-27 00:31:11,361 - logp: -4753.416, val_logp: -5004.513, loss: -4649.961, val_loss: -4166.225
+INFO - nice_runner.py - 2024-06-27 00:31:11,569 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:31:19,689 - step: 11900, exact score matching loss: -4361.08984375
+INFO - nice_runner.py - 2024-06-27 00:31:22,349 - logp: -4830.856, val_logp: -4751.183, loss: -4471.341, val_loss: -4489.375
+INFO - nice_runner.py - 2024-06-27 00:31:24,999 - logp: -4673.651, val_logp: -4589.350, loss: -4704.633, val_loss: -4956.127
+INFO - nice_runner.py - 2024-06-27 00:31:27,781 - logp: -4901.822, val_logp: -4920.428, loss: -4367.680, val_loss: -4130.473
+INFO - nice_runner.py - 2024-06-27 00:31:30,552 - logp: -4808.926, val_logp: -4882.984, loss: -4412.167, val_loss: -4218.718
+INFO - nice_runner.py - 2024-06-27 00:31:33,300 - logp: -4595.829, val_logp: -4998.520, loss: -4844.587, val_loss: -4157.765
+INFO - nice_runner.py - 2024-06-27 00:31:36,033 - logp: -4943.761, val_logp: -4821.542, loss: -4230.518, val_loss: -4394.599
+INFO - nice_runner.py - 2024-06-27 00:31:39,263 - logp: -5155.924, val_logp: -4778.891, loss: -3757.594, val_loss: -4110.004
+INFO - nice_runner.py - 2024-06-27 00:31:42,003 - logp: -4801.584, val_logp: -4752.748, loss: -4504.300, val_loss: -4556.095
+INFO - nice_runner.py - 2024-06-27 00:31:44,638 - logp: -4775.271, val_logp: -4339.576, loss: -4547.378, val_loss: -5248.737
+INFO - nice_runner.py - 2024-06-27 00:31:47,582 - logp: -4763.620, val_logp: -4712.982, loss: -4602.828, val_loss: -4604.650
+INFO - nice_runner.py - 2024-06-27 00:31:47,787 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:31:56,130 - step: 12000, exact score matching loss: -4510.54052734375
+INFO - nice_runner.py - 2024-06-27 00:31:59,031 - logp: -4800.746, val_logp: -4843.922, loss: -4552.541, val_loss: -4318.332
+INFO - nice_runner.py - 2024-06-27 00:32:01,694 - logp: -4795.447, val_logp: -4712.606, loss: -4627.713, val_loss: -4812.115
+INFO - nice_runner.py - 2024-06-27 00:32:04,538 - logp: -4644.838, val_logp: -4997.868, loss: -4752.726, val_loss: -4159.161
+INFO - nice_runner.py - 2024-06-27 00:32:07,170 - logp: -4723.354, val_logp: -5110.169, loss: -4657.521, val_loss: -4123.682
+INFO - nice_runner.py - 2024-06-27 00:32:09,862 - logp: -4884.919, val_logp: -4786.481, loss: -4520.386, val_loss: -4482.413
+INFO - nice_runner.py - 2024-06-27 00:32:12,595 - logp: -4668.138, val_logp: -4867.025, loss: -5074.758, val_loss: -4606.359
+INFO - nice_runner.py - 2024-06-27 00:32:15,299 - logp: -5007.399, val_logp: -5015.107, loss: -4356.909, val_loss: -4343.319
+INFO - nice_runner.py - 2024-06-27 00:32:17,971 - logp: -5036.565, val_logp: -4979.776, loss: -4262.913, val_loss: -4122.696
+INFO - nice_runner.py - 2024-06-27 00:32:20,622 - logp: -4856.879, val_logp: -5059.702, loss: -4688.874, val_loss: -4123.957
+INFO - nice_runner.py - 2024-06-27 00:32:23,510 - logp: -4897.219, val_logp: -4857.612, loss: -4694.087, val_loss: -4581.693
+INFO - nice_runner.py - 2024-06-27 00:32:23,715 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:32:31,884 - step: 12100, exact score matching loss: -4565.2109375
+INFO - nice_runner.py - 2024-06-27 00:32:34,607 - logp: -4979.235, val_logp: -4950.017, loss: -4333.716, val_loss: -4264.644
+INFO - nice_runner.py - 2024-06-27 00:32:37,236 - logp: -4990.070, val_logp: -4924.039, loss: -4471.892, val_loss: -4556.129
+INFO - nice_runner.py - 2024-06-27 00:32:39,850 - logp: -5147.759, val_logp: -5031.590, loss: -4032.168, val_loss: -4337.127
+INFO - nice_runner.py - 2024-06-27 00:32:42,478 - logp: -4826.188, val_logp: -5015.297, loss: -4535.100, val_loss: -4305.226
+INFO - nice_runner.py - 2024-06-27 00:32:45,116 - logp: -4710.477, val_logp: -4796.730, loss: -4686.293, val_loss: -4503.497
+INFO - nice_runner.py - 2024-06-27 00:32:47,768 - logp: -4820.413, val_logp: -4757.760, loss: -4617.272, val_loss: -4624.713
+INFO - nice_runner.py - 2024-06-27 00:32:50,457 - logp: -4940.272, val_logp: -4891.010, loss: -4467.877, val_loss: -4563.071
+INFO - nice_runner.py - 2024-06-27 00:32:53,113 - logp: -4800.728, val_logp: -4809.544, loss: -4545.385, val_loss: -4426.706
+INFO - nice_runner.py - 2024-06-27 00:32:56,070 - logp: -4976.713, val_logp: -4921.211, loss: -4388.139, val_loss: -4359.222
+INFO - nice_runner.py - 2024-06-27 00:32:58,865 - logp: -5063.293, val_logp: -4977.880, loss: -4206.231, val_loss: -4357.667
+INFO - nice_runner.py - 2024-06-27 00:32:59,065 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:33:07,365 - step: 12200, exact score matching loss: -4690.77783203125
+INFO - nice_runner.py - 2024-06-27 00:33:09,989 - logp: -4865.584, val_logp: -4839.096, loss: -4655.911, val_loss: -4675.228
+INFO - nice_runner.py - 2024-06-27 00:33:12,633 - logp: -5043.402, val_logp: -5005.177, loss: -4538.562, val_loss: -4474.473
+INFO - nice_runner.py - 2024-06-27 00:33:15,352 - logp: -5095.699, val_logp: -4790.499, loss: -4178.095, val_loss: -4700.364
+INFO - nice_runner.py - 2024-06-27 00:33:18,018 - logp: -4976.369, val_logp: -4953.827, loss: -4365.407, val_loss: -4321.684
+INFO - nice_runner.py - 2024-06-27 00:33:20,655 - logp: -4946.942, val_logp: -4803.149, loss: -4471.269, val_loss: -4679.030
+INFO - nice_runner.py - 2024-06-27 00:33:23,289 - logp: -4942.388, val_logp: -4945.764, loss: -4451.822, val_loss: -4494.553
+INFO - nice_runner.py - 2024-06-27 00:33:26,349 - logp: -4962.630, val_logp: -5062.242, loss: -4525.145, val_loss: -4313.843
+INFO - nice_runner.py - 2024-06-27 00:33:28,950 - logp: -5080.899, val_logp: -5020.024, loss: -4430.916, val_loss: -4441.497
+INFO - nice_runner.py - 2024-06-27 00:33:31,726 - logp: -5019.006, val_logp: -4999.512, loss: -4573.334, val_loss: -4407.912
+INFO - nice_runner.py - 2024-06-27 00:33:34,345 - logp: -5030.014, val_logp: -5008.275, loss: -4521.844, val_loss: -4617.709
+INFO - nice_runner.py - 2024-06-27 00:33:34,549 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:33:42,678 - step: 12300, exact score matching loss: -4376.65087890625
+INFO - nice_runner.py - 2024-06-27 00:33:45,383 - logp: -5038.420, val_logp: -5008.318, loss: -4460.854, val_loss: -4395.530
+INFO - nice_runner.py - 2024-06-27 00:33:48,508 - logp: -4867.449, val_logp: -5198.012, loss: -4691.231, val_loss: -4128.839
+INFO - nice_runner.py - 2024-06-27 00:33:51,189 - logp: -4864.676, val_logp: -4938.751, loss: -4635.809, val_loss: -4459.803
+INFO - nice_runner.py - 2024-06-27 00:33:53,832 - logp: -4917.708, val_logp: -4922.565, loss: -4479.524, val_loss: -4407.580
+INFO - nice_runner.py - 2024-06-27 00:33:56,458 - logp: -5092.021, val_logp: -4931.896, loss: -4423.677, val_loss: -4647.663
+INFO - nice_runner.py - 2024-06-27 00:33:59,379 - logp: -4976.246, val_logp: -5171.548, loss: -4429.155, val_loss: -4086.134
+INFO - nice_runner.py - 2024-06-27 00:34:02,195 - logp: -4778.299, val_logp: -4810.353, loss: -4825.493, val_loss: -4713.217
+INFO - nice_runner.py - 2024-06-27 00:34:04,898 - logp: -5073.781, val_logp: -5059.764, loss: -4541.602, val_loss: -4485.561
+INFO - nice_runner.py - 2024-06-27 00:34:07,657 - logp: -5024.464, val_logp: -4963.281, loss: -4513.375, val_loss: -4593.780
+INFO - nice_runner.py - 2024-06-27 00:34:10,421 - logp: -4895.073, val_logp: -4918.423, loss: -4824.799, val_loss: -4669.610
+INFO - nice_runner.py - 2024-06-27 00:34:10,641 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:34:18,816 - step: 12400, exact score matching loss: -4364.4599609375
+INFO - nice_runner.py - 2024-06-27 00:34:21,666 - logp: -5035.704, val_logp: -5046.670, loss: -4518.724, val_loss: -4244.405
+INFO - nice_runner.py - 2024-06-27 00:34:24,485 - logp: -5072.004, val_logp: -4916.581, loss: -4523.041, val_loss: -4792.884
+INFO - nice_runner.py - 2024-06-27 00:34:27,265 - logp: -5160.810, val_logp: -5132.188, loss: -4443.249, val_loss: -4239.572
+INFO - nice_runner.py - 2024-06-27 00:34:30,050 - logp: -4787.628, val_logp: -4998.456, loss: -5120.975, val_loss: -4579.734
+INFO - nice_runner.py - 2024-06-27 00:34:32,701 - logp: -5024.718, val_logp: -5089.572, loss: -4592.362, val_loss: -4284.874
+INFO - nice_runner.py - 2024-06-27 00:34:35,323 - logp: -4792.830, val_logp: -4964.617, loss: -4857.793, val_loss: -4519.628
+INFO - nice_runner.py - 2024-06-27 00:34:38,099 - logp: -5165.324, val_logp: -5004.252, loss: -4310.388, val_loss: -4512.498
+INFO - nice_runner.py - 2024-06-27 00:34:40,640 - logp: -5201.132, val_logp: -5221.375, loss: -4326.126, val_loss: -4163.021
+INFO - nice_runner.py - 2024-06-27 00:34:43,314 - logp: -4837.006, val_logp: -4951.639, loss: -4878.286, val_loss: -4643.002
+INFO - nice_runner.py - 2024-06-27 00:34:45,864 - logp: -5096.360, val_logp: -4916.507, loss: -4485.771, val_loss: -4742.015
+INFO - nice_runner.py - 2024-06-27 00:34:46,068 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:34:54,297 - step: 12500, exact score matching loss: -4642.07275390625
+INFO - nice_runner.py - 2024-06-27 00:34:57,067 - logp: -5007.814, val_logp: -5061.700, loss: -4702.405, val_loss: -4393.116
+INFO - nice_runner.py - 2024-06-27 00:34:59,568 - logp: -5004.839, val_logp: -4843.134, loss: -4767.020, val_loss: -4878.199
+INFO - nice_runner.py - 2024-06-27 00:35:02,115 - logp: -5173.324, val_logp: -5101.703, loss: -4454.334, val_loss: -4435.730
+INFO - nice_runner.py - 2024-06-27 00:35:04,790 - logp: -4930.953, val_logp: -5121.505, loss: -4877.599, val_loss: -4600.419
+INFO - nice_runner.py - 2024-06-27 00:35:07,378 - logp: -5052.115, val_logp: -5094.263, loss: -4744.043, val_loss: -4582.606
+INFO - nice_runner.py - 2024-06-27 00:35:09,933 - logp: -5037.793, val_logp: -5018.919, loss: -4679.692, val_loss: -4515.834
+INFO - nice_runner.py - 2024-06-27 00:35:12,576 - logp: -4981.009, val_logp: -4894.639, loss: -4753.075, val_loss: -4820.108
+INFO - nice_runner.py - 2024-06-27 00:35:15,275 - logp: -5238.561, val_logp: -4919.515, loss: -4236.067, val_loss: -4775.046
+INFO - nice_runner.py - 2024-06-27 00:35:17,868 - logp: -4873.470, val_logp: -4982.250, loss: -4818.667, val_loss: -4656.163
+INFO - nice_runner.py - 2024-06-27 00:35:20,527 - logp: -5117.306, val_logp: -4920.144, loss: -4359.292, val_loss: -4713.947
+INFO - nice_runner.py - 2024-06-27 00:35:20,728 - Computing exact score matching....
+INFO - nice_runner.py - 2024-06-27 00:35:28,860 - step: 12600, exact score matching loss: -4677.8515625
+INFO - nice_runner.py - 2024-06-27 00:35:31,457 - logp: -5139.355, val_logp: -5075.748, loss: -4503.401, val_loss: -4444.888
+INFO - nice_runner.py - 2024-06-27 00:35:34,116 - logp: -5134.154, val_logp: -5045.219, loss: -4525.773, val_loss: -4551.015
+INFO - nice_runner.py - 2024-06-27 00:35:36,739 - logp: -5197.479, val_logp: -5017.829, loss: -4228.238, val_loss: -4470.934
+INFO - nice_runner.py - 2024-06-27 00:35:39,353 - logp: -4992.064, val_logp: -5107.078, loss: -4620.881, val_loss: -4313.440
+INFO - nice_runner.py - 2024-06-27 00:35:41,950 - logp: -4961.414, val_logp: -5174.109, loss: -4834.746, val_loss: -4298.744

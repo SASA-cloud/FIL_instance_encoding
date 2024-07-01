@@ -104,9 +104,10 @@ def evaluate_model(flow, val_loader, test_loader, device, noise_sigma = 0.0):
 sigma = 0.1
 #  数据集路径
 cifar10_route = '/cpfs01/projects-SSD/cfff-448d03a18a24_SSD/drj_22210240082/drj/DATASET/images/cifar10/'
+mnist_route = '/cpfs01/projects-SSD/cfff-448d03a18a24_SSD/drj_22210240082/drj/DATASET/images/mnist/'
 
-# for dataset_name in ["MNIST", "CIFAR10"]:
-for dataset_name in ["CIFAR10"]:
+for dataset_name in ["MNIST", "CIFAR10"]:
+# for dataset_name in ["CIFAR10"]:
     d = 784 if dataset_name == 'MNIST' else 3072 # input dim 32*32*3 for CIFAR10
     # 数据集处理
     if dataset_name == 'CIFAR10':
@@ -123,9 +124,9 @@ for dataset_name in ["CIFAR10"]:
             transforms.Resize(28),
             transforms.ToTensor()
         ])
-        dataset = MNIST(os.path.join('run', 'datasets', 'mnist'), train=True, download=True,
+        dataset = MNIST(mnist_route, train=True, download=True,
                         transform=transform)
-        test_dataset = MNIST(os.path.join('run', 'datasets', 'mnist'), train=False, download=True,
+        test_dataset = MNIST(mnist_route, train=False, download=True,
                                 transform=transform)
     
     num_items = len(dataset)
