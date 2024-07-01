@@ -89,8 +89,8 @@ class NICERunner():
 
         test_logp = sum(test_logps) / len(test_logps)
         test_sm_loss = sum(test_sm_losses) / len(test_sm_losses)
-        self.results[model_type]['test_logp'] = np.item(test_logp.detach().cpu().numpy())
-        self.results[model_type]['test_sm_loss'] = np.item(test_sm_loss.detach().cpu().numpy())
+        self.results[model_type]['test_logp'] = test_logp.detach().cpu().numpy().item()
+        self.results[model_type]['test_sm_loss'] = test_sm_loss.detach().cpu().numpy().item()
 
     def train(self):
 
