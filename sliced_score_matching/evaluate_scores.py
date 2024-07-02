@@ -51,6 +51,7 @@ def evaluate_scores(flow, val_loader, test_loader, device, noise_sigma=0.0):
         test_scores.append(scores)
     test_scores = torch.cat(test_scores)
     
+    print("evaluate model done!")
     return val_scores, test_scores
 
 # 没被调用过

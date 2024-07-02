@@ -93,7 +93,6 @@ class NICERunner():
         self.results[model_type]['test_sm_loss'] = test_sm_loss.detach().cpu().numpy().item()
 
     def train(self):
-
         # 取数据集(mnist 和 cifar10)
         transform = transforms.Compose([
             transforms.Resize(self.config.data.image_size),

@@ -82,8 +82,8 @@ python3 train.py --dataset cifar10 --model resnet18 --activation gelu --lr 0.001
 ### Score matching model training and evaluation
 ```bat
 cd sliced_score_matching
-nohup python3 -u main.py --runner NICERunner --config nice/nice_ssm_vr.yml >> mnist.out 2>&1 & # [1] 11866
-nohup python3 -u main.py --runner NICERunner --config nice/nice_cifar_ssm_vr.yml >> cifar10.out 2>&1 & # [1] 13393
+nohup python3 -u main.py --runner NICERunner --config nice/nice_ssm_vr.yml >> ../outs/scoreMatching/mnist.out 2>&1 & # 
+nohup python3 -u main.py --runner NICERunner --config nice/nice_cifar_ssm_vr.yml >> ../outs/scoreMatching/cifar10.out 2>&1 & # 
 python3 evaluate_scores.py
 ```
 
