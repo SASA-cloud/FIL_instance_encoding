@@ -5,12 +5,13 @@ import math
 import numpy as np
 import torch.autograd as autograd
 
-class Sigmoid(nn.Module):
+# 实现Sigmoid变换及其逆变换，并计算变换的对数行列式（log-determinant）   
+class Sigmoid(nn.Module): 
     def __init__(self):
         super(Sigmoid, self).__init__()
 
     def forward(self, inputs, cond_inputs=None, mode='direct'):
-        if mode == 'direct':
+        if mode == 'direct': 
             s = torch.sigmoid
             logdet = - inputs - 2. * F.softplus(-inputs)
             return s(inputs), logdet.sum(-1, keepdim=True)

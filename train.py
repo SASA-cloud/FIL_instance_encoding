@@ -12,7 +12,7 @@ from torch.utils.data import random_split
 from PyTorch_CIFAR10.schduler import WarmupCosineLR
 from util import calc_tr, calc_mean_tr, get_dataset, get_model, get_model_name, get_optimizer
 
-
+# 各类参数
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--model', type=str, default="resnet18")
@@ -50,22 +50,30 @@ def get_args():
 
     return args
 
+# split training？
 def train(args):
     print(args)
+
     # transformer training should be done with run_glue.py
+    # 断言确保args.model不是"distilbert"。
     assert(args.model != "distilbert")
+
+    # 随机参数设置
     torch.manual_seed(args.seed)
     random.seed(args.seed)
     np.random.seed(args.seed)
 
+    # loss, accuracy
     metrics = args.metrics.split(",")
     if torch.cuda.is_available():
         device = f"cuda:0"
     else:
         device = "cpu"
 
+    # 获取数据集
     train_data, test_data, *_ = get_dataset(args.dataset, args.standardize, args.data_portion)
 
+    # 划分验证集
     if args.validate:
         train_len = len(train_data)
         val_len = train_len // 10
@@ -78,13 +86,14 @@ def train(args):
 
     train_loader = torch.utils.data.DataLoader(train_data, batch_size=args.bs, shuffle=True, num_workers=4)
     test_loader = torch.utils.data.DataLoader(test_data, batch_size=args.bs, shuffle=False, num_workers=4)
-    net, _ = get_model(args.model, args.dataset, args.split_layer, args.bottleneck_dim, args.activation, args.pooling, test_data, device, args.split_learning, args.encoder_file)
 
+    # 模型、优化器
+    net, _ = get_model(args.model, args.dataset, args.split_layer, args.bottleneck_dim, args.activation, args.pooling, test_data, device, args.split_learning, args.encoder_file)
     optimizer = get_optimizer(net, args.optimizer, args.lr, args.weight_decay, args.nesterov)
 
     # For private training.
     # Note: This is not the so-called "split learning"
-    # as encoder is not updated.
+    # as encoder is not updated. encoder是不更新的。那这个为什么非要不更新encoder呢？因为随着encoder的变化，噪声也要调整？
     if args.split_learning:
         # Currently only implemented for CIFAR10.
         assert(args.dataset == "cifar10")
@@ -94,11 +103,14 @@ def train(args):
         net = net.to(device)
 
         # Calculate the noise needed to added for the encodings.
+        # target_lb就是 1/dFIL
         net.eval()
+        # 算trace的均值
         tr_mean, d = calc_mean_tr(net, train_loader, calc_tr, device, args.jvp_parallelism, emb_func=net.forward_embs if args.dataset == "movielens-20" else None)
         sigma = torch.sqrt(torch.tensor(args.target_lb * tr_mean / d)).to(device)
         print(f'tr mean: {tr_mean}, sigma {sigma}')
 
+        # 生成embeddings
         # We can generate more embeddings per input, each with more noise.
         # Here, we only implement creating only one.
         new_x = torch.tensor([]).to(device)
@@ -108,22 +120,23 @@ def train(args):
                 for x, y in train_loader:
                     x = x.to(device)
                     y = y.to(device)
-                    d = x[0].flatten().shape[0]
+                    d = x[0].flatten().shape[0] # 一个样本的长度？
                     act = net.forward_first(x, for_jacobian=False)
-                    act += torch.normal(torch.zeros_like(act), sigma)
+                    act += torch.normal(torch.zeros_like(act), sigma) # embeddings加上噪声了
                     new_x = torch.concat([new_x, act.detach().clone()], dim=0)
                     new_y = torch.concat([new_y, y.detach().clone()], dim=0)
 
             new_train_data = torch.utils.data.TensorDataset(new_x, new_y)
             train_loader = torch.utils.data.DataLoader(new_train_data, batch_size=args.bs, shuffle=True, num_workers=0)
 
-
+    # 确定一下loss function
     if args.dataset in ["cifar10", 'cifar100', "mnist", "tinyimagenet"]:
         total_steps = args.epochs * len(train_loader)
         loss_func = nn.CrossEntropyLoss()
     else:
         loss_func = nn.BCELoss()
 
+    # learning rate 调节
     # TODO: Hardcode for now
     if args.scheduler == 'warmupcosine':
         scheduler = WarmupCosineLR(optimizer, warmup_epochs=total_steps * 0.3, max_epochs=total_steps)
@@ -136,15 +149,18 @@ def train(args):
     else:
         scheduler = None
 
+    # 获取模型文件
     model_file = get_model_name(args.model_path, args.model, args.dataset, args.split_layer, args.bottleneck_dim, args.jacloss_alpha, args.train_lb, args.standardize, args.input_noise, args.data_portion, args.activation, args.pooling, args.bs, args.seed)
     print(model_file)
 
     print(net)
     print(len(train_loader))
 
+    # 用于存储文件名的文件
     best_chkpt = args.encoder_file.split(".pt")[0] + f"lr{args.lr}_bs{args.bs}_weight_decay{args.weight_decay}_split_learning_best.pt"
     best_acc = 0.
 
+    # 没有训练好，或者要重新训练
     if not os.path.exists(model_file) or args.split_learning:
         for epoch in range(args.epochs):
             net.train()
@@ -156,7 +172,8 @@ def train(args):
             epoch_n = 0
 
             start_t = time.time()
-            for i, (x, y) in enumerate(train_loader):
+            for i, (x, y) in enumerate(train_loader): # 遍历train loader
+                # x是一个batch
                 if isinstance(x, list):
                     # This is for SST2
                     x = [t.to(device) for t in x]
@@ -178,11 +195,12 @@ def train(args):
                         # Add randomized smoothing noise.
                         x = x + torch.normal(torch.zeros_like(x), args.input_noise)
 
-                    d = x[0].flatten().shape[0]
+                    d = x[0].flatten().shape[0] # 把一个batch的x展平，获取input dim
 
-                    if args.jacloss_alpha > 0.0:
+                    if args.jacloss_alpha > 0.0: # 计算jacloss，alpha是超参数(权重)
                         z = net.forward_first(x, for_jacobian=False)
                         net.set_bn_training(False)
+                        # 这个也是计算tr，但是不同在于，计算单个x，不需要求均值
                         tr, _ = calc_tr(net, x, device, jvp_parallelism=args.jvp_parallelism, subsample=10)
                         net.set_bn_training(True)
                         z_inner = torch.bmm(z.view(z.shape[0], 1, -1), z.view(z.shape[0], -1, 1)).flatten()
@@ -250,6 +268,7 @@ def train(args):
 
             print(f"Epoch {epoch}, loss {total_epoch_loss / epoch_n}, acc {total_epoch_acc / epoch_n}")
 
+            # 验证集上验证一下效果
             if args.validate:
                 if not args.split_learning:
                     raise AssertionError("Validation is only for split learning, because otherwise it is too slow.")
@@ -277,12 +296,14 @@ def train(args):
                     best_acc = total_acc / n
                     torch.save(net.state_dict(), best_chkpt)
 
+        # 存储模型
         if args.save_model and not args.validate:
             torch.save(net.state_dict(), model_file)
-    else:
+    else: # 已经训练好了
         print(f"Model {model_file} already exist")
         net.load_state_dict(torch.load(model_file))
 
+    # ？ 验证集上又验证一下
     if args.validate:
         # Validation only for split learning
         assert(args.split_learning)
@@ -291,6 +312,7 @@ def train(args):
         else:
             net.load_state_dict(torch.load(best_chkpt))
 
+    # 感觉是，在特定的FIL下，测模型精度
     if args.test_fil:
         # At the end, run noisy inference
         if args.train_lb == 0:
@@ -306,7 +328,7 @@ def train(args):
         if args.split_learning:
             tr_mean = None
             sigma = torch.tensor(0.).to(device)
-        else:
+        else: # 计算sigma
             tr_mean, d = calc_mean_tr(net, test_loader, calc_tr, device, args.jvp_parallelism, emb_func=net.forward_embs if args.dataset == "movielens-20" else None)
             sigma = torch.sqrt(torch.tensor(target_lb * tr_mean / d)).to(device)
         print(f'Eval tr mean: {tr_mean}, sigma {sigma}')
@@ -320,8 +342,9 @@ def train(args):
         print(len(test_loader))
         if "auc" in metrics:
             y_preds = torch.tensor([]).to(device)
-            ans = torch.tensor([]).to(device)
-        for i, (x, y) in enumerate(test_loader):
+            ans = torch.tensor([]).to(device) 
+
+        for i, (x, y) in enumerate(test_loader): # 遍历testloader
             if isinstance(x, list):
                 x = [t.to(device) for t in x]
             else:
@@ -333,10 +356,12 @@ def train(args):
             y = y.to(device)
             start_t = time.time()
             with torch.no_grad():
+
                 act = net.forward_first(x, for_jacobian=False)
-                y_pred = net.forward_second(act, sigma=sigma)
+                y_pred = net.forward_second(act, sigma=sigma) # second forward的时候 有sigma？
                 loss = loss_func(y_pred, y)
                 total_loss += loss.detach().item() * y.shape[0]
+                
                 if "accuracy" in metrics:
                     acc = (torch.max(y_pred, 1)[1] == y).sum()
                     total_acc += acc

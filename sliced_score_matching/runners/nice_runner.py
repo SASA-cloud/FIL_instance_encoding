@@ -151,7 +151,7 @@ class NICERunner():
         flow = NICE(self.config.input_dim, self.config.model.hidden_size, self.config.model.num_layers).to(
             self.config.device)
 
-        # 优化器
+        # 优化器, 优化 nice模型的
         optimizer = self.get_optimizer(flow.parameters())
 
         # Set up test data
@@ -202,20 +202,21 @@ class NICERunner():
         # 迭代训练
         for _ in range(self.config.training.n_epochs): # 遍历epochs
             for _, (X, y) in enumerate(dataloader): # 遍历数据集
-                X = X + (torch.rand_like(X) - 0.5) / 256.
-                flattened_X = X.type(torch.float32).to(self.config.device).view(X.shape[0], -1)
-                flattened_X.clamp_(1e-3, 1-1e-3)
-                flattened_X, _ = Logit()(flattened_X, mode='direct')
+                X = X + (torch.rand_like(X) - 0.5) / 256. # input直接加噪声？
+                flattened_X = X.type(torch.float32).to(self.config.device).view(X.shape[0], -1) # 展平
+                flattened_X.clamp_(1e-3, 1-1e-3) # 限制范围 裁剪
+                flattened_X, _ = Logit()(flattened_X, mode='direct') # logit变换，不知道啥意思
 
-                if noise_sigma is not None:
+                if noise_sigma is not None: # 再加一层 sigma的噪声
                     flattened_X += torch.randn_like(flattened_X) * noise_sigma
 
-                flattened_X.requires_grad_(True)
+                flattened_X.requires_grad_(True) # 需要求导
 
-                logp = -energy_net(flattened_X)
+                logp = -energy_net(flattened_X) # 计算logp
 
                 logp = logp.mean()
 
+                # 计算损失
                 if self.config.training.algo == 'kingma':
                     loss = approx_backprop_score_matching(grad_net_kingma, flattened_X)
                 if self.config.training.algo == 'UT':
@@ -233,6 +234,7 @@ class NICERunner():
                 elif self.config.training.algo == "exact":
                     loss = exact_score_matching(energy_net, flattened_X, train=True).mean()
 
+                # 反向传播，更新模型
                 optimizer.zero_grad()
                 loss.backward()
                 optimizer.step()
