@@ -107,3 +107,14 @@ class NCF_MLP(nn.Module):
     def get_embs(self, repeat):
         # Ignore repeat: hack to be compatible with transformers
         return self.embs
+
+
+if __name__=='__main__':
+    model = NCF_MLP([10, 10, 10, 10], emb_dim=32, mlp_dims=[64, 32, 16, 8], split_layer=2, bottleneck_dim=4)
+    x = torch.randint(0, 10, (10, 4))
+    # print(model(x))
+    z = model(x)
+
+    print(model)
+    print('x.shape: ', x.shape)
+    print('z.shape: ', z.shape)
