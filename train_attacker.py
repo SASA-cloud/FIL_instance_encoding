@@ -9,6 +9,11 @@ import random
 from util import calc_tr, calc_mean_tr
 from util import calc_tr, calc_mean_tr, get_dataset, get_model, get_model_name, get_attack_model, get_attack_model_name, get_optimizer
 
+# python3 train_attacker.py --dataset cifar10 --encoder-model resnet18 
+# --activation gelu --lr 1e-4 --target-lb 1. --bs 64 --standardize 
+# --pooling avg --seed 123 --split-layer 7 --jvp-parallelism 100 
+# --encoder-file models/resnet18_cifar10_l7_b-1_standardize-True_train_lb_1.0_act_gelu_pool_avg_bs128_seed123.pt
+
 def get_args():
     import argparse
     parser = argparse.ArgumentParser()
