@@ -203,6 +203,8 @@ def train(args):
                         # 这个也是计算tr，但是不同在于，计算单个x，不需要求均值
                         tr, _ = calc_tr(net, x, device, jvp_parallelism=args.jvp_parallelism, subsample=10)
                         net.set_bn_training(True)
+                        # 进行批量矩阵乘法（batch matrix multiplication）。torch.bmm 接受两个三维张量，
+                        # 分别是形状为 (batch_size, 1, features) 和 (batch_size, features, 1) 的张量，输出一个形状为 (batch_size, 1, 1) 的张量。
                         z_inner = torch.bmm(z.view(z.shape[0], 1, -1), z.view(z.shape[0], -1, 1)).flatten()
                         jac_loss = (tr / z_inner).mean()
 

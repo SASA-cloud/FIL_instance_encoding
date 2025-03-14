@@ -493,17 +493,21 @@ class ResNet(nn.Module):
         return x
 
     def forward_second(self, x, sigma=None):
+        # 加噪声
         if sigma is not None:
-            if len(sigma.shape) > 0:
+            if len(sigma.shape) > 0: # batch
                 noise = torch.stack([torch.normal(torch.zeros_like(x[j]), sigma[j]) for j in range(len(sigma))])
-            else:
+            else: # 单个样本
                 noise = torch.normal(torch.zeros_like(x), sigma)
             x = x + noise
+        
+        # 压缩
         if self.compress is not None:
             x = self.decompress(x)
         for layer in self.layers[self.split_layer + 1:]:
             x = layer(x)
 
+        # 后续的全连接层
         x = self.avgpool(x)
         x = x.reshape(x.size(0), -1)
         x = self.fc(x)

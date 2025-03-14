@@ -10,6 +10,6 @@
 	"adam_beta1": 0.9,
 	"adam_beta2": 0.999,
 	"adam_epsilon": 1e-8,
-	"output_dir": "./models/sst2_checkpoints",
+	"output_dir": "/home/dengruijun/data/project/models/distilbert/sst2_checkpoints",
 	"overwrite_output_dir": true
 }

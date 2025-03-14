@@ -1,3 +1,11 @@
+'''
+Author: Ruijun Deng
+Date: 2024-08-22 04:52:36
+LastEditTime: 2024-10-27 00:54:09
+LastEditors: Ruijun Deng
+FilePath: /FIL_instance_encoding-nips23/PyTorch_CIFAR10/train.py
+Description: 
+'''
 import os
 from argparse import ArgumentParser
 
@@ -11,7 +19,6 @@ from module import CIFAR10Module
 
 
 def main(args):
-
     if bool(args.download_weights):
         CIFAR10Data.download_weights()
     else:

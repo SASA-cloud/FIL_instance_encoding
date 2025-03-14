@@ -144,7 +144,7 @@ def get_attack_model(encoder_model, dataset, split_layer, last_activation, devic
 
     return inet
 
-
+# 获取模型和tokenizer
 def get_model(model, dataset, split_layer, bottleneck_dim, activation, pooling, test_data, device, load_from_file=False, model_file=""):
     tokenizer = None
     if 'cifar' in dataset:
@@ -420,14 +420,15 @@ def calc_mean_tr(net, loader, calc_tr_fn, device, jvp_parallelism=100, subsample
             else:
                 x = inputs[0]
                 y = inputs[1]
-
+            
+            # 他这，x可能是个list？不应该是个 tensor吗？哦为了适应transformer 模型
             if isinstance(x, list):
                 x = [t.to(device) for t in x]
             elif isinstance(x, dict):
                 x = {k: v if k == 'sentence' else torch.tensor(v).to(device) for k, v in x.items()}
             else:
                 x = x.to(device)
-            if emb_func is not None:
+            if emb_func is not None: # 需要embedding
                 if isinstance(x, dict):
                     inputs_embeds = emb_func(x['input_ids'])
                 else:
@@ -437,7 +438,7 @@ def calc_mean_tr(net, loader, calc_tr_fn, device, jvp_parallelism=100, subsample
             if isinstance(x, dict):
                 d = inputs_embeds[0].flatten().shape[0]
             else:
-                d = x[0].flatten().shape[0]
+                d = x[0].flatten().shape[0] # 第一个数据拉平后，第一维度 也就是输入数据的维度
             prev_t = time.time()
             if calc_tr_fn == calc_tr_transformer:
                 tr, _ = calc_tr_fn(net, x, inputs_embeds, device, jvp_parallelism=jvp_parallelism, subsample=subsample)
