@@ -290,6 +290,7 @@ def calc_tr(net, x, device, subsample=-1, jvp_parallelism=1):
     '''
     # 定义一个局部函数 jvp_func**：这个函数接受两个参数 x 和 tgt，并返回 net.forward_first 方法的雅可比向量积（JVP）。
     # 这意味着 jvp_func 用于计算网络对于输入 x 在方向 tgt 上的一阶导数
+    # tgt 计算雅各比向量积的向量
     def jvp_func(x, tgt):
         return jvp(net.forward_first, (x,), (tgt,))
 
@@ -311,19 +312,30 @@ def calc_tr(net, x, device, subsample=-1, jvp_parallelism=1):
     # jvp parallelism是数据并行的粒度？
     # 函数通过分批处理样本来计算迹，每批处理 jvp_parallelism 个样本
     for j in range(math.ceil(len(samples) / jvp_parallelism)): # 对于每个数据块
+        '''
+        在这个函数中，tgt 是用于计算雅可比向量积（JVP）的向量。具体来说，tgt 的作用如下：
+        构建雅可比向量积的向量：tgt 是一个与输入 x 形状相同的张量，但它的元素大部分为零，只有一个特定位置的元素为 1。这个特定位置对应于我们在计算迹时关注的特征维度。
+        计算 JVP：在 helper 函数中，tgt 被传递给 jvp_func，用于计算网络对于输入 x 在方向 tgt 上的一阶导数。具体来说，jvp_func 计算的是网络输出相对于输入 x 的雅可比矩阵与 tgt 的乘积。
+        估计迹：通过在不同的特征维度上重复上述过程，可以估计网络对于输入数据的迹。迹的计算涉及到对所有特征维度的导数进行求和，而 tgt 的作用就是在每次计算时只关注一个特征维度。
+        简而言之，tgt 是一个用于选择特定特征维度的向量，通过它可以逐个计算每个特征维度的导数，从而最终估计整个输入数据的迹。
+        '''
         tgts = []
         # 遍历每个数据块中的每个维度
+        # 对于每一列，构建tgt， 形状和x一样，但是只有一列是1，其他是0
         for k in samples[j*jvp_parallelism:(j+1)*jvp_parallelism]: # 提取整个batch中每个数据的特定维度
             tgt = torch.zeros_like(x).reshape(x.shape[0], -1) # 按照batch 排列？# 雅各比向量积的
             # 除了当前样本索引 k 对应的元素设置为 1。这相当于在计算迹时，每次只关注一个特征维度。
             tgt[:, k] = 1. # 提取tgt所有的样本的k的特征 计算雅各比向量积的向量，可用于计算trace
             tgt = tgt.reshape(x.shape) # 又变回x的形状
             tgts.append(tgt)
-        tgts = torch.stack(tgts)
+        tgts = torch.stack(tgts) # 把多个维度的tgt vstack，一行一行拼接起来，一行是一个维度。
+
+        # 定义一个辅助函数 helper，该函数接受一个目标张量 tgt并返回一个迹的张量和一个值的张量。
+        # jvp wrapper，遍历每个batchsize
         def helper(tgt):
             vals, grad = vmap(jvp_func, randomness='same')(x, tgt)
             #print('grad shape: ', grad.shape)
-            return torch.sum(grad * grad, dim=tuple(range(1, len(grad.shape)))), vals # 先求迹再求平方
+            return torch.sum(grad * grad, dim=tuple(range(1, len(grad.shape)))), vals # 先求迹再求平方——错！先求平方再求迹
         
         trs, vals = vmap(helper, randomness='same')(tgts) # randomness for randomness control of dropout
         # vals are stacked results that are repeated by d (should be all the same)
